@@ -1,0 +1,101 @@
+/* ============================================================
+   UPTEC ELEVADORES — Design Tokens
+   Impeccable-compliant, OKLCH palette, Sora + Literata + DM Mono
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+:root {
+  /* --- Color --- */
+  --bg:            oklch(98% 0.005 250);
+  --surface:       oklch(96% 0.008 250);
+  --surface-up:    oklch(100% 0 0);
+  --border:        oklch(88% 0.01 250);
+  --border-strong: oklch(78% 0.02 250);
+  --muted:         oklch(65% 0.015 250);
+  --ink-dim:       oklch(50% 0.02 250);
+  --ink:           oklch(30% 0.03 250);
+  --ink-strong:    oklch(15% 0.04 250);
+
+  --brand:         oklch(32% 0.12 250);
+  --brand-mid:     oklch(45% 0.14 250);
+  --brand-light:   oklch(62% 0.14 250);
+  --brand-surface: oklch(95.5% 0.04 250);
+  --brand-border:  oklch(88% 0.07 250);
+  --accent:        oklch(55% 0.18 250);
+  --accent-hover:  oklch(48% 0.20 250);
+
+  --success:       oklch(52% 0.15 145);
+  --success-bg:    oklch(96% 0.05 145);
+  --error:         oklch(52% 0.18 25);
+  --error-bg:      oklch(96% 0.05 25);
+
+  /* --- Typography --- */
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body:    'Literata', Georgia, serif;
+  --font-mono:    'DM Mono', 'Courier New', monospace;
+
+  /* Fluid type scale — clamp(min, preferred, max) */
+  --text-xs:   clamp(0.694rem, 0.68rem + 0.07vw, 0.75rem);
+  --text-sm:   clamp(0.833rem, 0.81rem + 0.1vw,  0.875rem);
+  --text-base: clamp(1rem,     0.97rem + 0.14vw,  1.0625rem);
+  --text-md:   clamp(1.125rem, 1.08rem + 0.2vw,   1.25rem);
+  --text-lg:   clamp(1.266rem, 1.19rem + 0.36vw,  1.5rem);
+  --text-xl:   clamp(1.424rem, 1.3rem  + 0.6vw,   1.875rem);
+  --text-2xl:  clamp(1.602rem, 1.4rem  + 1.0vw,   2.25rem);
+  --text-3xl:  clamp(1.802rem, 1.5rem  + 1.5vw,   2.75rem);
+  --text-4xl:  clamp(2.0rem,   1.6rem  + 2.0vw,   3.5rem);
+  --text-hero: clamp(2.4rem,   1.8rem  + 3.0vw,   5rem);
+
+  /* --- Spacing --- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* --- Layout --- */
+  --container:     1200px;
+  --container-sm:  720px;
+  --content-max:   65ch;
+  --sidebar-width: 240px;
+  --nav-height:    68px;
+
+  /* --- Motion --- */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:   cubic-bezier(0.4, 0, 1, 1);
+  --ease-io:   cubic-bezier(0.45, 0, 0.55, 1);
+  --dur-fast:  140ms;
+  --dur-base:  220ms;
+  --dur-slow:  380ms;
+  --dur-enter: 480ms;
+
+  /* --- Radii --- */
+  --radius-sm: 3px;
+  --radius:    5px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* --- Shadows --- */
+  --shadow-sm:  0 1px 3px oklch(15% 0.04 250 / 0.08), 0 1px 2px oklch(15% 0.04 250 / 0.06);
+  --shadow:     0 4px 12px oklch(15% 0.04 250 / 0.08), 0 2px 4px oklch(15% 0.04 250 / 0.05);
+  --shadow-md:  0 8px 24px oklch(15% 0.04 250 / 0.10), 0 3px 8px oklch(15% 0.04 250 / 0.06);
+  --shadow-lg:  0 16px 48px oklch(15% 0.04 250 / 0.12), 0 6px 16px oklch(15% 0.04 250 / 0.07);
+
+  /* --- Z-index scale --- */
+  --z-base:    1;
+  --z-raised:  10;
+  --z-dropdown:100;
+  --z-sticky:  200;
+  --z-overlay: 300;
+  --z-modal:   400;
+  --z-toast:   500;
+}
