@@ -19,6 +19,12 @@
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d8b15a' stroke-width='2'%3E%3Crect x='6' y='2' width='12' height='3' rx='1'/%3E%3Crect x='6' y='10' width='12' height='4' rx='1'/%3E%3Crect x='6' y='19' width='12' height='3' rx='1'/%3E%3Crect x='3' y='5' width='3' height='14' rx='1'/%3E%3Crect x='18' y='5' width='3' height='14' rx='1'/%3E%3C/svg%3E"
     type="image/svg+xml">
 
+  <!-- Preload de assets criticos: carregar logo e hero logo no inicio -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preload" as="image" href="images/logo-uptec-t.png">
+  <link rel="preload" as="image" href="images/uptec-hero-bg.jpg" media="(min-width: 768px)">
+  <link rel="preload" as="image" href="images/uptec-hero-bg-mobile.jpg" media="(max-width: 767px)">
+
   <!-- Fonts: Clash Display (display) + Satoshi (body) + DM Mono (data) -->
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400,500,700&display=swap"
@@ -546,6 +552,7 @@
             <p class="kicker"><span class="kicker-tick" aria-hidden="true"></span>Para quem atendemos</p>
             <h2 class="section-title">Para cada cliente, a <span class="hero__gold">solução</span> certa.</h2>
           </div>
+
 
           <div class="segmentos-grid">
             <article class="srv-card" data-reveal data-page="condominios" style="cursor:pointer" tabindex="0" role="button" aria-label="Ver page de Condominios">
@@ -2615,6 +2622,18 @@
       target="_blank" rel="noopener noreferrer" class="btn-emergency">
       <span class="emergency-dot" aria-hidden="true"></span>Emergência 24h
     </a>
+  </div>
+
+  <!-- BRAND LOADER / CINEMATIC VINHETA (first load only) -->
+  <div id="brand-loader" aria-hidden="true" role="presentation">
+    <img src="images/logo-uptec-t.png" alt="" class="bl-logo" width="72" height="72">
+    <div class="bl-wordmark">
+      <span class="bl-name">UPTEC</span>
+      <span class="bl-tag">Elevadores</span>
+    </div>
+    <div class="bl-bar-track">
+      <div class="bl-bar-fill"></div>
+    </div>
   </div>
 
   <!-- PAGE TRANSITION OVERLAY (brand loading vignette) -->

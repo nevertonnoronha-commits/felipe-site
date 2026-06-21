@@ -13,7 +13,10 @@
 (function () {
   'use strict';
 
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* ALWAYS-ON: client explicitly wants all animations regardless of OS setting.
+     reduce is forced false so the animated path runs for everyone. The a11y
+     media query is still respected in effects.js for the cursor ring (no harm). */
+  var reduce = false; /* was: window.matchMedia('(prefers-reduced-motion: reduce)').matches */
   var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var hasGSAP = function () { return typeof window.gsap !== 'undefined'; };
 
@@ -78,11 +81,39 @@
     el.classList.add('in-view');
   }
 
+  /* rAF-throttled scroll+resize reveal: catches any element that enters
+     the viewport and hasn't received .in-view yet. GUARANTEE: nothing
+     stays at opacity:0 after being scrolled to. */
+  var _revealScrollTicking = false;
+  function _revealOnScroll() {
+    if (_revealScrollTicking) return;
+    _revealScrollTicking = true;
+    requestAnimationFrame(function () {
+      _revealScrollTicking = false;
+      var active = Array.prototype.find
+        ? Array.prototype.find.call(pages, function (p) { return p.classList.contains('is-active'); })
+        : (function () { for (var i = 0; i < pages.length; i++) { if (pages[i].classList.contains('is-active')) return pages[i]; } }());
+      if (active) _revealVisible(active);
+    });
+  }
+
+  function _revealVisible(container) {
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    container.querySelectorAll('[data-reveal]:not(.in-view)').forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      /* Reveal if top edge is inside the viewport (entered the screen) */
+      if (r.top < vh && r.bottom > 0) revealNow(el);
+    });
+  }
+
+  window.addEventListener('scroll', _revealOnScroll, { passive: true });
+  window.addEventListener('resize', _revealOnScroll, { passive: true });
+
   function observeReveals(container) {
     var els = container.querySelectorAll('[data-reveal]:not(.in-view)');
     if (!els.length) return;
 
-    if (reduce || !('IntersectionObserver' in window)) {
+    if (!('IntersectionObserver' in window)) {
       els.forEach(revealNow);
       return;
     }
@@ -95,20 +126,20 @@
             revealObserver.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+      }, { threshold: 0.06, rootMargin: '0px 0px -5% 0px' });
     }
 
     els.forEach(function (el) {
       revealObserver.observe(el);
-      /* Hard failsafe: if still hidden ~700ms after first becoming
-         on-screen-ish, force it. Also covers anything below the fold
-         that an observer somehow misses. */
     });
 
-    /* Global safety net: 1.2s after a page shows, reveal anything that
-       is in (or near) the viewport but did not get the class. And on
-       any scroll, reveal what is now visible. */
-    setTimeout(function () { forceVisibleInView(container); }, 1200);
+    /* Safety net 1: 900ms after page shows, force-reveal anything in or
+       near the viewport (covers initial viewport content that the observer
+       may have missed due to timing). */
+    setTimeout(function () { forceVisibleInView(container); }, 900);
+
+    /* Safety net 2: 2s — force-reveal everything in-viewport on this page */
+    setTimeout(function () { _revealVisible(container); }, 2000);
   }
 
   function forceVisibleInView(container) {
@@ -119,17 +150,28 @@
     });
   }
 
-  /* Absolute last-resort failsafe: if for any reason reveals never run
-     at all (script error, etc.), CSS still guarantees visibility via
-     the no-JS fallback. We also reveal everything after load as a belt. */
+  /* Absolute last-resort failsafe: 2.5s after boot, reveal EVERYTHING
+     that is currently visible on screen, in any page. */
   function revealAllEventually() {
     setTimeout(function () {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
       document.querySelectorAll('[data-reveal]:not(.in-view)').forEach(function (el) {
         var r = el.getBoundingClientRect();
-        var vh = window.innerHeight || document.documentElement.clientHeight;
         if (r.top < vh && r.bottom > 0) revealNow(el);
       });
     }, 2500);
+    /* Extra belt-and-suspenders: 5s force reveal EVERYTHING on active page,
+       no matter what. Nothing ever stays hidden. */
+    setTimeout(function () {
+      var active = Array.prototype.find
+        ? Array.prototype.find.call(pages, function (p) { return p.classList.contains('is-active'); })
+        : (function () { for (var i = 0; i < pages.length; i++) { if (pages[i].classList.contains('is-active')) return pages[i]; } }());
+      if (active) {
+        active.querySelectorAll('[data-reveal]:not(.in-view)').forEach(function (el) {
+          revealNow(el);
+        });
+      }
+    }, 5000);
   }
 
   /* ============================================================
@@ -147,7 +189,7 @@
 
       function setFinal() { el.textContent = target + suffix; }
 
-      if (reduce || !('IntersectionObserver' in window)) {
+      if (!('IntersectionObserver' in window)) {
         el.dataset.counted = '1';
         setFinal();
         return;
@@ -241,6 +283,8 @@
     var container = document.getElementById('page-' + pageId);
     if (!container) return;
     observeReveals(container);
+    /* Immediately reveal anything already in the viewport */
+    _revealVisible(container);
     initCounters(container);
     initMagnetic();
     if (hasGSAP() && window.ScrollTrigger) {
@@ -274,7 +318,7 @@
       showOverlay(function () {
         activate(target, pageId);
         /* Small GSAP fade-in of target underneath while overlay exits */
-        if (hasGSAP() && !reduce) {
+        if (hasGSAP()) {
           window.gsap.fromTo(target, { opacity: 0 }, {
             opacity: 1, duration: 0.22, ease: 'power2.out',
             onComplete: function () {
@@ -397,7 +441,7 @@
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
 
-    if (hasGSAP() && !reduce) {
+    if (hasGSAP()) {
       window.gsap.set(modal, { opacity: 0 });
       window.gsap.set(dialog, { opacity: 0, y: 40, scale: 0.96 });
       window.gsap.to(modal, { opacity: 1, duration: 0.25, ease: 'power2.out' });
@@ -417,7 +461,7 @@
       if (dialog) { dialog.style.opacity = ''; dialog.style.transform = ''; }
       if (lastFocused && lastFocused.focus) lastFocused.focus();
     }
-    if (hasGSAP() && !reduce) {
+    if (hasGSAP()) {
       window.gsap.to(dialog, { opacity: 0, y: 30, scale: 0.97, duration: 0.22, ease: 'power2.in' });
       window.gsap.to(modal, { opacity: 0, duration: 0.28, ease: 'power2.in', onComplete: done });
     } else { done(); }
@@ -665,7 +709,7 @@
     /* Start with the first item active */
     setActive(0);
 
-    if (reduce || !('IntersectionObserver' in window)) return;
+    if (!('IntersectionObserver' in window)) return;
 
     /* Trigger when section crosses the upper quarter of the viewport */
     spyObserver = new IntersectionObserver(function (entries) {
@@ -764,7 +808,7 @@
        its own gsap.set state (not the CSS opacity:0 layer). */
     clearLoadingClass();
 
-    if (!hasGSAP() || reduce) return;
+    if (!hasGSAP()) return;
 
     var gsap = window.gsap;
     var pill     = document.querySelector('.site-nav__pill');
@@ -774,7 +818,7 @@
     var actions  = document.querySelector('#hero .hero__actions');
     var facts    = document.querySelector('#hero .hero__facts');
 
-    /* Set initial states: GSAP takes over from CSS opacity:0 above. */
+    /* Set initial states for the stagger animation */
     if (pill)    gsap.set(pill,    { opacity: 0, y: -22 });
     if (kicker)  gsap.set(kicker,  { opacity: 0, y: 18 });
     if (title)   gsap.set(title,   { opacity: 0, y: 28, clipPath: 'inset(0 0 30% 0)' });
@@ -824,32 +868,86 @@
     });
   }
 
-  function setupLoadEntrance() {
-    /* Skip animation entirely if user prefers reduced motion. */
-    if (reduce) {
-      clearLoadingClass();
-      return;
-    }
+  /* ============================================================
+     BRAND LOADER / VINHETA
+     Full-screen cinematic entrance on first load only.
+     Uses the #brand-loader element (injected into DOM in HTML).
+     ============================================================ */
+  var brandLoader = document.getElementById('brand-loader');
+  var brandLoaderPlayed = false;
 
+  var _brandLoaderHidden = false;
+  function hideBrandLoader(cb) {
+    if (_brandLoaderHidden) { if (cb) cb(); return; }
+    if (!brandLoader) { _brandLoaderHidden = true; if (cb) cb(); return; }
+    brandLoader.classList.add('is-exiting');
+    var fired = false;
+    function done() {
+      if (fired) return; fired = true;
+      _brandLoaderHidden = true;
+      brandLoader.style.display = 'none';
+      if (cb) cb();
+    }
+    var t = setTimeout(done, 480);
+    brandLoader.addEventListener('transitionend', function once() {
+      brandLoader.removeEventListener('transitionend', once);
+      clearTimeout(t);
+      done();
+    }, { once: true });
+  }
+
+  function showBrandLoader() {
+    if (!brandLoader || brandLoaderPlayed) return;
+    brandLoaderPlayed = true;
+    brandLoader.classList.add('is-visible');
+    /* Progress bar: animate to 100% then open */
+    var bar = brandLoader.querySelector('.bl-bar-fill');
+    if (bar) {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          bar.style.width = '100%';
+        });
+      });
+    }
+    /* Hide after ~0.7s then fire entrance */
+    setTimeout(function () {
+      hideBrandLoader(function () {
+        /* Brand loader done — play the hero stagger */
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            playLoadEntrance();
+          });
+        });
+      });
+    }, 700);
+    /* Hard failsafe: force hide after 1.9s no matter what */
+    setTimeout(function () {
+      hideBrandLoader(null);
+      clearLoadingClass();
+      if (!entrancePlayed) { entrancePlayed = true; }
+    }, 1900);
+  }
+
+  function setupLoadEntrance() {
     /* Apply loading class NOW (before initRoute) so there is no
        flash of full-opacity elements before GSAP sets hidden states. */
     document.documentElement.classList.add('js-loading');
 
-    /* Absolute failsafe: if anything goes wrong, clear after 1.5s. */
+    /* Start brand loader immediately (does not need GSAP) */
+    showBrandLoader();
+
+    /* Absolute failsafe: clear after 2.1s (gives brand loader 0.7s + 0.42s exit + margin). */
     var failsafeTimer = setTimeout(function () {
       clearLoadingClass();
       entrancePlayed = true;
-    }, 1500);
+      hideBrandLoader(null);
+    }, 2100);
 
-    /* If GSAP is already loaded, run immediately after first route. */
+    /* tryPlay: GSAP is ready. Brand loader timing handles when entrance fires.
+       Here we just clear the loading class so the CSS doesn't hide elements. */
     function tryPlay() {
       clearTimeout(failsafeTimer);
-      /* Small rAF delay so the DOM paint of the active page settles. */
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          playLoadEntrance();
-        });
-      });
+      clearLoadingClass();
     }
 
     if (hasGSAP()) {

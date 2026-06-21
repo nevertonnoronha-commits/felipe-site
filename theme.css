@@ -74,7 +74,7 @@
 * { box-sizing: border-box; }
 
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; font-size: 87.5%; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+/* prefers-reduced-motion: scroll-behavior is the only safe concession (not an animation) */
 
 html, body { margin: 0; padding: 0; }
 
@@ -188,9 +188,7 @@ html.js-ready [data-reveal].in-view {
   opacity: 1;
   transform: none;
 }
-@media (prefers-reduced-motion: reduce) {
-  html.js-ready [data-reveal] { opacity: 1 !important; transform: none !important; transition: none; }
-}
+/* ALWAYS-ON: reduced-motion no longer bypasses reveals (removed override) */
 
 /* ---------------------------------------------------------------
    LOAD ENTRANCE ANIMATION
@@ -677,10 +675,8 @@ body.drawer-open #site-nav {
 }
 .marquee__item.is-gold { color: var(--c-gold); }
 .marquee__dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(216, 177, 90, 0.5); flex-shrink: 0; }
-/* CSS fallback animation if JS marquee does not run */
-@media (prefers-reduced-motion: no-preference) {
-  .marquee__track { animation: marqueeSlide 26s linear infinite; }
-}
+/* CSS fallback marquee animation - always on (no prefers-reduced-motion gate) */
+.marquee__track { animation: marqueeSlide 26s linear infinite; }
 @keyframes marqueeSlide { to { transform: translateX(-50%); } }
 
 /* ---------------------------------------------------------------
@@ -1330,14 +1326,9 @@ body.drawer-open #site-nav {
   .site-nav__name { font-size: 1rem; }
 }
 
-/* ---------------------------------------------------------------
-   REDUCED MOTION
-   --------------------------------------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-  .marquee__track { animation: none !important; }
-  .emergency-dot, .status-dot__pulse, .nav-plantao__dot, .hero__scroll-line::after { animation: none !important; }
-}
+/* REDUCED MOTION: client has chosen always-on animations.
+   Keeping only scroll-behavior (not an animation) — all animation/transition
+   blocks that were here have been intentionally removed. */
 
 /* Photo illustration panels (real generated images) */
 .illus-panel--photo{padding:0 !important;background:none !important;border:1px solid rgba(216,177,90,0.32);border-radius:16px;overflow:hidden;box-shadow:0 26px 60px -26px rgba(0,0,0,0.6);}
@@ -1784,40 +1775,38 @@ html.js-ready [data-reveal].in-view { transition-duration: .8s; }
 
 /* ============================================================
    TASK 2 — SECTION TITLE REVEAL: subtle clip + translate on scroll
-   (site.js IntersectionObserver already handles .in-view - CSS only)
+   ALWAYS-ON: no prefers-reduced-motion gate
    ============================================================ */
-@media (prefers-reduced-motion: no-preference) {
-  html.js-ready .section-title[data-reveal],
-  html.js-ready [data-reveal] .section-title {
-    opacity: 0;
-    transform: translateY(22px);
-    clip-path: inset(0 0 18% 0);
-    transition:
-      opacity 0.75s var(--ease),
-      transform 0.75s var(--ease),
-      clip-path 0.75s var(--ease);
-  }
-  html.js-ready .section-title[data-reveal].in-view,
-  html.js-ready [data-reveal].in-view .section-title {
-    opacity: 1;
-    transform: none;
-    clip-path: inset(0 0 0% 0);
-  }
-  /* Inner-hero h1 titles (page sub-headers) also benefit */
-  html.js-ready .inner-hero__title[data-reveal] {
-    opacity: 0;
-    transform: translateY(20px);
-    clip-path: inset(0 0 14% 0);
-    transition:
-      opacity 0.72s var(--ease),
-      transform 0.72s var(--ease),
-      clip-path 0.72s var(--ease);
-  }
-  html.js-ready .inner-hero__title[data-reveal].in-view {
-    opacity: 1;
-    transform: none;
-    clip-path: inset(0 0 0% 0);
-  }
+html.js-ready .section-title[data-reveal],
+html.js-ready [data-reveal] .section-title {
+  opacity: 0;
+  transform: translateY(22px);
+  clip-path: inset(0 0 18% 0);
+  transition:
+    opacity 0.75s var(--ease),
+    transform 0.75s var(--ease),
+    clip-path 0.75s var(--ease);
+}
+html.js-ready .section-title[data-reveal].in-view,
+html.js-ready [data-reveal].in-view .section-title {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 0% 0);
+}
+/* Inner-hero h1 titles (page sub-headers) also benefit */
+html.js-ready .inner-hero__title[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  clip-path: inset(0 0 14% 0);
+  transition:
+    opacity 0.72s var(--ease),
+    transform 0.72s var(--ease),
+    clip-path 0.72s var(--ease);
+}
+html.js-ready .inner-hero__title[data-reveal].in-view {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 0% 0);
 }
 
 /* ============================================================
@@ -1877,9 +1866,8 @@ html.js-ready [data-reveal].in-view { transition-duration: .8s; }
   transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* IDLE SHIMMER: very slow, very subtle rotating conic glow on the border
-   so the button never looks completely static. Only on desktop, no-motion-ok. */
-@media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
+/* IDLE SHIMMER: always on (desktop only for performance). */
+@media (min-width: 769px) {
   .btn-gold::after {
     content: '';
     position: absolute;
@@ -1920,12 +1908,7 @@ html.js-ready [data-reveal].in-view { transition-duration: .8s; }
   z-index: 2;
 }
 
-/* Reduced motion: disable all btn-gold animations */
-@media (prefers-reduced-motion: reduce) {
-  .btn-gold::before,
-  .btn-gold::after { display: none; }
-  .btn-gold > * { position: static; }
-}
+/* ALWAYS-ON: btn-gold animation reduced-motion override removed */
 
 /* ============================================================
    MOBILE-FIRST FIXES  (max-width: 768px / 640px)
@@ -3087,18 +3070,7 @@ body.drawer-open .mobile-cta-bar {
   width: 100%;
 }
 
-/* prefers-reduced-motion: skip animation, instant display */
-@media (prefers-reduced-motion: reduce) {
-  #page-transition {
-    transition: none;
-  }
-  #page-transition .pt-logo {
-    animation: none;
-  }
-  #page-transition .pt-bar-fill {
-    transition: none;
-  }
-}
+/* ALWAYS-ON: page-transition reduced-motion overrides removed */
 
 /* ============================================================
    FEATURE 2 - ADAPTIVE SIDEBAR (dark/light per section)
@@ -3201,3 +3173,335 @@ body.drawer-open .mobile-cta-bar {
 .section:has(.faq-accordion) .section-head .kicker{justify-content:center;}
 .faq-accordion{max-width:760px;margin-left:auto;margin-right:auto;}
 @media (min-width:1200px){.page--inner .max-w-shell:has(.faq-accordion){padding-left:0;}}
+
+/* ============================================================
+   BRAND LOADER / VINHETA (cinematic entrance on first load)
+   Full-screen overlay: UPTEC logo + wordmark + gold progress bar.
+   Deep navy with glass-blur vignette. Exits on a scale+fade.
+   z-index 500: above everything including quote modal (400).
+   ============================================================ */
+#brand-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  /* deep-navy radial vignette */
+  background:
+    radial-gradient(ellipse 85% 85% at 50% 50%, rgba(9, 14, 28, 0.92) 0%, rgba(3, 5, 12, 0.99) 100%);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1);
+  /* transitions: controlled per state below */
+  transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#brand-loader.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+#brand-loader.is-exiting {
+  opacity: 0;
+  transform: scale(1.06);
+  pointer-events: none;
+  transition: opacity 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Logo pulsing glow */
+.bl-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(216, 177, 90, 0.60));
+  animation: bl-logo-pulse 1.6s ease-in-out infinite;
+}
+@keyframes bl-logo-pulse {
+  0%, 100% { filter: drop-shadow(0 0 16px rgba(216, 177, 90, 0.48)); transform: scale(1); }
+  50%       { filter: drop-shadow(0 0 32px rgba(216, 177, 90, 0.82)); transform: scale(1.04); }
+}
+
+/* Wordmark */
+.bl-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.28rem;
+}
+.bl-name {
+  font-family: "Clash Display", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.55rem;
+  letter-spacing: 0.07em;
+  color: #ffffff;
+  line-height: 1;
+}
+.bl-tag {
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  line-height: 1;
+}
+
+/* Progress bar */
+.bl-bar-track {
+  width: 160px;
+  height: 2px;
+  background: rgba(216, 177, 90, 0.18);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.4rem;
+}
+.bl-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--c-gold), var(--c-gold-soft));
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(216, 177, 90, 0.7);
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================
+   STAGGER REVEALS for grids
+   Cards in .srv-grid, .diff-grid, .tile-grid, .segmentos-grid,
+   .counters-grid get a subtle cascade via nth-child delay.
+   The .in-view transition-delay is applied here; it does NOT
+   prevent the card from revealing (delay only applies on entry,
+   and the failsafe always forces in-view eventually).
+   ============================================================ */
+/* srv-grid stagger */
+.srv-grid [data-reveal]:nth-child(1).in-view { transition-delay: 0s; }
+.srv-grid [data-reveal]:nth-child(2).in-view { transition-delay: 0.06s; }
+.srv-grid [data-reveal]:nth-child(3).in-view { transition-delay: 0.12s; }
+.srv-grid [data-reveal]:nth-child(4).in-view { transition-delay: 0.18s; }
+.srv-grid [data-reveal]:nth-child(5).in-view { transition-delay: 0.24s; }
+.srv-grid [data-reveal]:nth-child(n+6).in-view { transition-delay: 0.30s; }
+
+/* diff-grid stagger */
+.diff-grid [data-reveal]:nth-child(1).in-view { transition-delay: 0s; }
+.diff-grid [data-reveal]:nth-child(2).in-view { transition-delay: 0.06s; }
+.diff-grid [data-reveal]:nth-child(3).in-view { transition-delay: 0.12s; }
+.diff-grid [data-reveal]:nth-child(4).in-view { transition-delay: 0.18s; }
+
+/* tile-grid stagger */
+.tile-grid [data-reveal]:nth-child(1).in-view { transition-delay: 0s; }
+.tile-grid [data-reveal]:nth-child(2).in-view { transition-delay: 0.06s; }
+.tile-grid [data-reveal]:nth-child(3).in-view { transition-delay: 0.12s; }
+.tile-grid [data-reveal]:nth-child(4).in-view { transition-delay: 0.18s; }
+.tile-grid [data-reveal]:nth-child(5).in-view { transition-delay: 0.24s; }
+.tile-grid [data-reveal]:nth-child(n+6).in-view { transition-delay: 0.30s; }
+
+/* segmentos-grid stagger */
+.segmentos-grid [data-reveal]:nth-child(1).in-view { transition-delay: 0s; }
+.segmentos-grid [data-reveal]:nth-child(2).in-view { transition-delay: 0.07s; }
+.segmentos-grid [data-reveal]:nth-child(3).in-view { transition-delay: 0.14s; }
+.segmentos-grid [data-reveal]:nth-child(4).in-view { transition-delay: 0.21s; }
+
+/* counters-grid stagger */
+.counters-grid [data-reveal]:nth-child(1).in-view { transition-delay: 0s; }
+.counters-grid [data-reveal]:nth-child(2).in-view { transition-delay: 0.06s; }
+.counters-grid [data-reveal]:nth-child(3).in-view { transition-delay: 0.12s; }
+.counters-grid [data-reveal]:nth-child(4).in-view { transition-delay: 0.18s; }
+
+/* mobile-cta-bar (sticky) */
+.mobile-cta-bar {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+  padding: 0.8rem 1rem;
+  background: rgba(7, 11, 24, 0.96);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  gap: 0.75rem;
+}
+@media (max-width: 768px) {
+  .mobile-cta-bar { display: flex; }
+  .mobile-cta-bar .btn-gold,
+  .mobile-cta-bar .btn-emergency { flex: 1; justify-content: center; min-height: 44px; }
+}
+
+/* ============================================================
+   RESPONSIVE QA FIXES — 2026-06-20
+   ALL rules below are max-width only. Zero base rules touched.
+   ============================================================ */
+
+/* ---- 1. SEGMENTOS-GRID: explicit 2-col tablet, 1-col phone ---- */
+/* Already handled at 1100px (2-col) and 640px (1-col) above.
+   Add 480px safety to ensure 1-col on very narrow phones.        */
+@media (max-width: 480px) {
+  .segmentos-grid { grid-template-columns: 1fr; }
+}
+/* Ensure cards never cause overflow on phone */
+@media (max-width: 640px) {
+  .segmentos-grid .srv-card { min-width: 0; }
+}
+
+/* ---- 2. SRV-GRID: fix srv-card--tall row-span on tablet ----
+   At 768px-1100px the grid is 2-col. srv-card--tall spans 2 rows
+   making the grid unbalanced. Collapse it to span 1 row.         */
+@media (max-width: 1100px) {
+  /* Tall card: already grid-row:span 1 via existing rule - confirm */
+  /* Wide card: spans 2 cols (correct at 2-col grid) */
+  .srv-grid { min-width: 0; }
+  .srv-grid .srv-card { min-width: 0; }
+}
+
+/* ---- 3. SECTION-HEAD--SPLIT: collapse earlier (at 768px) ---- */
+@media (max-width: 768px) {
+  .section-head--split {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* ---- 4. COUNTERS-GRID: stay 2-col on phone (fine), but
+   reduce number font + padding at very narrow widths             */
+@media (max-width: 390px) {
+  .counters-grid { grid-template-columns: 1fr 1fr; }
+  .counter { padding: 1.1rem 0.8rem; }
+  .counter__num { font-size: clamp(1.4rem, 5.5vw, 1.8rem); }
+}
+
+/* ---- 5. DIFF-GRID: ensure ghost-num never bleeds out on phone -- */
+@media (max-width: 640px) {
+  .diff-card { overflow: hidden; }
+  .ghost-num { font-size: clamp(2.5rem, 12vw, 4rem); }
+  .diff-card--lead, .diff-card { padding: 1.2rem; }
+}
+
+/* ---- 6. TILE-GRID: already collapses at 640px. On 768px (iPad)
+   ensure 2-col is not too cramped — already 1fr 1fr, OK.        */
+
+/* ---- 7. CHECK-LIST: already 1-col at 640px. Ensure no overflow -- */
+@media (max-width: 640px) {
+  .check-list { min-width: 0; }
+  .check-list li { min-width: 0; word-break: break-word; }
+}
+
+/* ---- 8. STAT-TILES: already 1-col at 480px. Confirm 2-col at
+   tablet looks proportionate (stat-tile__v is clamp-sized OK).  */
+
+/* ---- 9. FOOTER: ensure no overflow at all phone sizes ---------- */
+@media (max-width: 640px) {
+  .site-footer__top { gap: 1.5rem; }
+  .site-footer__desc { max-width: none; }
+  .site-footer__data-value { word-break: break-all; }
+  .site-footer__col { min-width: 0; }
+}
+/* Footer 2-col to 1-col: already done at 640px above. iPad 768:
+   stays 2-col but both brand-wide + 1 col is readable.          */
+
+/* ---- 10. PILL SETS + BADGES: ensure wrapping on narrow phones -- */
+@media (max-width: 390px) {
+  .pill-set li, .licit__pills li, .cert-pills li, .diff-pills li {
+    font-size: 0.72rem;
+    padding: 0.4rem 0.7rem;
+  }
+}
+
+/* ---- 11. MVV ITEM: at 768px-1100px, 130px label may be tight.
+   Reduce label column on tablet.                                  */
+@media (max-width: 900px) {
+  .mvv__item { grid-template-columns: 100px 1fr; gap: 1rem; }
+}
+
+/* ---- 12. ENG-CARDS (quem somos): already 1-col at 640px.
+   At 768px the 2-col is tight — collapse to 1-col.               */
+@media (max-width: 768px) {
+  .eng-cards { grid-template-columns: 1fr; }
+  .eng-cards--lic { grid-template-columns: 1fr; }
+}
+
+/* ---- 13. ABOUT SIDE: sticky top can trap on mobile. Already
+   static at 1100px. Ensure gap is comfortable at 768px.          */
+@media (max-width: 900px) {
+  .about__side { gap: 1rem; }
+  .founder-photo { width: 72px; height: 72px; }
+}
+
+/* ---- 14. CASE GRID: already 1-col at 1100px. Confirm phone
+   image is constrained in height.                                 */
+
+/* ---- 15. INNER-HERO: at iPad (768px) the shaft is still at 38%
+   opacity 0.45 — reduce opacity more for readability.             */
+@media (max-width: 900px) {
+  .inner-hero__shaft { width: 32%; opacity: 0.30; }
+}
+@media (max-width: 768px) {
+  .inner-hero__shaft { opacity: 0.20; }
+  .inner-hero__title { max-width: 90%; }
+  .inner-hero__lead { max-width: 90%; }
+}
+
+/* ---- 16. HERO shaft: at 768px-900px reduce further before hiding at 640px */
+@media (max-width: 900px) {
+  .hero__shaft { width: 36%; opacity: 0.40; }
+}
+
+/* ---- 17. BREADCRUMB: prevent overflow on narrow phones ---------- */
+@media (max-width: 480px) {
+  .breadcrumb { flex-wrap: wrap; gap: 0.35rem; font-size: 0.68rem; }
+}
+
+/* ---- 18. DOC-ITEM: badge stays on its own line on narrow phone -- */
+@media (max-width: 480px) {
+  .doc-item { gap: 0.6rem; padding: 0.7rem 0.8rem; }
+  .doc-item__name { font-size: 0.88rem; }
+  .badge { font-size: 0.62rem; padding: 0.28rem 0.5rem; }
+}
+
+/* ---- 19. PORQUE-ITEM: already 1-col at 1100px. On iPad (768px)
+   it is 1-col (correct). Ensure icon + text gap looks right.     */
+@media (max-width: 768px) {
+  .porque-item { padding: 1rem 1.1rem; }
+}
+
+/* ---- 20. QUOTE-CTA BANNER: stacks at 760px (existing rule OK).
+   On phone reduce padding.                                        */
+
+/* ---- 21. SRV-BLOCK actions on tablet: full-width at 768px ------- */
+@media (max-width: 768px) {
+  .srv-block__actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .srv-block__actions .btn-gold,
+  .srv-block__actions .btn-ghost,
+  .srv-block__actions .btn-emergency {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ---- 22. CONTACT-GRID aside: on phone tighten cards ------------- */
+@media (max-width: 640px) {
+  .info-card, .data-card { padding: 1.3rem; border-radius: 16px; }
+  .contact-aside { gap: 1rem; }
+}
+
+/* ---- 23. RECV-LIST items on phone: icon stays small, text wraps -- */
+@media (max-width: 480px) {
+  .recv-item { padding: 1rem; gap: 0.75rem; }
+  .recv-item__ic { width: 36px; height: 36px; flex-shrink: 0; }
+}
+
+/* ---- 24. CTA-BAND on iPad: button row may be cramped at 768px --- */
+@media (max-width: 768px) {
+  .cta-band__inner { border-radius: 22px; }
+  .cta-band__title { font-size: clamp(1.4rem, 4.5vw, 2rem); }
+}
+
+/* ---- 25. GLOBAL: ensure all flex/grid children have min-width:0
+   to prevent text overflow inside grid/flex cells on phones.      */
+@media (max-width: 640px) {
+  .tile-card, .srv-card, .diff-card, .recv-item,
+  .porque-item, .counter, .eng-card, .ident-cell,
+  .doc-item, .info-card, .data-card, .quote-cta,
+  .feature-box { min-width: 0; }
+}

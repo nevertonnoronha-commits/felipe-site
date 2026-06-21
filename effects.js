@@ -36,7 +36,7 @@
      Does NOT block clicks, hover, text selection, or the quote modal.
      ================================================================= */
   function initCursorFollower() {
-    if (!isPointerFine || isReducedMotion) return;
+    if (!isPointerFine) return; /* ALWAYS-ON: removed isReducedMotion check */
 
     var ring = document.createElement('div');
     ring.id = 'uptec-cursor-ring';
@@ -82,10 +82,6 @@
     document.addEventListener('mouseenter', onMouseEnter, { passive: true });
 
     function tick() {
-      if (isReducedMotion) {
-        rafId = requestAnimationFrame(tick);
-        return;
-      }
       ringX += (mouseX - ringX) * SPEED;
       ringY += (mouseY - ringY) * SPEED;
       // Centre the ring on the cursor: offset by half its current rendered size.
@@ -120,7 +116,7 @@
       card._glowBound = true;
 
       card.addEventListener('mousemove', function (e) {
-        if (isReducedMotion) return;
+        /* ALWAYS-ON: isReducedMotion check removed */
         var rect = card.getBoundingClientRect();
         var x = ((e.clientX - rect.left) / rect.width  * 100).toFixed(2);
         var y = ((e.clientY - rect.top)  / rect.height * 100).toFixed(2);
@@ -186,12 +182,9 @@
       }
     }
 
+    /* ALWAYS-ON: grid ripple plays regardless of reduced-motion setting */
     function applyReducedMotion() {
-      if (isReducedMotion) {
-        bg.classList.add('uptec-grid-ripple--paused');
-      } else {
-        bg.classList.remove('uptec-grid-ripple--paused');
-      }
+      bg.classList.remove('uptec-grid-ripple--paused');
     }
 
     reduceMotion.addEventListener('change', applyReducedMotion);

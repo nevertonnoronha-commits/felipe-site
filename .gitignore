@@ -13,3 +13,9 @@ package-lock.json
 _briefing_extracted.txt
 .DS_Store
 Thumbs.db
+/*.png
+verify-*.mjs
+verify-output/
+*.mjs
+test-results/
+playwright-report/
