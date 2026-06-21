@@ -2624,8 +2624,8 @@
     </a>
   </div>
 
-  <!-- BRAND LOADER / CINEMATIC VINHETA (first load only) -->
-  <div id="brand-loader" aria-hidden="true" role="presentation">
+  <!-- BRAND LOADER / CINEMATIC VINHETA (first load only) - is-visible no HTML cobre desde o primeiro paint (evita flash) -->
+  <div id="brand-loader" class="is-visible" aria-hidden="true" role="presentation">
     <img src="images/logo-uptec-t.png" alt="" class="bl-logo" width="72" height="72">
     <div class="bl-wordmark">
       <span class="bl-name">UPTEC</span>

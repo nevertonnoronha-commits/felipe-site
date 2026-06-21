@@ -3204,6 +3204,11 @@ body.drawer-open .mobile-cta-bar {
 #brand-loader.is-visible {
   opacity: 1;
   pointer-events: auto;
+  /* Failsafe puro-CSS: se o JS nao esconder o loader, ele some sozinho em ~3.5s (evita tela travada) */
+  animation: bl-failsafe-hide 0.5s ease 3.5s forwards;
+}
+@keyframes bl-failsafe-hide {
+  to { opacity: 0; visibility: hidden; pointer-events: none; }
 }
 #brand-loader.is-exiting {
   opacity: 0;
