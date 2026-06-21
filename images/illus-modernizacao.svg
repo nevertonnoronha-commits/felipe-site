@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mod-panel-old" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b0b8c8"/>
+      <stop offset="100%" stop-color="#8a9ab0"/>
+    </linearGradient>
+    <linearGradient id="mod-panel-new" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef2fb"/>
+      <stop offset="100%" stop-color="#dce6f8"/>
+    </linearGradient>
+    <linearGradient id="mod-arrow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1d3a8a"/>
+      <stop offset="100%" stop-color="#3b6fd4"/>
+    </linearGradient>
+    <marker id="mod-arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b6fd4"/>
+    </marker>
+  </defs>
+
+  <!-- ===== LABEL: ANTES / DEPOIS ===== -->
+  <text x="150" y="28" font-family="'Space Grotesk', Inter, sans-serif" font-size="11" font-weight="600" fill="#1d3a8a" fill-opacity="0.45" text-anchor="middle" letter-spacing="2">ANTES</text>
+  <text x="410" y="28" font-family="'Space Grotesk', Inter, sans-serif" font-size="11" font-weight="600" fill="#1d3a8a" text-anchor="middle" letter-spacing="2">DEPOIS</text>
+
+  <!-- ===== LEFT PANEL: OLD CONTROL PANEL ===== -->
+  <rect x="30" y="40" width="240" height="340" rx="4" fill="url(#mod-panel-old)" stroke="#8a9ab0" stroke-width="2"/>
+
+  <!-- Panel door -->
+  <rect x="38" y="50" width="224" height="320" rx="3" fill="#c4cdd8" stroke="#9aa8b8" stroke-width="1.25"/>
+
+  <!-- OLD: Rotary dial controls (obsolete technology) -->
+  <!-- Large rotary dial 1 -->
+  <circle cx="90" cy="100" r="28" fill="#b8c0cc" stroke="#7a8898" stroke-width="1.5"/>
+  <circle cx="90" cy="100" r="20" fill="#a8b2be" stroke="#7a8898" stroke-width="1"/>
+  <circle cx="90" cy="100" r="5" fill="#889098"/>
+  <line x1="90" y1="100" x2="90" y2="82" stroke="#6a7888" stroke-width="2" stroke-linecap="round"/>
+  <!-- Tick marks around dial -->
+  <g stroke="#6a7888" stroke-width="1" stroke-opacity="0.7">
+    <line x1="90" y1="72" x2="90" y2="76"/>
+    <line x1="108" y1="78" x2="105.4" y2="81.2"/>
+    <line x1="114" y1="96" x2="110" y2="96"/>
+    <line x1="108" y1="114" x2="105.4" y2="111"/>
+    <line x1="72" y1="78" x2="74.6" y2="81.2"/>
+    <line x1="66" y1="96" x2="70" y2="96"/>
+    <line x1="72" y1="114" x2="74.6" y2="111"/>
+  </g>
+  <text x="90" y="138" font-family="monospace" font-size="7" fill="#6a7888" text-anchor="middle">VELOCIDADE</text>
+
+  <!-- Large rotary dial 2 -->
+  <circle cx="200" cy="100" r="28" fill="#b8c0cc" stroke="#7a8898" stroke-width="1.5"/>
+  <circle cx="200" cy="100" r="20" fill="#a8b2be" stroke="#7a8898" stroke-width="1"/>
+  <circle cx="200" cy="100" r="5" fill="#889098"/>
+  <line x1="200" y1="100" x2="215" y2="88" stroke="#6a7888" stroke-width="2" stroke-linecap="round"/>
+  <g stroke="#6a7888" stroke-width="1" stroke-opacity="0.7">
+    <line x1="200" y1="72" x2="200" y2="76"/>
+    <line x1="218" y1="78" x2="215.4" y2="81.2"/>
+    <line x1="224" y1="96" x2="220" y2="96"/>
+    <line x1="182" y1="78" x2="184.6" y2="81.2"/>
+    <line x1="176" y1="96" x2="180" y2="96"/>
+  </g>
+  <text x="200" y="138" font-family="monospace" font-size="7" fill="#6a7888" text-anchor="middle">ACELERAÇÃO</text>
+
+  <!-- OLD: Toggle switches row -->
+  <text x="60" y="168" font-family="monospace" font-size="7" fill="#6a7888">SW-1</text>
+  <rect x="58" y="172" width="18" height="30" rx="3" fill="#9aa5b4" stroke="#7a8898" stroke-width="1"/>
+  <rect x="62" y="172" width="10" height="14" rx="2" fill="#788090"/>
+
+  <text x="88" y="168" font-family="monospace" font-size="7" fill="#6a7888">SW-2</text>
+  <rect x="88" y="172" width="18" height="30" rx="3" fill="#9aa5b4" stroke="#7a8898" stroke-width="1"/>
+  <rect x="92" y="186" width="10" height="14" rx="2" fill="#788090"/>
+
+  <text x="118" y="168" font-family="monospace" font-size="7" fill="#6a7888">SW-3</text>
+  <rect x="118" y="172" width="18" height="30" rx="3" fill="#9aa5b4" stroke="#7a8898" stroke-width="1"/>
+  <rect x="122" y="172" width="10" height="14" rx="2" fill="#788090"/>
+
+  <text x="148" y="168" font-family="monospace" font-size="7" fill="#6a7888">SW-4</text>
+  <rect x="148" y="172" width="18" height="30" rx="3" fill="#9aa5b4" stroke="#7a8898" stroke-width="1"/>
+  <rect x="152" y="186" width="10" height="14" rx="2" fill="#788090"/>
+
+  <text x="178" y="168" font-family="monospace" font-size="7" fill="#6a7888">SW-5</text>
+  <rect x="178" y="172" width="18" height="30" rx="3" fill="#9aa5b4" stroke="#7a8898" stroke-width="1"/>
+  <rect x="182" y="172" width="10" height="14" rx="2" fill="#788090"/>
+
+  <text x="208" y="168" font-family="monospace" font-size="7" fill="#6a7888">SW-6</text>
+  <rect x="208" y="172" width="18" height="30" rx="3" fill="#9aa5b4" stroke="#7a8898" stroke-width="1"/>
+  <rect x="212" y="186" width="10" height="14" rx="2" fill="#788090"/>
+
+  <!-- OLD: Messy wiring below (oxidized) -->
+  <!-- Wire bundle -->
+  <g stroke="#7a8898" stroke-width="1.5" fill="none" stroke-opacity="0.6">
+    <path d="M60 220 Q80 240 65 260 Q50 280 75 295"/>
+    <path d="M80 220 Q100 245 90 265 Q78 285 95 300"/>
+    <path d="M120 220 Q130 250 115 270 Q102 290 125 305"/>
+    <path d="M160 220 Q170 240 155 258 Q142 278 165 293"/>
+    <path d="M200 220 Q215 242 205 262 Q192 282 210 298"/>
+    <path d="M230 220 Q240 238 235 258 Q228 278 240 295"/>
+  </g>
+  <!-- Rust/oxidation spots -->
+  <circle cx="85" cy="250" r="4" fill="#8a6a50" fill-opacity="0.35"/>
+  <circle cx="145" cy="265" r="3" fill="#8a6a50" fill-opacity="0.3"/>
+  <circle cx="195" cy="245" r="3.5" fill="#8a6a50" fill-opacity="0.35"/>
+  <circle cx="120" cy="290" r="2.5" fill="#8a6a50" fill-opacity="0.3"/>
+
+  <!-- OLD: Indicator lights (some burned out) -->
+  <circle cx="70" cy="330" r="7" fill="#888" stroke="#6a7888" stroke-width="1"/>
+  <circle cx="95" cy="330" r="7" fill="#c84040" stroke="#6a7888" stroke-width="1"/><!-- red warning -->
+  <circle cx="120" cy="330" r="7" fill="#888" stroke="#6a7888" stroke-width="1"/>
+  <circle cx="145" cy="330" r="7" fill="#a86020" stroke="#6a7888" stroke-width="1"/><!-- amber -->
+  <circle cx="170" cy="330" r="7" fill="#888" stroke="#6a7888" stroke-width="1"/>
+  <circle cx="195" cy="330" r="7" fill="#888" stroke="#6a7888" stroke-width="1"/>
+  <circle cx="220" cy="330" r="7" fill="#c84040" stroke="#6a7888" stroke-width="1"/><!-- red warning -->
+  <text x="145" y="355" font-family="monospace" font-size="8" fill="#6a7888" fill-opacity="0.7" text-anchor="middle">CONTROLE ANALÓGICO — 1998</text>
+
+  <!-- ===== TRANSITION ARROW ===== -->
+  <g>
+    <!-- Arrow body -->
+    <line x1="285" y1="205" x2="335" y2="205" stroke="url(#mod-arrow)" stroke-width="3" stroke-linecap="round"/>
+    <!-- Arrowhead -->
+    <path d="M328 197 L340 205 L328 213" fill="none" stroke="#3b6fd4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Upgrade chevrons -->
+    <path d="M292 188 L300 180 L308 188" fill="none" stroke="#3b6fd4" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.7"/>
+    <path d="M296 194 L300 190 L304 194" fill="none" stroke="#3b6fd4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.5"/>
+    <text x="312" y="196" font-family="'Space Grotesk', Inter, sans-serif" font-size="9" fill="#1d3a8a" fill-opacity="0.6" text-anchor="middle">UPGRADE</text>
+  </g>
+
+  <!-- ===== RIGHT PANEL: NEW CONTROL PANEL ===== -->
+  <rect x="350" y="40" width="200" height="340" rx="4" fill="#1d3a8a" stroke="#16306e" stroke-width="2"/>
+  <rect x="358" y="50" width="184" height="320" rx="3" fill="url(#mod-panel-new)" stroke="#3b6fd4" stroke-width="1"/>
+
+  <!-- NEW: Digital display -->
+  <rect x="368" y="62" width="164" height="60" rx="3" fill="#0a1e4a" stroke="#3b6fd4" stroke-width="1.25"/>
+  <!-- Display content -->
+  <text x="450" y="84" font-family="monospace" font-size="10" fill="#3b6fd4" text-anchor="middle">SISTEMA ATIVO</text>
+  <text x="450" y="100" font-family="monospace" font-size="16" fill="#6aaeff" text-anchor="middle" letter-spacing="2">OK</text>
+  <text x="450" y="113" font-family="monospace" font-size="8" fill="#3b6fd4" fill-opacity="0.6" text-anchor="middle">v3.2.1 — FREQ. VARIÁVEL</text>
+
+  <!-- NEW: Clean circuit board pattern (decorative) -->
+  <g stroke="#3b6fd4" stroke-width="0.75" stroke-opacity="0.3" fill="none">
+    <!-- Horizontal traces -->
+    <line x1="368" y1="140" x2="532" y2="140"/>
+    <line x1="368" y1="160" x2="532" y2="160"/>
+    <line x1="368" y1="180" x2="532" y2="180"/>
+    <line x1="368" y1="200" x2="532" y2="200"/>
+    <!-- Vertical traces -->
+    <line x1="395" y1="135" x2="395" y2="205"/>
+    <line x1="420" y1="135" x2="420" y2="205"/>
+    <line x1="450" y1="135" x2="450" y2="205"/>
+    <line x1="480" y1="135" x2="480" y2="205"/>
+    <line x1="510" y1="135" x2="510" y2="205"/>
+    <!-- Corner joints -->
+    <circle cx="395" cy="140" r="2.5" fill="#3b6fd4" fill-opacity="0.5" stroke="none"/>
+    <circle cx="420" cy="160" r="2.5" fill="#3b6fd4" fill-opacity="0.5" stroke="none"/>
+    <circle cx="450" cy="140" r="2.5" fill="#3b6fd4" fill-opacity="0.5" stroke="none"/>
+    <circle cx="480" cy="180" r="2.5" fill="#3b6fd4" fill-opacity="0.5" stroke="none"/>
+    <circle cx="510" cy="160" r="2.5" fill="#3b6fd4" fill-opacity="0.5" stroke="none"/>
+    <circle cx="450" cy="200" r="2.5" fill="#3b6fd4" fill-opacity="0.5" stroke="none"/>
+  </g>
+
+  <!-- IC chip (main controller) -->
+  <rect x="430" y="148" width="40" height="24" rx="2" fill="#1d3a8a" fill-opacity="0.5" stroke="#3b6fd4" stroke-width="1.25"/>
+  <!-- Chip pins -->
+  <g stroke="#3b6fd4" stroke-width="1" stroke-opacity="0.6">
+    <line x1="435" y1="148" x2="435" y2="143"/>
+    <line x1="443" y1="148" x2="443" y2="143"/>
+    <line x1="451" y1="148" x2="451" y2="143"/>
+    <line x1="459" y1="148" x2="459" y2="143"/>
+    <line x1="435" y1="172" x2="435" y2="177"/>
+    <line x1="443" y1="172" x2="443" y2="177"/>
+    <line x1="451" y1="172" x2="451" y2="177"/>
+    <line x1="459" y1="172" x2="459" y2="177"/>
+  </g>
+  <text x="450" y="163" font-family="monospace" font-size="7" fill="#6aaeff" text-anchor="middle">MCU</text>
+
+  <!-- Capacitors -->
+  <rect x="374" y="152" width="8" height="14" rx="1" fill="#1d3a8a" fill-opacity="0.4" stroke="#3b6fd4" stroke-width="1"/>
+  <line x1="372" y1="155" x2="384" y2="155" stroke="#3b6fd4" stroke-width="0.75" stroke-opacity="0.5"/>
+  <rect x="386" y="152" width="8" height="14" rx="1" fill="#1d3a8a" fill-opacity="0.4" stroke="#3b6fd4" stroke-width="1"/>
+  <rect x="510" y="152" width="8" height="14" rx="1" fill="#1d3a8a" fill-opacity="0.4" stroke="#3b6fd4" stroke-width="1"/>
+
+  <!-- NEW: Touch/button panel (clean) -->
+  <rect x="368" y="218" width="76" height="76" rx="3" fill="#1d3a8a" fill-opacity="0.1" stroke="#3b6fd4" stroke-width="1"/>
+  <!-- Button grid -->
+  <g fill="none" stroke="#3b6fd4" stroke-width="1">
+    <rect x="374" y="224" width="18" height="14" rx="2"/>
+    <rect x="396" y="224" width="18" height="14" rx="2"/>
+    <rect x="418" y="224" width="18" height="14" rx="2"/>
+    <rect x="374" y="242" width="18" height="14" rx="2"/>
+    <rect x="396" y="242" width="18" height="14" rx="2"/>
+    <rect x="418" y="242" width="18" height="14" rx="2"/>
+    <rect x="374" y="260" width="18" height="14" rx="2"/>
+    <rect x="396" y="260" width="18" height="14" rx="2"/>
+    <rect x="418" y="260" width="18" height="14" rx="2"/>
+  </g>
+  <g font-family="monospace" font-size="7" fill="#1d3a8a" fill-opacity="0.6" text-anchor="middle">
+    <text x="383" y="234">1</text><text x="405" y="234">2</text><text x="427" y="234">3</text>
+    <text x="383" y="252">4</text><text x="405" y="252">5</text><text x="427" y="252">6</text>
+    <text x="383" y="270">P</text><text x="405" y="270">0</text><text x="427" y="270">A</text>
+  </g>
+
+  <!-- NEW: Status indicators (all green/ok) -->
+  <rect x="452" y="218" width="76" height="76" rx="3" fill="#1d3a8a" fill-opacity="0.06" stroke="#3b6fd4" stroke-width="1"/>
+  <g font-family="monospace" font-size="7" fill="#1d3a8a" fill-opacity="0.5">
+    <text x="460" y="234">PORTA</text>
+    <text x="460" y="248">MOTOR</text>
+    <text x="460" y="262">FRENO</text>
+    <text x="460" y="276">NÍVEL</text>
+    <text x="460" y="290">TEMP</text>
+  </g>
+  <!-- Status dots (all green = healthy) -->
+  <g fill="#2d8a4a">
+    <circle cx="515" cy="231" r="4"/>
+    <circle cx="515" cy="245" r="4"/>
+    <circle cx="515" cy="259" r="4"/>
+    <circle cx="515" cy="273" r="4"/>
+    <circle cx="515" cy="287" r="4"/>
+  </g>
+
+  <!-- NEW: Bottom label (clean) -->
+  <rect x="368" y="306" width="164" height="50" rx="2" fill="#1d3a8a" fill-opacity="0.06" stroke="#3b6fd4" stroke-width="0.75"/>
+  <text x="450" y="326" font-family="'Space Grotesk', Inter, sans-serif" font-size="9" font-weight="600" fill="#1d3a8a" text-anchor="middle" letter-spacing="1">INVERSOR DE FREQUÊNCIA</text>
+  <text x="450" y="340" font-family="monospace" font-size="8" fill="#3b6fd4" fill-opacity="0.7" text-anchor="middle">±1mm NIVELAMENTO</text>
+  <text x="450" y="352" font-family="monospace" font-size="8" fill="#1d3a8a" fill-opacity="0.45" text-anchor="middle">CONTROLE DIGITAL — 2024</text>
+
+</svg>

@@ -1,0 +1,7 @@
+Coloque aqui a foto de fundo do hero com o nome:
+
+  hero-elevator.jpg
+
+Tamanho ideal: 1920 x 1080 px (paisagem)
+Foto sugerida: ambiente de luxo com elevador em destaque (hotel, edificio corporativo, lobby)
+A imagem deve ser escura ou sera escurecida pelo overlay CSS automaticamente.

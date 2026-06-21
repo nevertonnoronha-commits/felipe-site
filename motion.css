@@ -1,0 +1,146 @@
+/* ============================================================
+   UPTEC ELEVADORES — Motion Layer (motion.css)
+   Purely additive styles for GSAP / Lenis / Splitting effects.
+   Uses design tokens from tokens.css — no hardcoded colours
+   where a var() exists.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   REDUCED MOTION: bail-out at the cascade root
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  /* All motion-layer animations are driven by JS which also
+     bails; these rules make CSS transitions inert as a safety net. */
+  .anim-split .word,
+  .anim-split .line-wrapper,
+  [data-anim-group] > *,
+  .anim-parallax {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   ANIM-SPLIT  — headline text-reveal
+   .anim-split is the root element.
+   Splitting.js injects .word spans inside .line spans.
+   We wrap each .line in a .line-mask (overflow:hidden clip).
+   ------------------------------------------------------------ */
+
+/* Each word chip — needed for the yPercent rise */
+.anim-split .word {
+  display: inline-block;
+  /* Splitting adds whitespace via ::after; preserve it */
+  white-space: pre;
+}
+
+/* The line-level overflow mask injected by motion.js */
+.split-line-mask {
+  display: block;
+  overflow: hidden;
+  /* Small descender room so g / p / y are not clipped */
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+  /* Allow the line to size to its content */
+  line-height: inherit;
+}
+
+/* Char spans (Splitting.js) — keep inline-block for transforms */
+.anim-split .char {
+  display: inline-block;
+}
+
+/* ------------------------------------------------------------
+   ANIM-PARALLAX  — subtle vertical drift
+   ------------------------------------------------------------ */
+.anim-parallax {
+  will-change: transform;
+}
+
+/* ------------------------------------------------------------
+   BRAND MARQUEE  — infinite horizontal scroll band
+   ------------------------------------------------------------ */
+.brand-marquee {
+  overflow: hidden;
+  /* Fade-out left + right edges for a premium feel */
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  /* Pause on hover via aria / JS — cursor gives the hint */
+  cursor: default;
+}
+
+.brand-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  white-space: nowrap;
+  will-change: transform;
+  /* Let GSAP drive the transform; no CSS animation here */
+}
+
+/* Items inside a marquee track */
+.brand-marquee-track > * {
+  flex-shrink: 0;
+}
+
+/* Optional: separator dots between items */
+.brand-marquee-sep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+/* ------------------------------------------------------------
+   DATA-ANIM-GROUP  — staggered child fade-up
+   Children start invisible; GSAP will reveal them.
+   We only set initial state in CSS when JS has confirmed
+   the plugin is loaded — the JS adds .anim-group-ready.
+   ------------------------------------------------------------ */
+[data-anim-group].anim-group-ready > * {
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: transform, opacity;
+}
+
+/* Once GSAP has played, JS removes anim-group-ready so the
+   will-change budget is released (handled in motion.js). */
+
+/* ------------------------------------------------------------
+   LENIS SMOOTH SCROLL — html-level class added by Lenis
+   ------------------------------------------------------------ */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

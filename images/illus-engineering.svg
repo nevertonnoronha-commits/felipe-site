@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="eng-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef2fb"/>
+      <stop offset="100%" stop-color="#dce6f8"/>
+    </linearGradient>
+    <linearGradient id="blueprint-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d3a8a" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#3b6fd4" stop-opacity="0.04"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== BLUEPRINT DOCUMENT (background, left side) ===== -->
+  <rect x="20" y="40" width="280" height="340" rx="4" fill="url(#blueprint-bg)" stroke="#3b6fd4" stroke-width="1.5" stroke-opacity="0.35"/>
+
+  <!-- Blueprint grid lines (light) -->
+  <g stroke="#3b6fd4" stroke-width="0.5" stroke-opacity="0.2">
+    <line x1="20" y1="80" x2="300" y2="80"/>
+    <line x1="20" y1="120" x2="300" y2="120"/>
+    <line x1="20" y1="160" x2="300" y2="160"/>
+    <line x1="20" y1="200" x2="300" y2="200"/>
+    <line x1="20" y1="240" x2="300" y2="240"/>
+    <line x1="20" y1="280" x2="300" y2="280"/>
+    <line x1="20" y1="320" x2="300" y2="320"/>
+    <line x1="60" y1="40" x2="60" y2="380"/>
+    <line x1="100" y1="40" x2="100" y2="380"/>
+    <line x1="140" y1="40" x2="140" y2="380"/>
+    <line x1="180" y1="40" x2="180" y2="380"/>
+    <line x1="220" y1="40" x2="220" y2="380"/>
+    <line x1="260" y1="40" x2="260" y2="380"/>
+  </g>
+
+  <!-- Blueprint title bar -->
+  <rect x="20" y="350" width="280" height="30" rx="0" fill="#1d3a8a" fill-opacity="0.08"/>
+  <line x1="20" y1="350" x2="300" y2="350" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.25"/>
+  <text x="30" y="368" font-family="'Space Grotesk', Inter, sans-serif" font-size="9" fill="#1d3a8a" fill-opacity="0.5" letter-spacing="1">UPTEC ELEVADORES — PROJETO TÉCNICO</text>
+
+  <!-- Blueprint: Elevator shaft cross-section drawing on document -->
+  <!-- Shaft outline -->
+  <rect x="55" y="70" width="90" height="200" rx="2" fill="none" stroke="#1d3a8a" stroke-width="1.5" stroke-opacity="0.5"/>
+  <!-- Cabin rectangle in shaft -->
+  <rect x="65" y="170" width="70" height="60" rx="1" fill="none" stroke="#3b6fd4" stroke-width="1.5" stroke-opacity="0.7"/>
+  <!-- Rails in blueprint -->
+  <line x1="62" y1="70" x2="62" y2="270" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="118" y1="70" x2="118" y2="270" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.4"/>
+  <!-- Dimension arrows on blueprint -->
+  <line x1="38" y1="70" x2="38" y2="270" stroke="#1d3a8a" stroke-width="0.75" stroke-opacity="0.4"/>
+  <line x1="35" y1="70" x2="41" y2="70" stroke="#1d3a8a" stroke-width="0.75" stroke-opacity="0.4"/>
+  <line x1="35" y1="270" x2="41" y2="270" stroke="#1d3a8a" stroke-width="0.75" stroke-opacity="0.4"/>
+  <text x="30" y="175" font-family="monospace" font-size="8" fill="#1d3a8a" fill-opacity="0.45" transform="rotate(-90 30 175)">H = 12.00m</text>
+
+  <!-- Gear system schematic on blueprint (right area of document) -->
+  <!-- Large gear -->
+  <circle cx="220" cy="140" r="38" fill="none" stroke="#3b6fd4" stroke-width="1.5" stroke-opacity="0.5"/>
+  <circle cx="220" cy="140" r="12" fill="none" stroke="#3b6fd4" stroke-width="1.5" stroke-opacity="0.5"/>
+  <!-- Gear teeth suggestion (polygon points) -->
+  <g stroke="#3b6fd4" stroke-width="1.5" stroke-opacity="0.5" fill="none">
+    <line x1="220" y1="98" x2="220" y2="90"/>
+    <line x1="220" y1="182" x2="220" y2="190"/>
+    <line x1="178" y1="140" x2="170" y2="140"/>
+    <line x1="262" y1="140" x2="270" y2="140"/>
+    <line x1="190" y1="110" x2="184" y2="104"/>
+    <line x1="250" y1="170" x2="256" y2="176"/>
+    <line x1="190" y1="170" x2="184" y2="176"/>
+    <line x1="250" y1="110" x2="256" y2="104"/>
+  </g>
+  <!-- Small gear (meshing) -->
+  <circle cx="270" cy="182" r="22" fill="none" stroke="#3b6fd4" stroke-width="1.5" stroke-opacity="0.5"/>
+  <circle cx="270" cy="182" r="7" fill="none" stroke="#3b6fd4" stroke-width="1.5" stroke-opacity="0.5"/>
+  <g stroke="#3b6fd4" stroke-width="1.25" stroke-opacity="0.5">
+    <line x1="270" y1="157" x2="270" y2="151"/>
+    <line x1="270" y1="207" x2="270" y2="213"/>
+    <line x1="245" y1="182" x2="239" y2="182"/>
+    <line x1="295" y1="182" x2="301" y2="182"/>
+  </g>
+
+  <!-- Measurement lines on blueprint -->
+  <line x1="160" y1="290" x2="285" y2="290" stroke="#1d3a8a" stroke-width="0.75" stroke-opacity="0.4"/>
+  <line x1="160" y1="287" x2="160" y2="293" stroke="#1d3a8a" stroke-width="0.75" stroke-opacity="0.4"/>
+  <line x1="285" y1="287" x2="285" y2="293" stroke="#1d3a8a" stroke-width="0.75" stroke-opacity="0.4"/>
+  <text x="222" y="305" font-family="monospace" font-size="7" fill="#1d3a8a" fill-opacity="0.4" text-anchor="middle">SISTEMA DE TRAÇÃO</text>
+
+  <!-- Cross-hatch annotation -->
+  <line x1="160" y1="255" x2="175" y2="265" stroke="#1d3a8a" stroke-width="0.75" stroke-opacity="0.35"/>
+  <line x1="163" y1="255" x2="178" y2="265" stroke="#1d3a8a" stroke-width="0.75" stroke-opacity="0.35"/>
+  <line x1="166" y1="255" x2="181" y2="265" stroke="#1d3a8a" stroke-width="0.75" stroke-opacity="0.35"/>
+
+  <!-- ===== ENGINEER FIGURE (right side, isometric-ish) ===== -->
+  <!-- Engineer standing, viewing blueprint, drawn in clean line-art style -->
+
+  <!-- Body/torso (simplified geometric) -->
+  <!-- Hard hat -->
+  <path d="M390 85 Q390 65 420 65 Q450 65 450 85 Z" fill="#1d3a8a" fill-opacity="0.18" stroke="#1d3a8a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="383" y1="85" x2="457" y2="85" stroke="#1d3a8a" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Head -->
+  <circle cx="420" cy="100" r="18" fill="#eef2fb" stroke="#1d3a8a" stroke-width="1.75"/>
+  <!-- Face details -->
+  <line x1="413" y1="97" x2="416" y2="97" stroke="#1d3a8a" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="424" y1="97" x2="427" y2="97" stroke="#1d3a8a" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M414 105 Q420 110 426 105" fill="none" stroke="#1d3a8a" stroke-width="1.25" stroke-linecap="round"/>
+
+  <!-- Neck -->
+  <rect x="416" y="116" width="8" height="8" rx="1" fill="#eef2fb" stroke="#1d3a8a" stroke-width="1.5"/>
+
+  <!-- Shoulders & torso -->
+  <path d="M390 124 L395 124 L400 154 L440 154 L445 124 L450 124 Q465 130 462 150 L440 160 L400 160 L378 150 Q375 130 390 124Z" fill="url(#eng-bg)" stroke="#1d3a8a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Collar/shirt V -->
+  <path d="M412 124 L420 136 L428 124" fill="none" stroke="#1d3a8a" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Pocket / ID badge -->
+  <rect x="424" y="136" width="14" height="10" rx="1" fill="none" stroke="#3b6fd4" stroke-width="1"/>
+  <line x1="424" y1="140" x2="438" y2="140" stroke="#3b6fd4" stroke-width="0.75"/>
+
+  <!-- Arms -->
+  <!-- Left arm (holding blueprint) -->
+  <path d="M395 130 L375 170 L360 190" fill="none" stroke="#1d3a8a" stroke-width="2" stroke-linecap="round"/>
+  <path d="M360 190 L345 210 L355 220 L368 200" fill="none" stroke="#1d3a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right arm (pointing) -->
+  <path d="M445 130 L465 155 L490 148" fill="none" stroke="#1d3a8a" stroke-width="2" stroke-linecap="round"/>
+  <!-- Right hand / pointing finger -->
+  <path d="M490 148 L510 143" stroke="#1d3a8a" stroke-width="1.75" stroke-linecap="round"/>
+  <path d="M490 148 L508 150" stroke="#1d3a8a" stroke-width="1.25" stroke-linecap="round" stroke-opacity="0.5"/>
+
+  <!-- Legs (trousers) -->
+  <path d="M400 160 L395 220 L405 220 L420 175 L435 220 L445 220 L440 160Z" fill="url(#eng-bg)" stroke="#1d3a8a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Shoes -->
+  <path d="M393 218 L388 228 L410 228 L408 218Z" fill="#1d3a8a" fill-opacity="0.2" stroke="#1d3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M442 218 L440 228 L462 228 L458 218Z" fill="#1d3a8a" fill-opacity="0.2" stroke="#1d3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- CLIPBOARD held by left hand -->
+  <rect x="318" y="195" width="55" height="68" rx="3" fill="#eef2fb" stroke="#1d3a8a" stroke-width="1.75"/>
+  <rect x="332" y="190" width="28" height="10" rx="2" fill="#eef2fb" stroke="#1d3a8a" stroke-width="1.5"/>
+  <!-- Clipboard lines (notes) -->
+  <line x1="326" y1="215" x2="365" y2="215" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="326" y1="225" x2="365" y2="225" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="326" y1="235" x2="355" y2="235" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="326" y1="245" x2="365" y2="245" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.4"/>
+  <path d="M326 252 l4 -4 4 4" fill="none" stroke="#3b6fd4" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== GEAR SYSTEM floating right (decorative engineering element) ===== -->
+  <!-- Large gear -->
+  <circle cx="470" cy="310" r="55" fill="none" stroke="#1d3a8a" stroke-width="1.5" stroke-opacity="0.2"/>
+  <circle cx="470" cy="310" r="42" fill="none" stroke="#3b6fd4" stroke-width="1.5" stroke-opacity="0.15"/>
+  <circle cx="470" cy="310" r="14" fill="none" stroke="#1d3a8a" stroke-width="1.5" stroke-opacity="0.25"/>
+  <!-- Gear spokes -->
+  <g stroke="#1d3a8a" stroke-width="1.25" stroke-opacity="0.2">
+    <line x1="470" y1="296" x2="470" y2="256"/>
+    <line x1="470" y1="324" x2="470" y2="364"/>
+    <line x1="456" y1="310" x2="416" y2="310"/>
+    <line x1="484" y1="310" x2="524" y2="310"/>
+    <line x1="460" y1="300" x2="432" y2="272"/>
+    <line x1="480" y1="320" x2="508" y2="348"/>
+    <line x1="460" y1="320" x2="432" y2="348"/>
+    <line x1="480" y1="300" x2="508" y2="272"/>
+  </g>
+  <!-- Gear teeth -->
+  <g stroke="#3b6fd4" stroke-width="2" stroke-opacity="0.18">
+    <line x1="470" y1="253" x2="470" y2="245"/>
+    <line x1="470" y1="375" x2="470" y2="367"/>
+    <line x1="413" y1="310" x2="405" y2="310"/>
+    <line x1="527" y1="310" x2="535" y2="310"/>
+    <line x1="430" y1="270" x2="424" y2="264"/>
+    <line x1="510" y1="350" x2="516" y2="356"/>
+    <line x1="430" y1="350" x2="424" y2="356"/>
+    <line x1="510" y1="270" x2="516" y2="264"/>
+  </g>
+
+  <!-- Small meshing gear -->
+  <circle cx="404" cy="360" r="30" fill="none" stroke="#3b6fd4" stroke-width="1.5" stroke-opacity="0.2"/>
+  <circle cx="404" cy="360" r="8" fill="none" stroke="#1d3a8a" stroke-width="1.5" stroke-opacity="0.25"/>
+  <g stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.2">
+    <line x1="404" y1="352" x2="404" y2="332"/>
+    <line x1="404" y1="368" x2="404" y2="388"/>
+    <line x1="396" y1="360" x2="376" y2="360"/>
+    <line x1="412" y1="360" x2="432" y2="360"/>
+  </g>
+
+  <!-- Ground line -->
+  <line x1="20" y1="380" x2="500" y2="380" stroke="#1d3a8a" stroke-width="1.5" stroke-opacity="0.12"/>
+
+  <!-- Shadow under engineer figure -->
+  <ellipse cx="420" cy="382" rx="45" ry="6" fill="#1d3a8a" fill-opacity="0.07"/>
+
+</svg>

@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 460" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sky-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef2fb"/>
+      <stop offset="60%" stop-color="#dce6f8"/>
+      <stop offset="100%" stop-color="#c8d8f2"/>
+    </linearGradient>
+    <linearGradient id="bld-main" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef2fb"/>
+      <stop offset="100%" stop-color="#d8e4f4"/>
+    </linearGradient>
+    <linearGradient id="bld-highlight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f8ff"/>
+      <stop offset="100%" stop-color="#eef2fb"/>
+    </linearGradient>
+    <linearGradient id="elevator-glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b6fd4" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#1d3a8a" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="ground-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c8d8f2"/>
+      <stop offset="100%" stop-color="#b0c4e8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky background -->
+  <rect x="0" y="0" width="560" height="460" fill="url(#sky-grad)"/>
+
+  <!-- Ground -->
+  <rect x="0" y="400" width="560" height="60" fill="url(#ground-grad)"/>
+  <line x1="0" y1="400" x2="560" y2="400" stroke="#1d3a8a" stroke-width="1.5" stroke-opacity="0.2"/>
+
+  <!-- ===== BACKGROUND BUILDINGS (skyline) ===== -->
+  <!-- Far left small building -->
+  <rect x="20" y="280" width="55" height="120" rx="2" fill="#1d3a8a" fill-opacity="0.06" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.15"/>
+  <rect x="20" y="260" width="55" height="24" rx="1" fill="#1d3a8a" fill-opacity="0.08" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.12"/>
+  <!-- windows -->
+  <g fill="none" stroke="#1d3a8a" stroke-width="0.75" stroke-opacity="0.2">
+    <rect x="26" y="288" width="9" height="8" rx="0.5"/>
+    <rect x="39" y="288" width="9" height="8" rx="0.5"/>
+    <rect x="52" y="288" width="9" height="8" rx="0.5"/>
+    <rect x="26" y="304" width="9" height="8" rx="0.5"/>
+    <rect x="39" y="304" width="9" height="8" rx="0.5"/>
+    <rect x="52" y="304" width="9" height="8" rx="0.5"/>
+    <rect x="26" y="320" width="9" height="8" rx="0.5"/>
+    <rect x="39" y="320" width="9" height="8" rx="0.5"/>
+    <rect x="52" y="320" width="9" height="8" rx="0.5"/>
+    <rect x="26" y="336" width="9" height="8" rx="0.5"/>
+    <rect x="39" y="336" width="9" height="8" rx="0.5"/>
+    <rect x="52" y="336" width="9" height="8" rx="0.5"/>
+  </g>
+
+  <!-- Far right building (tall, background) -->
+  <rect x="460" y="200" width="80" height="200" rx="2" fill="#1d3a8a" fill-opacity="0.07" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.15"/>
+  <rect x="478" y="180" width="44" height="24" rx="1" fill="#1d3a8a" fill-opacity="0.06"/>
+  <!-- windows right bg building -->
+  <g fill="none" stroke="#1d3a8a" stroke-width="0.75" stroke-opacity="0.18">
+    <rect x="466" y="212" width="10" height="8"/>
+    <rect x="480" y="212" width="10" height="8"/>
+    <rect x="494" y="212" width="10" height="8"/>
+    <rect x="508" y="212" width="10" height="8"/>
+    <rect x="522" y="212" width="10" height="8"/>
+    <rect x="466" y="228" width="10" height="8"/>
+    <rect x="480" y="228" width="10" height="8"/>
+    <rect x="494" y="228" width="10" height="8"/>
+    <rect x="508" y="228" width="10" height="8"/>
+    <rect x="466" y="244" width="10" height="8"/>
+    <rect x="480" y="244" width="10" height="8"/>
+    <rect x="494" y="244" width="10" height="8"/>
+    <rect x="466" y="260" width="10" height="8"/>
+    <rect x="480" y="260" width="10" height="8"/>
+    <rect x="494" y="260" width="10" height="8"/>
+    <rect x="508" y="260" width="10" height="8"/>
+    <rect x="466" y="276" width="10" height="8"/>
+    <rect x="480" y="276" width="10" height="8"/>
+    <rect x="466" y="292" width="10" height="8"/>
+    <rect x="494" y="292" width="10" height="8"/>
+    <rect x="508" y="292" width="10" height="8"/>
+  </g>
+
+  <!-- Mid-right building -->
+  <rect x="390" y="250" width="70" height="150" rx="2" fill="#1d3a8a" fill-opacity="0.08" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.18"/>
+  <g fill="none" stroke="#1d3a8a" stroke-width="0.75" stroke-opacity="0.2">
+    <rect x="397" y="260" width="10" height="8"/>
+    <rect x="411" y="260" width="10" height="8"/>
+    <rect x="425" y="260" width="10" height="8"/>
+    <rect x="439" y="260" width="10" height="8"/>
+    <rect x="397" y="276" width="10" height="8"/>
+    <rect x="411" y="276" width="10" height="8"/>
+    <rect x="425" y="276" width="10" height="8"/>
+    <rect x="397" y="292" width="10" height="8"/>
+    <rect x="439" y="292" width="10" height="8"/>
+    <rect x="397" y="308" width="10" height="8"/>
+    <rect x="411" y="308" width="10" height="8"/>
+    <rect x="425" y="308" width="10" height="8"/>
+    <rect x="439" y="308" width="10" height="8"/>
+    <rect x="397" y="324" width="10" height="8"/>
+    <rect x="411" y="324" width="10" height="8"/>
+    <rect x="425" y="324" width="10" height="8"/>
+  </g>
+
+  <!-- ===== MAIN FOREGROUND BUILDING (condominium, center-left) ===== -->
+  <!-- Building body -->
+  <rect x="100" y="100" width="260" height="300" rx="3" fill="url(#bld-main)" stroke="#1d3a8a" stroke-width="2" stroke-opacity="0.5"/>
+
+  <!-- Roof parapet -->
+  <rect x="94" y="92" width="272" height="18" rx="2" fill="#1d3a8a" fill-opacity="0.18" stroke="#1d3a8a" stroke-width="1.5" stroke-opacity="0.4"/>
+  <!-- Roof detail -->
+  <rect x="110" y="86" width="240" height="10" rx="1" fill="#1d3a8a" fill-opacity="0.1" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.3"/>
+
+  <!-- ===== WINDOWS GRID (main building) ===== -->
+  <!-- Floors: generate rows of windows with gap for elevator shaft column -->
+  <!-- Floor 7 -->
+  <g fill="none" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.3">
+    <!-- Left block windows (cols before elevator) -->
+    <rect x="114" y="112" width="28" height="18" rx="1.5"/>
+    <rect x="148" y="112" width="28" height="18" rx="1.5"/>
+    <rect x="182" y="112" width="28" height="18" rx="1.5"/>
+    <!-- [gap: elevator shaft 220-270] -->
+    <rect x="272" y="112" width="28" height="18" rx="1.5"/>
+    <rect x="306" y="112" width="28" height="18" rx="1.5"/>
+    <rect x="340" y="112" width="28" height="18" rx="1.5"/>
+  </g>
+  <!-- Floor 6 -->
+  <g fill="none" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.3">
+    <rect x="114" y="140" width="28" height="18" rx="1.5"/>
+    <rect x="148" y="140" width="28" height="18" rx="1.5"/>
+    <rect x="182" y="140" width="28" height="18" rx="1.5"/>
+    <rect x="272" y="140" width="28" height="18" rx="1.5"/>
+    <rect x="306" y="140" width="28" height="18" rx="1.5"/>
+    <rect x="340" y="140" width="28" height="18" rx="1.5"/>
+  </g>
+  <!-- Floor 5 -->
+  <g fill="none" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.3">
+    <rect x="114" y="168" width="28" height="18" rx="1.5"/>
+    <rect x="148" y="168" width="28" height="18" rx="1.5"/>
+    <rect x="182" y="168" width="28" height="18" rx="1.5"/>
+    <rect x="272" y="168" width="28" height="18" rx="1.5"/>
+    <rect x="306" y="168" width="28" height="18" rx="1.5"/>
+    <rect x="340" y="168" width="28" height="18" rx="1.5"/>
+  </g>
+  <!-- Floor 4 -->
+  <g fill="none" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.3">
+    <rect x="114" y="196" width="28" height="18" rx="1.5"/>
+    <rect x="148" y="196" width="28" height="18" rx="1.5"/>
+    <rect x="182" y="196" width="28" height="18" rx="1.5"/>
+    <rect x="272" y="196" width="28" height="18" rx="1.5"/>
+    <rect x="306" y="196" width="28" height="18" rx="1.5"/>
+    <rect x="340" y="196" width="28" height="18" rx="1.5"/>
+  </g>
+  <!-- Floor 3 -->
+  <g fill="none" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.3">
+    <rect x="114" y="224" width="28" height="18" rx="1.5"/>
+    <rect x="148" y="224" width="28" height="18" rx="1.5"/>
+    <rect x="182" y="224" width="28" height="18" rx="1.5"/>
+    <rect x="272" y="224" width="28" height="18" rx="1.5"/>
+    <rect x="306" y="224" width="28" height="18" rx="1.5"/>
+    <rect x="340" y="224" width="28" height="18" rx="1.5"/>
+  </g>
+  <!-- Floor 2 -->
+  <g fill="none" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.3">
+    <rect x="114" y="252" width="28" height="18" rx="1.5"/>
+    <rect x="148" y="252" width="28" height="18" rx="1.5"/>
+    <rect x="182" y="252" width="28" height="18" rx="1.5"/>
+    <rect x="272" y="252" width="28" height="18" rx="1.5"/>
+    <rect x="306" y="252" width="28" height="18" rx="1.5"/>
+    <rect x="340" y="252" width="28" height="18" rx="1.5"/>
+  </g>
+  <!-- Floor 1 -->
+  <g fill="none" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.25">
+    <rect x="114" y="280" width="28" height="18" rx="1.5"/>
+    <rect x="148" y="280" width="28" height="18" rx="1.5"/>
+    <rect x="182" y="280" width="28" height="18" rx="1.5"/>
+    <rect x="272" y="280" width="28" height="18" rx="1.5"/>
+    <rect x="306" y="280" width="28" height="18" rx="1.5"/>
+    <rect x="340" y="280" width="28" height="18" rx="1.5"/>
+  </g>
+
+  <!-- ===== HIGHLIGHTED ELEVATOR SHAFT (center column) ===== -->
+  <!-- Shaft background (glowing) -->
+  <rect x="217" y="100" width="56" height="305" rx="2" fill="url(#elevator-glow)"/>
+  <!-- Shaft border -->
+  <rect x="217" y="100" width="56" height="305" rx="2" fill="none" stroke="#3b6fd4" stroke-width="2"/>
+
+  <!-- Guide rails inside shaft -->
+  <line x1="224" y1="102" x2="224" y2="400" stroke="#1d3a8a" stroke-width="1.5" stroke-opacity="0.4"/>
+  <line x1="267" y1="102" x2="267" y2="400" stroke="#1d3a8a" stroke-width="1.5" stroke-opacity="0.4"/>
+
+  <!-- Rail clips -->
+  <g stroke="#3b6fd4" stroke-width="1" stroke-opacity="0.5">
+    <line x1="220" y1="130" x2="228" y2="130"/>
+    <line x1="263" y1="130" x2="271" y2="130"/>
+    <line x1="220" y1="172" x2="228" y2="172"/>
+    <line x1="263" y1="172" x2="271" y2="172"/>
+    <line x1="220" y1="214" x2="228" y2="214"/>
+    <line x1="263" y1="214" x2="271" y2="214"/>
+    <line x1="220" y1="256" x2="228" y2="256"/>
+    <line x1="263" y1="256" x2="271" y2="256"/>
+    <line x1="220" y1="298" x2="228" y2="298"/>
+    <line x1="263" y1="298" x2="271" y2="298"/>
+    <line x1="220" y1="340" x2="228" y2="340"/>
+    <line x1="263" y1="340" x2="271" y2="340"/>
+  </g>
+
+  <!-- Elevator cabin (floating around floor 4) -->
+  <rect x="227" y="195" width="36" height="50" rx="2" fill="#eef2fb" stroke="#1d3a8a" stroke-width="1.75" stroke-opacity="0.8"/>
+  <!-- Cabin door line -->
+  <line x1="245" y1="197" x2="245" y2="243" stroke="#3b6fd4" stroke-width="1" stroke-opacity="0.6"/>
+  <!-- Door panel -->
+  <rect x="229" y="199" width="14" height="42" rx="1" fill="none" stroke="#3b6fd4" stroke-width="0.75" stroke-opacity="0.5"/>
+  <rect x="247" y="199" width="14" height="42" rx="1" fill="none" stroke="#3b6fd4" stroke-width="0.75" stroke-opacity="0.5"/>
+
+  <!-- UPTEC badge on elevator -->
+  <text x="245" y="227" font-family="'Space Grotesk', Inter, sans-serif" font-size="5.5" fill="#1d3a8a" text-anchor="middle" font-weight="700">UPTEC</text>
+
+  <!-- ===== LOBBY / GROUND FLOOR ===== -->
+  <!-- Main entrance -->
+  <rect x="100" y="352" width="260" height="48" rx="0" fill="#1d3a8a" fill-opacity="0.07"/>
+  <line x1="100" y1="352" x2="360" y2="352" stroke="#1d3a8a" stroke-width="1.5" stroke-opacity="0.3"/>
+
+  <!-- Glass doors (lobby) -->
+  <rect x="168" y="356" width="30" height="44" rx="1" fill="none" stroke="#3b6fd4" stroke-width="1.25" stroke-opacity="0.5"/>
+  <line x1="183" y1="356" x2="183" y2="400" stroke="#3b6fd4" stroke-width="1" stroke-opacity="0.4"/>
+  <rect x="204" y="356" width="30" height="44" rx="1" fill="none" stroke="#3b6fd4" stroke-width="1.25" stroke-opacity="0.5"/>
+  <line x1="219" y1="356" x2="219" y2="400" stroke="#3b6fd4" stroke-width="1" stroke-opacity="0.4"/>
+  <rect x="240" y="356" width="30" height="44" rx="1" fill="none" stroke="#3b6fd4" stroke-width="1.25" stroke-opacity="0.5"/>
+  <line x1="255" y1="356" x2="255" y2="400" stroke="#3b6fd4" stroke-width="1" stroke-opacity="0.4"/>
+
+  <!-- ===== ANNOTATION: highlight the elevator shaft ===== -->
+  <!-- Arrow + label pointing to elevator shaft -->
+  <path d="M290 170 Q330 170 340 190" fill="none" stroke="#3b6fd4" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#shaft-arrowhead)"/>
+  <text x="345" y="195" font-family="'Space Grotesk', Inter, sans-serif" font-size="10" fill="#1d3a8a" font-weight="600">ELEVADOR</text>
+  <text x="345" y="208" font-family="'Space Grotesk', Inter, sans-serif" font-size="9" fill="#1d3a8a" fill-opacity="0.6">em destaque</text>
+
+  <defs>
+    <marker id="shaft-arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b6fd4"/>
+    </marker>
+  </defs>
+
+  <!-- Ground shadow -->
+  <ellipse cx="230" cy="406" rx="130" ry="8" fill="#1d3a8a" fill-opacity="0.06"/>
+
+  <!-- Trees (simple geometric) -->
+  <!-- Left tree -->
+  <line x1="80" y1="400" x2="80" y2="360" stroke="#1d3a8a" stroke-width="2.5" stroke-opacity="0.3" stroke-linecap="round"/>
+  <ellipse cx="80" cy="345" rx="16" ry="20" fill="#1d3a8a" fill-opacity="0.08" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.2"/>
+
+  <!-- Right tree -->
+  <line x1="380" y1="400" x2="380" y2="355" stroke="#1d3a8a" stroke-width="2.5" stroke-opacity="0.3" stroke-linecap="round"/>
+  <ellipse cx="380" cy="340" rx="18" ry="20" fill="#1d3a8a" fill-opacity="0.08" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.2"/>
+  <line x1="400" y1="400" x2="400" y2="370" stroke="#1d3a8a" stroke-width="2" stroke-opacity="0.25" stroke-linecap="round"/>
+  <ellipse cx="400" cy="358" rx="14" ry="16" fill="#1d3a8a" fill-opacity="0.07" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.18"/>
+
+</svg>

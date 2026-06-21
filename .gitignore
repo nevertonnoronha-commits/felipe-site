@@ -1,0 +1,15 @@
+node_modules/
+screenshots/
+*.pdf
+index-legacy.html
+index-landing.html
+*.perfbak.*
+images/uptec-*.png
+mobile-footer.png
+mobile-drawer-open.png
+package.json
+package-lock.json
+.tmp/
+_briefing_extracted.txt
+.DS_Store
+Thumbs.db

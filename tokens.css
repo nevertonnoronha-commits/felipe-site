@@ -1,0 +1,123 @@
+/* ============================================================
+   UPTEC ELEVADORES — Design Tokens
+   OKLCH palette · Space Grotesk (display) + Inter (UI/body) + DM Mono (data)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+:root {
+  /* --- Color: neutrals (subtle warm-cool navy tint) --- */
+  --bg:            oklch(98.4% 0.004 250);
+  --surface:       oklch(96.5% 0.007 250);
+  --surface-up:    oklch(100% 0 0);
+  --surface-sunken:oklch(94% 0.009 250);
+  --border:        oklch(90% 0.012 250);
+  --border-strong: oklch(80% 0.02 250);
+  --muted:         oklch(60% 0.018 250);
+  --ink-dim:       oklch(46% 0.025 250);
+  --ink:           oklch(28% 0.03 250);
+  --ink-strong:    oklch(15% 0.04 250);
+
+  /* --- Color: brand (deep engineering navy) --- */
+  --brand:         oklch(32% 0.12 250);
+  --brand-deep:    oklch(22% 0.10 255);
+  --brand-mid:     oklch(45% 0.14 250);
+  --brand-light:   oklch(62% 0.15 250);
+  --brand-bright:  oklch(70% 0.16 245);
+  --brand-surface: oklch(95.5% 0.04 250);
+  --brand-border:  oklch(88% 0.07 250);
+  --accent:        oklch(55% 0.18 250);
+  --accent-hover:  oklch(48% 0.20 250);
+
+  /* --- Color: emergency (orange, semantic = urgency only) --- */
+  --emergency:       oklch(64% 0.19 45);
+  --emergency-hover: oklch(57% 0.20 42);
+
+  /* --- Color: status --- */
+  --success:       oklch(52% 0.15 145);
+  --success-bg:    oklch(96% 0.05 145);
+  --error:         oklch(52% 0.18 25);
+  --error-bg:      oklch(96% 0.05 25);
+
+  /* --- Gradients & glows (premium surfaces) --- */
+  --grad-brand:   linear-gradient(135deg, oklch(34% 0.13 255) 0%, oklch(22% 0.10 258) 100%);
+  --grad-hero:    radial-gradient(120% 120% at 15% 12%, oklch(38% 0.14 250) 0%, oklch(20% 0.10 258) 45%, oklch(12% 0.07 260) 100%);
+  --grad-sheen:   linear-gradient(180deg, oklch(100% 0 0 / 0.10) 0%, oklch(100% 0 0 / 0) 60%);
+  --glow-brand:   0 0 0 1px oklch(70% 0.16 245 / 0.10), 0 18px 50px oklch(32% 0.12 250 / 0.22);
+
+  /* --- Typography --- */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-mono:    'DM Mono', 'Courier New', monospace;
+
+  /* Fluid type scale — clamp(min, preferred, max) */
+  --text-xs:   clamp(0.694rem, 0.68rem + 0.07vw, 0.75rem);
+  --text-sm:   clamp(0.833rem, 0.81rem + 0.1vw,  0.875rem);
+  --text-base: clamp(1rem,     0.97rem + 0.14vw,  1.0625rem);
+  --text-md:   clamp(1.125rem, 1.08rem + 0.2vw,   1.25rem);
+  --text-lg:   clamp(1.266rem, 1.19rem + 0.36vw,  1.5rem);
+  --text-xl:   clamp(1.424rem, 1.3rem  + 0.6vw,   1.875rem);
+  --text-2xl:  clamp(1.602rem, 1.4rem  + 1.0vw,   2.25rem);
+  --text-3xl:  clamp(1.802rem, 1.5rem  + 1.5vw,   2.75rem);
+  --text-4xl:  clamp(2.0rem,   1.6rem  + 2.0vw,   3.5rem);
+  --text-hero: clamp(2.6rem,   1.7rem  + 3.6vw,   5.5rem);
+
+  /* --- Spacing --- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-7:  1.75rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* --- Layout --- */
+  --container:     1200px;
+  --container-sm:  720px;
+  --content-max:   65ch;
+  --sidebar-width: 240px;
+  --nav-height:    72px;
+
+  /* --- Motion --- */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:   cubic-bezier(0.4, 0, 1, 1);
+  --ease-io:   cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-magnetic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --dur-fast:  140ms;
+  --dur-base:  220ms;
+  --dur-slow:  380ms;
+  --dur-enter: 480ms;
+
+  /* --- Radii --- */
+  --radius-sm: 4px;
+  --radius:    7px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  /* --- Shadows --- */
+  --shadow-sm:  0 1px 3px oklch(15% 0.04 250 / 0.08), 0 1px 2px oklch(15% 0.04 250 / 0.06);
+  --shadow:     0 4px 12px oklch(15% 0.04 250 / 0.08), 0 2px 4px oklch(15% 0.04 250 / 0.05);
+  --shadow-md:  0 8px 24px oklch(15% 0.04 250 / 0.10), 0 3px 8px oklch(15% 0.04 250 / 0.06);
+  --shadow-lg:  0 16px 48px oklch(15% 0.04 250 / 0.12), 0 6px 16px oklch(15% 0.04 250 / 0.07);
+  --shadow-xl:  0 30px 70px oklch(15% 0.05 255 / 0.18), 0 10px 24px oklch(15% 0.05 255 / 0.10);
+
+  /* --- Z-index scale --- */
+  --z-base:    1;
+  --z-raised:  10;
+  --z-dropdown:100;
+  --z-sticky:  200;
+  --z-overlay: 300;
+  --z-modal:   400;
+  --z-toast:   500;
+}

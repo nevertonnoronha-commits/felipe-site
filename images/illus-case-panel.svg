@@ -1,0 +1,313 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="case-bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f0f0f0"/>
+      <stop offset="50%" stop-color="#eef2fb"/>
+      <stop offset="100%" stop-color="#dce6f8"/>
+    </linearGradient>
+    <linearGradient id="old-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c8cdd8"/>
+      <stop offset="100%" stop-color="#a0a8b8"/>
+    </linearGradient>
+    <linearGradient id="new-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d3a8a"/>
+      <stop offset="100%" stop-color="#16306e"/>
+    </linearGradient>
+    <linearGradient id="rust-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8a6a50" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#6a5040" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="panel-shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="6" flood-color="#1d3a8a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- ===== HEADER LABELS ===== -->
+  <!-- ANTES (before) tag -->
+  <rect x="32" y="14" width="80" height="24" rx="12" fill="#b0b8c8"/>
+  <text x="72" y="30" font-family="'Space Grotesk', Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle" letter-spacing="1">ANTES</text>
+
+  <!-- DEPOIS (after) tag -->
+  <rect x="388" y="14" width="84" height="24" rx="12" fill="#1d3a8a"/>
+  <text x="430" y="30" font-family="'Space Grotesk', Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle" letter-spacing="1">DEPOIS</text>
+
+  <!-- Sub-labels -->
+  <text x="170" y="26" font-family="'Space Grotesk', Inter, sans-serif" font-size="9" fill="#6a7888" text-anchor="middle">Quadro Thyssen Sûr — Estado Original</text>
+  <text x="530" y="26" font-family="'Space Grotesk', Inter, sans-serif" font-size="9" fill="#3b6fd4" text-anchor="middle">Após Modernização UPTEC</text>
+
+  <!-- ===== LEFT: OLD PANEL (before) ===== -->
+  <g filter="url(#panel-shadow)">
+    <!-- Panel enclosure -->
+    <rect x="28" y="48" width="284" height="340" rx="4" fill="url(#old-panel)" stroke="#8a98a8" stroke-width="2"/>
+    <!-- Panel door inset -->
+    <rect x="36" y="58" width="268" height="320" rx="3" fill="#b8c0cc"/>
+
+    <!-- Oxidation/dirt overlay -->
+    <rect x="36" y="58" width="268" height="320" rx="3" fill="url(#rust-grad)"/>
+
+    <!-- ===== OLD TERMINAL BLOCK (messy) ===== -->
+    <!-- Terminal block rail (DIN) - disorganized -->
+    <rect x="44" y="68" width="252" height="10" rx="2" fill="#888898" stroke="#6a7888" stroke-width="1"/>
+
+    <!-- Terminals (scattered, some askew) -->
+    <g fill="#9aa5b4" stroke="#7a8898" stroke-width="0.75">
+      <rect x="48" y="78" width="14" height="20" rx="1" transform="rotate(-2 48 78)"/>
+      <rect x="65" y="78" width="14" height="20" rx="1" transform="rotate(1 65 78)"/>
+      <rect x="82" y="78" width="14" height="20" rx="1" transform="rotate(-1 82 78)"/>
+      <rect x="99" y="78" width="14" height="20" rx="1" transform="rotate(2 99 78)"/>
+      <rect x="116" y="78" width="14" height="20" rx="1" transform="rotate(-1 116 78)"/>
+      <rect x="133" y="78" width="14" height="20" rx="1" transform="rotate(1 133 78)"/>
+      <rect x="150" y="78" width="14" height="20" rx="1" transform="rotate(-2 150 78)"/>
+      <rect x="167" y="78" width="14" height="20" rx="1" transform="rotate(1 167 78)"/>
+      <rect x="184" y="78" width="14" height="20" rx="1" transform="rotate(-1 184 78)"/>
+      <rect x="201" y="78" width="14" height="20" rx="1" transform="rotate(2 201 78)"/>
+      <rect x="218" y="78" width="14" height="20" rx="1" transform="rotate(-1 218 78)"/>
+      <rect x="235" y="78" width="14" height="20" rx="1" transform="rotate(1 235 78)"/>
+      <rect x="252" y="78" width="14" height="20" rx="1" transform="rotate(-2 252 78)"/>
+      <rect x="269" y="78" width="14" height="20" rx="1" transform="rotate(1 269 78)"/>
+    </g>
+
+    <!-- Wire chaos: tangled, various paths -->
+    <g fill="none" stroke-width="2" stroke-linecap="round">
+      <!-- Red wires -->
+      <path d="M52 98 Q60 120 45 140 Q35 160 55 175 Q75 185 68 200" stroke="#c84040" stroke-opacity="0.75"/>
+      <path d="M99 98 Q95 130 110 150 Q125 165 100 185 Q82 195 90 220" stroke="#c84040" stroke-opacity="0.65"/>
+      <!-- Black wires -->
+      <path d="M65 98 Q80 115 65 138 Q50 158 70 170 Q90 182 75 205 Q62 222 80 240" stroke="#404040" stroke-opacity="0.7"/>
+      <path d="M133 98 Q140 118 128 142 Q116 162 130 178 Q148 190 138 215" stroke="#404040" stroke-opacity="0.65"/>
+      <!-- Yellow/green wire (earth) -->
+      <path d="M184 98 Q190 125 178 150 Q166 172 180 190 Q196 205 185 228 Q174 248 188 268" stroke="#8a8820" stroke-opacity="0.65"/>
+      <path d="M218 98 Q224 122 215 148 Q205 168 218 185 Q232 200 222 225 Q212 245 228 262" stroke="#8a8820" stroke-opacity="0.6"/>
+      <!-- Blue wires -->
+      <path d="M167 98 Q158 120 170 145 Q182 165 170 182 Q158 198 172 218 Q186 235 175 255" stroke="#3060a0" stroke-opacity="0.65"/>
+      <path d="M252 98 Q258 118 248 145 Q238 168 252 185 Q268 200 256 220 Q244 238 260 255" stroke="#3060a0" stroke-opacity="0.7"/>
+      <!-- Wire crossing (tangle) -->
+      <path d="M80 140 Q120 120 115 160 Q110 195 80 185" stroke="#804030" stroke-opacity="0.5" stroke-width="1.5"/>
+      <path d="M200 160 Q238 145 232 175 Q228 200 200 192" stroke="#804030" stroke-opacity="0.45" stroke-width="1.5"/>
+    </g>
+
+    <!-- Oxidation spots on terminals/wires -->
+    <circle cx="70" cy="145" r="5" fill="#8a6a50" fill-opacity="0.45"/>
+    <circle cx="110" cy="128" r="4" fill="#8a6a50" fill-opacity="0.4"/>
+    <circle cx="155" cy="160" r="3.5" fill="#8a6a50" fill-opacity="0.38"/>
+    <circle cx="200" cy="148" r="4" fill="#8a6a50" fill-opacity="0.42"/>
+    <circle cx="240" cy="135" r="3" fill="#8a6a50" fill-opacity="0.35"/>
+    <circle cx="92" cy="185" r="5" fill="#8a6a50" fill-opacity="0.4"/>
+    <circle cx="178" cy="205" r="4" fill="#8a6a50" fill-opacity="0.35"/>
+
+    <!-- ===== RELAYS (old, large, bulky) ===== -->
+    <g fill="#9aa5b4" stroke="#7a8898" stroke-width="1">
+      <rect x="44" y="248" width="38" height="30" rx="2"/>
+      <rect x="88" y="248" width="38" height="30" rx="2" transform="rotate(1 88 248)"/>
+      <rect x="132" y="248" width="38" height="30" rx="2"/>
+      <rect x="178" y="250" width="38" height="30" rx="2" transform="rotate(-1 178 250)"/>
+      <rect x="222" y="248" width="38" height="30" rx="2"/>
+      <rect x="268" y="249" width="38" height="30" rx="2" transform="rotate(1 268 249)"/>
+    </g>
+    <!-- Relay labels -->
+    <g font-family="monospace" font-size="7" fill="#6a7888" text-anchor="middle">
+      <text x="63" y="260">K1</text><text x="107" y="260">K2</text><text x="151" y="260">K3</text>
+      <text x="197" y="260">K4</text><text x="241" y="260">K5</text><text x="287" y="260">K6</text>
+      <text x="63" y="272">⚡</text><text x="197" y="272">⚡</text>
+    </g>
+
+    <!-- Rust visible on relay K2 and K4 -->
+    <rect x="88" y="248" width="38" height="30" rx="2" fill="url(#rust-grad)" fill-opacity="0.7"/>
+    <rect x="178" y="250" width="38" height="30" rx="2" fill="url(#rust-grad)" fill-opacity="0.6"/>
+
+    <!-- Burnt/taped wire -->
+    <path d="M150 290 Q160 305 145 315" stroke="#404040" stroke-width="3" stroke-linecap="round"/>
+    <path d="M148 305 Q158 305 155 315" stroke="#808080" stroke-width="4" stroke-linecap="round" stroke-opacity="0.5"/><!-- tape -->
+
+    <!-- Danger sticker -->
+    <polygon points="250,300 270,300 260,315" fill="#c84040" fill-opacity="0.8"/>
+    <text x="260" y="312" font-family="monospace" font-size="6" fill="white" text-anchor="middle">!</text>
+
+    <!-- Bottom label plate -->
+    <rect x="44" y="344" width="252" height="26" rx="1" fill="#9aa5b4" stroke="#7a8898" stroke-width="1"/>
+    <text x="170" y="360" font-family="monospace" font-size="8" fill="#5a6878" text-anchor="middle">THYSSEN SUR — INSTALAÇÃO 2003</text>
+    <text x="170" y="368" font-family="monospace" font-size="7" fill="#8a6a50" text-anchor="middle">VERIFICAR OXIDAÇÃO — RISCO</text>
+  </g>
+
+  <!-- ===== CENTER DIVIDER + ARROW ===== -->
+  <!-- Vertical divider line -->
+  <line x1="330" y1="44" x2="330" y2="398" stroke="#1d3a8a" stroke-width="1" stroke-opacity="0.15" stroke-dasharray="6 4"/>
+
+  <!-- Arrow (before→after) -->
+  <g>
+    <line x1="316" y1="215" x2="360" y2="215" stroke="#1d3a8a" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M352 207 L363 215 L352 223" fill="none" stroke="#1d3a8a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Improvement badges -->
+    <circle cx="330" cy="198" r="10" fill="#eef2fb" stroke="#3b6fd4" stroke-width="1.25"/>
+    <path d="M325 198 l3 3 7-6" fill="none" stroke="#3b6fd4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ===== RIGHT: NEW PANEL (after UPTEC modernization) ===== -->
+  <g filter="url(#panel-shadow)">
+    <!-- Panel enclosure (navy) -->
+    <rect x="372" y="48" width="240" height="340" rx="4" fill="url(#new-panel)" stroke="#16306e" stroke-width="2"/>
+    <!-- UPTEC badge on panel door top -->
+    <rect x="380" y="56" width="224" height="22" rx="2" fill="#16306e"/>
+    <text x="492" y="71" font-family="'Space Grotesk', Inter, sans-serif" font-size="10" font-weight="700" fill="#6aaeff" text-anchor="middle" letter-spacing="2">UPTEC ELEVADORES</text>
+
+    <!-- Panel inner (clean white interior) -->
+    <rect x="380" y="82" width="224" height="296" rx="2" fill="#f5f8ff" stroke="#3b6fd4" stroke-width="1"/>
+
+    <!-- ===== DIN RAIL (organized) ===== -->
+    <rect x="388" y="90" width="208" height="8" rx="2" fill="#1d3a8a" fill-opacity="0.3" stroke="#3b6fd4" stroke-width="0.75"/>
+
+    <!-- Organized terminals (neat, labeled, uniform) -->
+    <g fill="#eef2fb" stroke="#3b6fd4" stroke-width="0.75">
+      <rect x="390" y="98" width="12" height="18" rx="1"/>
+      <rect x="404" y="98" width="12" height="18" rx="1"/>
+      <rect x="418" y="98" width="12" height="18" rx="1"/>
+      <rect x="432" y="98" width="12" height="18" rx="1"/>
+      <rect x="446" y="98" width="12" height="18" rx="1"/>
+      <rect x="460" y="98" width="12" height="18" rx="1"/>
+      <rect x="474" y="98" width="12" height="18" rx="1"/>
+      <rect x="488" y="98" width="12" height="18" rx="1"/>
+      <rect x="502" y="98" width="12" height="18" rx="1"/>
+      <rect x="516" y="98" width="12" height="18" rx="1"/>
+      <rect x="530" y="98" width="12" height="18" rx="1"/>
+      <rect x="544" y="98" width="12" height="18" rx="1"/>
+      <rect x="558" y="98" width="12" height="18" rx="1"/>
+      <rect x="572" y="98" width="12" height="18" rx="1"/>
+    </g>
+    <!-- Terminal top screws (tiny circles) -->
+    <g fill="#3b6fd4" fill-opacity="0.5">
+      <circle cx="396" cy="103" r="2"/>
+      <circle cx="410" cy="103" r="2"/>
+      <circle cx="424" cy="103" r="2"/>
+      <circle cx="438" cy="103" r="2"/>
+      <circle cx="452" cy="103" r="2"/>
+      <circle cx="466" cy="103" r="2"/>
+      <circle cx="480" cy="103" r="2"/>
+      <circle cx="494" cy="103" r="2"/>
+      <circle cx="508" cy="103" r="2"/>
+      <circle cx="522" cy="103" r="2"/>
+      <circle cx="536" cy="103" r="2"/>
+      <circle cx="550" cy="103" r="2"/>
+      <circle cx="564" cy="103" r="2"/>
+      <circle cx="578" cy="103" r="2"/>
+    </g>
+
+    <!-- Cable duct (organized cable management) -->
+    <rect x="388" y="122" width="24" height="140" rx="2" fill="#e0e8f8" stroke="#3b6fd4" stroke-width="0.75"/>
+    <text x="400" y="160" font-family="monospace" font-size="6" fill="#3b6fd4" text-anchor="middle" transform="rotate(-90 400 160)">ELETRODUTO</text>
+
+    <!-- ===== INVERTER / MAIN CONTROLLER (right side of new panel) ===== -->
+    <rect x="424" y="122" width="164" height="100" rx="3" fill="#1d3a8a" fill-opacity="0.08" stroke="#3b6fd4" stroke-width="1.25"/>
+
+    <!-- Display screen -->
+    <rect x="434" y="130" width="90" height="55" rx="2" fill="#0a1e4a" stroke="#3b6fd4" stroke-width="1"/>
+    <text x="479" y="151" font-family="monospace" font-size="8" fill="#6aaeff" text-anchor="middle">ATIVO</text>
+    <text x="479" y="165" font-family="monospace" font-size="11" fill="#6aaeff" text-anchor="middle" letter-spacing="1">OK</text>
+    <text x="479" y="179" font-family="monospace" font-size="7" fill="#3b6fd4" fill-opacity="0.7" text-anchor="middle">48V — 3Ph</text>
+
+    <!-- Status bar at bottom of display -->
+    <rect x="434" y="182" width="90" height="5" rx="1" fill="#2d8a4a"/>
+
+    <!-- Side parameter buttons -->
+    <g fill="#eef2fb" stroke="#3b6fd4" stroke-width="0.75">
+      <rect x="530" y="134" width="22" height="12" rx="1.5"/>
+      <rect x="530" y="150" width="22" height="12" rx="1.5"/>
+      <rect x="530" y="166" width="22" height="12" rx="1.5"/>
+      <rect x="530" y="182" width="22" height="12" rx="1.5"/>
+    </g>
+    <g font-family="monospace" font-size="6" fill="#1d3a8a" text-anchor="middle">
+      <text x="541" y="143">PRG</text>
+      <text x="541" y="159">ENT</text>
+      <text x="541" y="175">▲</text>
+      <text x="541" y="191">▼</text>
+    </g>
+
+    <!-- Inverter label -->
+    <text x="492" y="218" font-family="'Space Grotesk', Inter, sans-serif" font-size="8" fill="#1d3a8a" fill-opacity="0.7" text-anchor="middle">INVERSOR DE FREQUÊNCIA VF-3.2</text>
+
+    <!-- ===== CLEAN WIRING HARNESSES ===== -->
+    <!-- Organized cable bundles (color-coded, tied) -->
+    <!-- Power bundle (thick, red) -->
+    <path d="M412 262 L412 315" stroke="#c84040" stroke-width="4" stroke-linecap="round" stroke-opacity="0.6"/>
+    <path d="M412 262 L412 315" stroke="#e06060" stroke-width="2" stroke-linecap="round" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+    <!-- Neutral bundle (black) -->
+    <path d="M420 262 L420 315" stroke="#404040" stroke-width="4" stroke-linecap="round" stroke-opacity="0.55"/>
+    <!-- Control bundle (blue, thin) -->
+    <path d="M428 262 L428 315" stroke="#3b6fd4" stroke-width="3" stroke-linecap="round" stroke-opacity="0.5"/>
+    <!-- Earth (yellow-green) -->
+    <path d="M436 262 L436 315" stroke="#8a8820" stroke-width="3" stroke-linecap="round" stroke-opacity="0.55"/>
+    <!-- Signal bundle (thin blue) -->
+    <path d="M444 262 L444 315" stroke="#6aaeff" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/>
+
+    <!-- Cable ties (horizontal bands showing organized bundles) -->
+    <g fill="none" stroke="#1d3a8a" stroke-width="1.5" stroke-linecap="round">
+      <line x1="408" y1="272" x2="450" y2="272"/>
+      <line x1="408" y1="290" x2="450" y2="290"/>
+      <line x1="408" y1="308" x2="450" y2="308"/>
+    </g>
+
+    <!-- ===== MINIATURE CIRCUIT BREAKERS (MCBs — organized row) ===== -->
+    <g fill="#1d3a8a" fill-opacity="0.85" stroke="#3b6fd4" stroke-width="0.75">
+      <rect x="462" y="248" width="14" height="36" rx="1.5"/>
+      <rect x="478" y="248" width="14" height="36" rx="1.5"/>
+      <rect x="494" y="248" width="14" height="36" rx="1.5"/>
+      <rect x="510" y="248" width="14" height="36" rx="1.5"/>
+      <rect x="526" y="248" width="14" height="36" rx="1.5"/>
+      <rect x="542" y="248" width="14" height="36" rx="1.5"/>
+      <rect x="558" y="248" width="14" height="36" rx="1.5"/>
+      <rect x="574" y="248" width="14" height="36" rx="1.5"/>
+    </g>
+    <!-- MCB toggles (all ON = up position) -->
+    <g fill="#6aaeff">
+      <rect x="466" y="252" width="6" height="10" rx="1"/>
+      <rect x="482" y="252" width="6" height="10" rx="1"/>
+      <rect x="498" y="252" width="6" height="10" rx="1"/>
+      <rect x="514" y="252" width="6" height="10" rx="1"/>
+      <rect x="530" y="252" width="6" height="10" rx="1"/>
+      <rect x="546" y="252" width="6" height="10" rx="1"/>
+      <rect x="562" y="252" width="6" height="10" rx="1"/>
+      <rect x="578" y="252" width="6" height="10" rx="1"/>
+    </g>
+    <!-- MCB labels -->
+    <g font-family="monospace" font-size="5.5" fill="#6aaeff" text-anchor="middle">
+      <text x="469" y="292">F1</text>
+      <text x="485" y="292">F2</text>
+      <text x="501" y="292">F3</text>
+      <text x="517" y="292">M1</text>
+      <text x="533" y="292">M2</text>
+      <text x="549" y="292">L1</text>
+      <text x="565" y="292">L2</text>
+      <text x="581" y="292">L3</text>
+    </g>
+
+    <!-- ===== BOTTOM STATUS PANEL ===== -->
+    <rect x="388" y="308" width="208" height="62" rx="2" fill="#1d3a8a" fill-opacity="0.07" stroke="#3b6fd4" stroke-width="0.75"/>
+
+    <!-- LED indicators (all green) -->
+    <g fill="#2d8a4a">
+      <circle cx="402" cy="322" r="4"/>
+      <circle cx="420" cy="322" r="4"/>
+      <circle cx="438" cy="322" r="4"/>
+      <circle cx="456" cy="322" r="4"/>
+      <circle cx="474" cy="322" r="4"/>
+    </g>
+    <g font-family="monospace" font-size="6" fill="#1d3a8a" fill-opacity="0.55" text-anchor="middle">
+      <text x="402" y="332">PWR</text>
+      <text x="420" y="332">RUN</text>
+      <text x="438" y="332">COM</text>
+      <text x="456" y="332">SAF</text>
+      <text x="474" y="332">NET</text>
+    </g>
+
+    <!-- Certification labels -->
+    <rect x="492" y="314" width="96" height="48" rx="2" fill="white" stroke="#3b6fd4" stroke-width="0.75"/>
+    <text x="540" y="328" font-family="monospace" font-size="6.5" fill="#1d3a8a" text-anchor="middle" font-weight="700">UPTEC — RAT 2024</text>
+    <text x="540" y="340" font-family="monospace" font-size="6" fill="#3b6fd4" fill-opacity="0.7" text-anchor="middle">NR-18 / NR-12 / NBR</text>
+    <text x="540" y="350" font-family="monospace" font-size="6" fill="#1d3a8a" fill-opacity="0.5" text-anchor="middle">ART: 2024.SP.00482</text>
+    <text x="540" y="360" font-family="monospace" font-size="6" fill="#2d8a4a" text-anchor="middle">APROVADO ✓</text>
+  </g>
+
+  <!-- ===== BOTTOM CAPTION ===== -->
+  <text x="170" y="408" font-family="'Space Grotesk', Inter, sans-serif" font-size="10" fill="#6a7888" text-anchor="middle">Quadro oxidado / fiação improvisada</text>
+  <text x="492" y="408" font-family="'Space Grotesk', Inter, sans-serif" font-size="10" fill="#1d3a8a" text-anchor="middle">Quadro novo / fiação organizada / ART emitida</text>
+
+</svg>
