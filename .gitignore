@@ -19,3 +19,13 @@ verify-output/
 *.mjs
 test-results/
 playwright-report/
+index-dark-backup.html
+fonts/
+index-claude*.html
+*.zip
+theme-claude.css
+theme-free.css
+index-free.html
+theme-montserrat.css
+index-montserrat.html
+index-opcao*.html
