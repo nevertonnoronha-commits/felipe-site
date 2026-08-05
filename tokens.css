@@ -95,12 +95,16 @@
   --dur-slow:  450ms;
   --dur-enter: 480ms;
 
-  /* --- Radii --- */
-  --radius-sm:   4px;
-  --radius:      8px;
-  --radius-md:   12px;
-  --radius-lg:   20px;
-  --radius-pill: 999px;
+  /* --- Radii ---
+     Escala institucional: cantos discretos, quase retos. Um site de engenharia
+     comunica precisao com angulo, nao com curva. Nada acima de 8px em canto reto.
+     --radius-bar e --radius-full sao formas, nao arredondamento: barra de
+     progresso e circulo. Nao use nenhum dos dois em card, botao ou tag. */
+  --radius-sm:   2px;
+  --radius:      4px;
+  --radius-md:   6px;
+  --radius-lg:   8px;
+  --radius-bar:  999px;
   --radius-full: 50%;
 
   /* --- Shadows --- */
