@@ -74,50 +74,71 @@ Números (DARK) → Quem Somos (LIGHT) → Case (DARK) → CTA Band (DARK) → F
 | `--shell` | `1240px` | Largura máxima do layout (`.max-w-shell`) |
 | `--nav-h` | `86px` | Altura da nav usada em `padding-top` do inner-hero |
 
-> **Nota sobre `tokens.css`:** O arquivo `tokens.css` contém um sistema de tokens OKLCH (espaço de cores perceptual) com fontes Space Grotesk + Inter + DM Mono, usado **exclusivamente pelo formulário conversacional** (`form.css` faz `@import` implícito via carregamento antes de `theme.css`). O site principal usa apenas as variáveis de `theme.css` acima.
+> **Nota sobre `tokens.css`:** O arquivo `tokens.css` contém um sistema de tokens OKLCH (espaço de cores perceptual) — cor, espaçamento, radius e tipografia — usado **pelo formulário conversacional** (`form.css`). As variáveis de tipografia e radius de `tokens.css` (`--font-display`, `--font-body`, `--font-mono`, `--radius-*`) foram unificadas com as fontes carregadas em `<head>` (Montserrat + DM Mono) e são as mesmas usadas em `theme.css`, para que o formulário não destoe visualmente do restante do site. As demais variáveis de cor do site principal continuam vivendo em `theme.css` (`--c-*`).
 
 ---
 
 ## 3. Tipografia
 
+> Fontes migradas de Clash Display + Satoshi (Fontshare) para **Montserrat**, unificando display e corpo em uma única família — decisão tomada porque as fontes Fontshare não existem mais em nenhum arquivo vivo do código. `theme.css` e `tokens.css` agora compartilham o mesmo stack.
+
 ### Fontes e carregamento
 
-| Família | Papel | Pesos | Provedor |
+| Família | Papel | Pesos carregados | Provedor |
 |---|---|---|---|
-| **Clash Display** | Display / títulos `h1–h4`, wordmark da nav, marquee | 600, 700 | Fontshare (`api.fontshare.com`) |
-| **Satoshi** | Corpo / parágrafos, botões, `body` | 400, 500, 700 | Fontshare (`api.fontshare.com`) |
+| **Montserrat** | Display + corpo (títulos, parágrafos, botões, nav, `body`) | 400, 500, 600, 700, 800 | Google Fonts |
 | **DM Mono** | Dados / kickers, labels técnicos, mono | 400, 500 | Google Fonts |
 
-**Tags de carregamento em `<head>`:**
+**Tags de carregamento em `<head>` (`index.html`):**
 ```html
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 ```
+Nenhum outro arquivo carrega fontes — `tokens.css` não faz mais `@import` de fonte própria; ele referencia as mesmas famílias já carregadas acima.
 
-### Classes de família
+### Classes de família e tokens
 
 ```css
-.font-body    { font-family: "Satoshi", system-ui, sans-serif; }
-.font-display { font-family: "Clash Display", system-ui, sans-serif; }
+/* theme.css */
+.font-body    { font-family: "Montserrat", system-ui, sans-serif; }
+.font-display { font-family: "Montserrat", system-ui, sans-serif; }
 .font-mono    { font-family: "DM Mono", ui-monospace, monospace; }
 ```
+```css
+/* tokens.css — usado por form.css */
+--font-display: 'Montserrat', system-ui, sans-serif;
+--font-body:    'Montserrat', system-ui, sans-serif;
+--font-mono:    'DM Mono', ui-monospace, monospace;
+```
+Stack único por família em todo o código: qualquer `font-family` fora desses dois valores é bug.
 
 ### Escala de tipo (valores exatos do `theme.css`)
 
 | Elemento | Tamanho (clamp) | Família |
 |---|---|---|
-| `body` | `clamp(1rem, 0.97rem + 0.14vw, 1.0625rem)` | Satoshi |
-| `.section-title` | `clamp(2rem, 4.6vw, 3.6rem)` | Clash Display |
-| `.hero__title` | `clamp(3rem, 8vw, 8rem)` | Clash Display |
-| `.inner-hero__title` | `clamp(2.2rem, 5.2vw, 4rem)` | Clash Display |
-| `.cta-band__title` | `clamp(2.2rem, 5.5vw, 4.5rem)` | Clash Display |
-| `.counter__num` | `clamp(2.8rem, 5vw, 4.5rem)` | Clash Display |
+| `body` | `clamp(1rem, 0.97rem + 0.14vw, 1.0625rem)` | Montserrat |
+| `.section-title` | `clamp(2rem, 4.6vw, 3.6rem)` | Montserrat |
+| `.hero__title` | `clamp(3rem, 8vw, 8rem)` | Montserrat |
+| `.inner-hero__title` | `clamp(2.2rem, 5.2vw, 4rem)` | Montserrat |
+| `.cta-band__title` | `clamp(2.2rem, 5.5vw, 4.5rem)` | Montserrat |
+| `.counter__num` | `clamp(2.8rem, 5vw, 4.5rem)` | Montserrat |
 | `.kicker` | `0.72rem` + `letter-spacing: 0.22em` | DM Mono |
-| `.nav-link` | `0.88rem` | Satoshi |
-| `.btn-gold/ghost/emergency` | `0.9rem` (base) | Satoshi |
+| `.nav-link` | `0.88rem` | Montserrat |
+| `.btn-gold/ghost/emergency` | `0.9rem` (base) | Montserrat |
+
+### Escala de radius (`tokens.css`, consumida por `theme.css` e `form.css`)
+
+| Token CSS | Valor | Uso | Degraus antigos consolidados |
+|---|---|---|---|
+| `--radius-sm` | `4px` | Chips, badges, focus rings, elementos pequenos | 2, 3, 4px |
+| `--radius` | `8px` | Botões, inputs, elementos de interação | 6, 8, 10, 11px |
+| `--radius-md` | `12px` | Cards de conteúdo, painéis médios | 12, 14, 16px |
+| `--radius-lg` | `20px` | Cards grandes, modais, blocos de destaque — **maior radius do site** | 18, 20, 22, 24, 28, 32px |
+| `--radius-pill` | `999px` | Pílulas (badges, tags, botões arredondados) — fora da escala de cards | — |
+| `--radius-full` | `50%` | Elementos circulares (dots, avatares) — fora da escala de cards | — |
+
+Nada acima de 20px em cantos retos: bordas muito arredondadas (24–32px, usadas antes em `.licit__panel`, `.cta-band__inner` etc.) foram identificadas como excessivas para uma marca de engenharia séria e reduzidas a `--radius-lg`.
 
 ---
 
