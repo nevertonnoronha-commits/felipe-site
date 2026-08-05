@@ -3649,3 +3649,124 @@ body.drawer-open .mobile-cta-bar {
 .panel--light .check-list li strong { color: var(--c-ink); }
 /* mobile: evitar quebra tipo Salva-dor */
 .check-list li { word-break: normal; overflow-wrap: normal; }
+
+/* ================================================================
+   CAMADA EDITORIAL
+   Objetivo: tirar a cara de template. O site repetia a mesma formula
+   39x (kicker dourado -> titulo com uma palavra dourada -> grade de
+   cards identicos). Aqui o dourado vira pontuacao rara, listas param
+   de ser cards e a secao ganha marcacao de documento tecnico.
+   ================================================================ */
+
+/* --- 1. KICKER: de acento dourado a rotulo de documento ---------
+   Eram 39 kickers dourados competindo com os CTAs. Neutralizados,
+   o dourado volta a significar acao. */
+.kicker {
+  color: var(--c-ink-faint);
+  letter-spacing: 0.18em;
+  font-weight: 400;
+}
+.panel--dark .kicker, .hero .kicker, .site-footer .kicker { color: rgba(255, 255, 255, 0.48); }
+.kicker-tick {
+  width: 32px;
+  background: currentColor;
+  box-shadow: none;
+  opacity: 0.55;
+}
+.kicker-sep { color: currentColor; opacity: 0.4; }
+
+/* --- 2. NUMERACAO DE SECAO: marcacao de relatorio tecnico -------
+   Numero em mono na margem, fora da coluna de texto. Da ritmo e
+   referencia sem poluir o conteudo. So em telas largas. */
+.page { counter-reset: sec; }
+@media (min-width: 1180px) {
+  .section-head { position: relative; }
+  .section-head::before {
+    counter-increment: sec;
+    content: counter(sec, decimal-leading-zero);
+    position: absolute;
+    left: -3.6rem;
+    top: 0.15rem;
+    font-family: "DM Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--c-ink-faint);
+    opacity: 0.5;
+  }
+  .panel--dark .section-head::before { color: rgba(255, 255, 255, 0.34); }
+}
+
+/* --- 3. DE-CARD: listas voltam a ser listas ---------------------
+   .doc-item (39x) e .porque-item (6x) sao itens de lista, nao
+   cards. Moldura em cada linha e o que mais gerava ruido visual. */
+.doc-item,
+.porque-item {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--c-line);
+  border-radius: 0;
+  padding: 0.85rem 0.1rem;
+  transition: border-color var(--dur-base) var(--ease-out), background var(--dur-base) var(--ease-out);
+}
+.doc-item:hover,
+.porque-item:hover {
+  background: none;
+  transform: none;
+  border-bottom-color: rgba(216, 177, 90, var(--gold-a-border-hover));
+}
+.panel--light .doc-item,
+.panel--light .porque-item { background: none; border-bottom-color: var(--c-light-line); }
+.doc-list, .porque-grid { gap: 0 !important; }
+
+/* --- 4. DOURADO COMO PONTUACAO, NAO DECORACAO -------------------
+   Icone de check em cada linha de lista somava dezenas de pontos
+   dourados. Neutralizados; o dourado fica para CTA e numeros. */
+.doc-item__ic,
+.porque-item svg,
+.check-list li svg { color: var(--c-ink-faint); opacity: 0.75; }
+.panel--dark .doc-item__ic,
+.panel--dark .porque-item svg,
+.panel--dark .check-list li svg { color: rgba(255, 255, 255, 0.42); }
+
+/* --- 5. CARDS MAIS QUIETOS -------------------------------------
+   Os cards que continuam cards perdem peso de moldura: a borda
+   deixa de disputar atencao com o conteudo. */
+.srv-card, .tile-card, .feature-box { border-color: var(--c-line); }
+.panel--light .srv-card,
+.panel--light .tile-card,
+.panel--light .feature-box { border-color: var(--c-light-line); }
+
+/* --- 6. TITULO DE SECAO: um pouco mais de ar -------------------- */
+.section-title { line-height: 1.12; }
+.section-head { margin-bottom: clamp(2rem, 4vw, 3.2rem); }
+
+/* --- 7. NUMEROS SEM MOLDURA -------------------------------------
+   A faixa de indicadores era uma caixa com 4 celulas fechadas. Em
+   composicao editorial o numero e a evidencia: ele carrega o peso
+   sozinho, separado apenas por filete. */
+.counters-grid {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  gap: 0;
+}
+.counter,
+.panel--light .counter,
+#page-home .counter {
+  background: none;
+  border: 0;
+  border-left: 1px solid var(--c-line);
+  padding: 0.4rem 2.2rem;
+  padding-left: 2.2rem;
+}
+.panel--light .counter { border-left-color: var(--c-light-line); }
+.counter:first-child,
+.panel--light .counter:first-child,
+#page-home .counter:first-child { border-left: 0; padding-left: 0; }
+.panel--light .counters-grid { background: none; border-color: transparent; }
+.counter__num { letter-spacing: -0.035em; }
+.counter__label { opacity: 0.72; }
+@media (max-width: 860px) {
+  .counters-grid { grid-template-columns: repeat(2, 1fr); row-gap: 1.6rem; }
+  .counter:nth-child(odd) { border-left: 0; padding-left: 0; }
+}
