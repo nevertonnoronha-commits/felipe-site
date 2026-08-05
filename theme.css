@@ -3757,16 +3757,59 @@ body.drawer-open .mobile-cta-bar {
   border: 0;
   border-left: 1px solid var(--c-line);
   padding: 0.4rem 2.2rem;
-  padding-left: 2.2rem;
 }
 .panel--light .counter { border-left-color: var(--c-light-line); }
-.counter:first-child,
-.panel--light .counter:first-child,
-#page-home .counter:first-child { border-left: 0; padding-left: 0; }
 .panel--light .counters-grid { background: none; border-color: transparent; }
+
+/* O divisor marca a separacao ENTRE colunas, entao o primeiro item de
+   cada linha nunca tem divisor nem recuo. Em 4 colunas isso e so o
+   primeiro; em 2 colunas (<=1100px) e todo item impar. Os seletores
+   repetem o prefixo #page-home porque a regra base do arquivo usa esse
+   ID e, sem igualar a especificidade, o recuo voltaria. */
+@media (min-width: 1101px) {
+  .counter:first-child,
+  .panel--light .counter:first-child,
+  #page-home .counter:first-child { border-left: 0; padding-left: 0; }
+}
+@media (max-width: 1100px) {
+  .counter:nth-child(odd),
+  .panel--light .counter:nth-child(odd),
+  #page-home .counter:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .counters-grid { row-gap: 1.8rem; }
+}
 .counter__num { letter-spacing: -0.035em; }
 .counter__label { opacity: 0.72; }
-@media (max-width: 860px) {
-  .counters-grid { grid-template-columns: repeat(2, 1fr); row-gap: 1.6rem; }
-  .counter:nth-child(odd) { border-left: 0; padding-left: 0; }
+
+
+/* --- 8. CORRECOES DE RESPONSIVIDADE -----------------------------
+
+   a) NAV 1024-1178px: os links do menu ja estao ocultos nessa faixa,
+      mas o bloco de acoes nao era empurrado para a direita — o botao
+      hamburguer colava no logo e sobrava uma barra vazia inteira. */
+.site-nav__actions { margin-left: auto; }
+
+/* b) CARD ALTO: .srv-card--tall ocupava 2 linhas da grade sem ter
+      conteudo para preencher, abrindo 191px de vazio dentro do card
+      acima de 1180px. A grade passa a ser uniforme. */
+.srv-card--tall { grid-row: auto; }
+
+/* c) RODAPE 641-1100px: a grade cai para 2 colunas e o bloco da marca
+      ocupa a linha inteira, sobrando 3 colunas para 2 vagas. A coluna
+      "Empresa" ficava orfa na ultima linha com metade da largura vazia
+      ao lado. Ela passa a ocupar a linha toda e distribui o proprio
+      conteudo em duas colunas. */
+@media (min-width: 641px) and (max-width: 1100px) {
+  .site-footer__col:last-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(1.5rem, 3vw, 3rem);
+    row-gap: 0.65rem;
+    align-content: start;
+  }
+  .site-footer__col:last-child > .site-footer__col-title { grid-column: 1 / -1; }
+  /* o bloco da marca ja ocupava a linha inteira nessa faixa, o que
+     esticava os dois CTAs por toda a largura. Limitado a uma coluna
+     de leitura. */
+  .site-footer__brand > * { max-width: 34rem; }
 }
