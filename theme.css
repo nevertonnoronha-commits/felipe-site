@@ -2522,8 +2522,15 @@ h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
     padding: 1.1rem 1.2rem;
     font-size: 0.97rem;
   }
+  /* o padding vertical so pode existir no estado ABERTO. Aplicado aqui
+     em qualquer estado, o padding-bottom entrava na altura minima do
+     paragrafo e impedia a linha 0fr de colapsar ate zero — a resposta
+     vazava sob o titulo mesmo com o acordeao fechado. */
   .accordion-body > p {
-    padding: 0 1.2rem 1.1rem;
+    padding: 0 1.2rem;
+  }
+  .accordion-trigger[aria-expanded="true"] + .accordion-body > p {
+    padding: 0.2rem 1.2rem 1.1rem;
   }
 }
 
