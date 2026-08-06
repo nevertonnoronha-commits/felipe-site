@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Habilitação para licitações públicas de elevadores em todo o Brasil: pregão eletrônico, concorrência e dispensa. ART por contrato, proposta em até 24h.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Licitação de Elevadores para Órgãos Públicos | UPTEC">
+  <meta property="og:description"
+    content="Habilitação para licitações públicas de elevadores em todo o Brasil: pregão eletrônico, concorrência e dispensa. ART por contrato, proposta em até 24h.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uptecelevadores.com/licitacoes">
+  <meta name="theme-color" content="#f6f2e9">
+  <link rel="canonical" href="https://uptecelevadores.com/licitacoes">
+  <title>Licitação de Elevadores para Órgãos Públicos | UPTEC</title>
+
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d8b15a' stroke-width='2'%3E%3Crect x='6' y='2' width='12' height='3' rx='1'/%3E%3Crect x='6' y='10' width='12' height='4' rx='1'/%3E%3Crect x='6' y='19' width='12' height='3' rx='1'/%3E%3Crect x='3' y='5' width='3' height='14' rx='1'/%3E%3Crect x='18' y='5' width='3' height='14' rx='1'/%3E%3C/svg%3E"
+    type="image/svg+xml">
+
+  <!-- Preload de assets criticos: carregar logo e hero logo no inicio -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preload" as="image" href="images/logo-uptec-t.png">
+  <link rel="preload" as="image" href="images/uptec-hero-bg-opcao5.jpg" media="(min-width: 768px)">
+  <link rel="preload" as="image" href="images/uptec-hero-bg-mobile-opcao5.jpg" media="(max-width: 767px)">
+
+  <!-- Fonts: Montserrat (display + body) + DM Mono (data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Form depends on tokens.css variables -->
+  <link rel="stylesheet" href="tokens.css">
+  <!-- Custom cinematic + light-break layer -->
+  <link rel="stylesheet" href="theme.css">
+  <!-- Conversational form, restyled for the dark modal -->
+  <link rel="stylesheet" href="form.css">
+
+  <!-- FAQPage JSON-LD: inner pages (licitacoes, condominios, elevadores, contato) -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "A UPTEC participa de pregão eletrônico?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Participamos de pregões eletrônicos no Comprasnet, BEC-BA e portais estaduais e municipais, além de pregões presenciais, concorrências e dispensas em todo o território nacional. A proposta técnica e comercial é emitida em até 24h após envio do edital."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vocês emitem ART por contrato público?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Cada contrato firmado com órgão público recebe ART (Anotação de Responsabilidade Técnica) assinada por engenheiro mecânico registrado no CREA, conforme Lei 6.496/1977. A ART é entregue antes do início da execução."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Atendem órgãos fora da Bahia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Para licitações públicas, atuamos em todo o território nacional. A documentação de habilitação jurídica, fiscal e técnica está apta para certames em qualquer estado da federação. Entre em contato pelo e-mail licitacoes@uptecelevadores.com para verificar a viabilidade logística do seu certame."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como o fiscal do contrato acompanha a execução?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O fiscal recebe o RAT fotográfico (Relatório de Atendimento Técnico) por e-mail após cada visita preventiva ou corretiva, com data, fotos antes e depois, e assinatura do técnico responsável. Isso garante rastreabilidade total para prestação de contas e medições mensais."
+        }
+      }
+    ]
+  }
+  </script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "UPTEC Elevadores Ltda.",
+    "description": "Manutenção, instalação e modernização de elevadores em Salvador, na Bahia e em todos os estados do Brasil. RAT com foto, ART em todos os serviços e plantão 24h com atendimento em até 30 minutos.",
+    "image": "https://uptecelevadores.com/images/logo-uptec-full.png",
+    "telephone": "+55-71-99652-6835",
+    "email": "contato@uptecelevadores.com",
+    "url": "https://uptecelevadores.com",
+    "taxID": "64.753.094/0001-52",
+    "areaServed": [
+      { "@type": "City", "name": "Salvador" },
+      { "@type": "State", "name": "Bahia" },
+      { "@type": "Country", "name": "Brasil" }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Tancredo Neves, 3343, Bloco B, Sala 1009/10, Caminho das Árvores",
+      "addressLocality": "Salvador",
+      "addressRegion": "BA",
+      "postalCode": "41820-021",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59",
+        "description": "Plantão técnico de emergência 24h, atendimento em até 30 minutos"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="font-body antialiased">
+
+  <a href="#main" class="skip-to-content">Ir para o conteúdo</a>
+
+  <!-- Layered cinematic background (dark sections sit above it; light sections cover it) -->
+  <div class="site-bg" aria-hidden="true">
+    <div class="site-bg__mesh"></div>
+    <div class="site-bg__grid"></div>
+    <div class="site-bg__grain"></div>
+  </div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-fill"></span></div>
+
+  <!-- ============================================================ NAV (shared, technological floating pill) ============================================================ -->
+  <header id="site-nav" class="site-nav" aria-label="Navegação principal">
+    <div class="site-nav__pill">
+      <a href="/" data-page="home" class="site-nav__brand" aria-label="UPTEC Elevadores, início">
+        <img src="images/logo-uptec-t.png" alt="" class="site-nav__logo" width="40" height="40">
+        <span class="site-nav__wordmark">
+          <span class="site-nav__name">UPTEC</span>
+          <span class="site-nav__tagline">Elevadores</span>
+        </span>
+      </a>
+
+      <nav class="site-nav__links" aria-label="Seções">
+        <a href="/" data-page="home" class="nav-link">Início</a>
+        <a href="/servicos" data-page="servicos" class="nav-link">Serviços</a>
+        <a href="/licitacoes" data-page="licitacoes" class="nav-link">Licitações</a>
+        <a href="/condominios" data-page="condominios" class="nav-link">Condomínios</a>
+        <a href="/elevadores" data-page="elevadores" class="nav-link">Elevadores</a>
+      </nav>
+
+      <div class="site-nav__actions">
+        <a href="https://wa.me/5571996526835?text=Emerg%C3%AAncia%20-%20preciso%20de%20atendimento%20no%20elevador"
+          target="_blank" rel="noopener noreferrer" class="btn-emergency btn-sm" title="Emergência 24h via WhatsApp">
+          <span class="emergency-dot" aria-hidden="true"></span>
+          Emergência 24h
+        </a>
+        <button type="button" class="btn-gold btn-sm" data-open-quote>Solicitar orçamento</button>
+        <button type="button" class="nav-burger" id="nav-burger" aria-label="Abrir menu" aria-expanded="false"
+          aria-controls="mobile-drawer">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawer backdrop (tap-to-close) -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+  <!-- Mobile drawer (shared) -->
+  <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true" role="dialog" aria-label="Menu de navegação">
+    <!-- Drawer header: brand + close -->
+    <div class="mobile-drawer__header">
+      <div class="mobile-drawer__brand">
+        <img src="images/logo-uptec-t.png" alt="" width="34" height="34">
+        <div class="mobile-drawer__brand-text">
+          <span class="mobile-drawer__brand-name">UPTEC</span>
+          <span class="mobile-drawer__brand-tag">Elevadores</span>
+        </div>
+      </div>
+      <button type="button" class="mobile-drawer__close" id="drawer-close-btn" aria-label="Fechar menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Nav links -->
+    <nav class="mobile-drawer__links" aria-label="Menu mobile">
+      <a href="/" data-page="home">Início</a>
+      <a href="/servicos" data-page="servicos">Serviços</a>
+      <a href="/licitacoes" data-page="licitacoes">Licitações</a>
+      <a href="/condominios" data-page="condominios">Condomínios</a>
+      <a href="/elevadores" data-page="elevadores">Elevadores</a>
+      <a href="/contato" data-page="contato">Contato</a>
+    </nav>
+
+    <!-- Status -->
+    <span class="mobile-drawer__status">
+      <span class="mobile-drawer__status-dot" aria-hidden="true"></span>Plantão 24h, 365 dias
+    </span>
+
+    <!-- CTA at bottom -->
+    <div class="mobile-drawer__cta">
+      <button type="button" class="btn-gold w-full justify-center" data-open-quote>Solicitar orçamento</button>
+      <a href="https://wa.me/5571996526835?text=Emerg%C3%AAncia%20-%20preciso%20de%20atendimento%20no%20elevador"
+        target="_blank" rel="noopener noreferrer" class="btn-emergency w-full justify-center">
+        <span class="emergency-dot" aria-hidden="true"></span>Emergência 24h</a>
+    </div>
+  </div>
+
+  <!-- Scroll-spy sidebar rail (desktop only; hidden on <=1024px) -->
+  <nav id="scroll-spy-rail" class="spy-rail" aria-label="Seções da página" aria-hidden="true"></nav>
+
+  <main id="main">
+
+    <!-- ============================================================
+         PAGE: HOME  (alternating dark <-> light rhythm)
+         Hero DARK -> trust LIGHT -> diferenciais DARK -> servicos LIGHT
+         -> numeros DARK (counters) -> quem somos LIGHT -> case DARK
+         -> CTA gold/dark -> (shared footer DARK)
+         ============================================================ -->
+    <div id="page-licitacoes" class="page page--inner is-active">
+
+      <!-- INNER HERO (DARK) -->
+      <section class="inner-hero panel panel--dark">
+        <div class="inner-hero__shaft anim-parallax" data-speed="5" aria-hidden="true">
+          <div class="illus-panel illus-panel--photo"><img src="images/uptec-licitacoes.jpg" alt="" width="1024" height="1024" loading="lazy"></div>
+        </div>
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <nav class="breadcrumb" aria-label="Trilha de navegação">
+            <a href="/" data-page="home">Início</a>
+            <span class="breadcrumb-sep" aria-hidden="true">/</span>
+            <span class="breadcrumb-current">Licitações</span>
+          </nav>
+          <p class="kicker" data-reveal><span class="kicker-tick" aria-hidden="true"></span>Órgãos públicos</p>
+          <h1 class="inner-hero__title" data-reveal>Habilitação para<br>licitações públicas.</h1>
+          <p class="inner-hero__lead" data-reveal>A UPTEC ELEVADORES atende órgãos públicos com documentação completa,
+            ART emitida e padrão de execução comprovado em relatório técnico. Atuamos em pregões eletrônicos,
+            presenciais, concorrências e dispensas em todo o território nacional.</p>
+          <ul class="licit__pills" data-reveal>
+            <li>CREA-BA 0010441166</li>
+            <li>CAT e CAT-A</li>
+            <li>Atestados (inclui CREMEB)</li>
+            <li>ART por contrato</li>
+          </ul>
+          <div class="inner-hero__actions" data-reveal>
+            <a href="mailto:licitacoes@uptecelevadores.com" class="btn-gold btn-magnetic">Falar com licitações
+              <svg width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+            </a>
+            <button type="button" class="btn-ghost" data-open-quote>Solicitar orçamento</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTRO + IDENTIFICACAO (LIGHT) -->
+      <section class="section panel panel--light" id="lic-identificacao" data-spy="Identificação">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="section-head" data-reveal>
+            <p class="kicker"><span class="kicker-tick" aria-hidden="true"></span>Quem somos no edital</p>
+            <h2 class="section-title">Identificação da empresa.</h2>
+          </div>
+
+          <div class="licit-intro" data-reveal>
+            <p>A UPTEC ELEVADORES LTDA está habilitada para participar de licitações públicas (pregões eletrônicos,
+              presenciais, concorrências e dispensas) em todo o território nacional, com documentação fiscal, técnica e
+              jurídica regular.</p>
+            <p>Atuamos junto a órgãos federais, estaduais e municipais, conselhos profissionais, autarquias, fundações,
+              hospitais públicos, universidades e tribunais. Nosso forte é executar com excelência aquilo que está em
+              edital, sem improviso, sem atraso e sem maquiagem técnica. Cada serviço termina com ART, RAT fotográfico e
+              laudo assinado por engenheiro mecânico.</p>
+          </div>
+
+          <div class="ident-grid" data-reveal>
+            <div class="ident-cell">
+              <div class="ident-cell__k">Razão Social</div>
+              <div class="ident-cell__v">UPTEC Elevadores Ltda.</div>
+            </div>
+            <div class="ident-cell">
+              <div class="ident-cell__k">CNPJ</div>
+              <div class="ident-cell__v ident-cell__v--mono">64.753.094/0001-52</div>
+            </div>
+            <div class="ident-cell">
+              <div class="ident-cell__k">CREA-BA (Pessoa Jurídica)</div>
+              <div class="ident-cell__v ident-cell__v--mono">0010441166</div>
+            </div>
+            <div class="ident-cell">
+              <div class="ident-cell__k">Inscrição Estadual</div>
+              <div class="ident-cell__v ident-cell__v--mono">240.839.293</div>
+            </div>
+            <div class="ident-cell">
+              <div class="ident-cell__k">Inscrição Municipal (CGA)</div>
+              <div class="ident-cell__v ident-cell__v--mono">01.065.655/0001-83</div>
+            </div>
+            <div class="ident-cell">
+              <div class="ident-cell__k">Endereço</div>
+              <div class="ident-cell__v">Av. Tancredo Neves, 3343, Bloco B, Sala 1009/10<br>Caminho das Árvores, Salvador, BA, CEP 41.820-021</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOCUMENTACAO DE HABILITACAO (LIGHT) -->
+      <section class="section panel panel--light" id="lic-documentos" data-spy="Documentação">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="section-head" data-reveal>
+            <p class="kicker"><span class="kicker-tick" aria-hidden="true"></span>Habilitação</p>
+            <h2 class="section-title">Documentação de habilitação<br>disponível.</h2>
+            <p class="section-head__note section-head__note--full">Documentação jurídica, fiscal, econômico-financeira e
+              técnica regular, pronta para envio em até 24h.</p>
+          </div>
+
+          <div class="doc-groups">
+            <!-- Juridica -->
+            <div class="doc-group" data-reveal>
+              <h3 class="doc-group__title"><span class="doc-group__idx">01</span>Habilitação jurídica</h3>
+              <ul class="doc-list">
+                <li class="doc-item">
+                  <svg class="doc-item__ic" width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-rat"></use></svg>
+                  <span class="doc-item__name">Contrato Social consolidado e alterações</span>
+                  <span class="badge badge-brand"><span class="badge-dot"></span>Disponível</span>
+                </li>
+                <li class="doc-item">
+                  <svg class="doc-item__ic" width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-rat"></use></svg>
+                  <span class="doc-item__name">Cartão CNPJ atualizado, documentos dos sócios e procurações</span>
+                  <span class="badge badge-brand"><span class="badge-dot"></span>Disponível</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Fiscal / Trabalhista -->
+            <div class="doc-group" data-reveal>
+              <h3 class="doc-group__title"><span class="doc-group__idx">02</span>Regularidade fiscal e trabalhista</h3>
+              <ul class="doc-list">
+                <li class="doc-item">
+                  <svg class="doc-item__ic" width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>
+                  <span class="doc-item__name">CND Federal (Receita Federal e PGFN)</span>
+                  <span class="badge badge-success"><span class="badge-dot"></span>Vigente</span>
+                </li>
+                <li class="doc-item">
+                  <svg class="doc-item__ic" width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>
+                  <span class="doc-item__name">Certidão Negativa Estadual (SEFAZ-BA)</span>
+                  <span class="badge badge-success"><span class="badge-dot"></span>Vigente</span>
+                </li>
+                <li class="doc-item">
+                  <svg class="doc-item__ic" width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>
+                  <span class="doc-item__name">Certidão Negativa Municipal (Salvador)</span>
+                  <span class="badge badge-success"><span class="badge-dot"></span>Vigente</span>
+                </li>
+                <li class="doc-item">
+                  <svg class="doc-item__ic" width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>
+                  <span class="doc-item__name">CNDT, Debitos Trabalhistas (TST)</span>
+                  <span class="badge badge-success"><span class="badge-dot"></span>Vigente</span>
+                </li>
+                <li class="doc-item">
+                  <svg class="doc-item__ic" width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>
+                  <span class="doc-item__name">Regularidade do FGTS (CRF-CAIXA)</span>
+                  <span class="badge badge-success"><span class="badge-dot"></span>Vigente</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Economico-Financeira -->
+            <div class="doc-group" data-reveal>
+              <h3 class="doc-group__title"><span class="doc-group__idx">03</span>Qualificação econômico-financeira</h3>
+              <ul class="doc-list">
+                <li class="doc-item">
+                  <svg class="doc-item__ic" width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-vistoria"></use></svg>
+                  <span class="doc-item__name">Balanço Patrimonial registrado, DRE e índices LG, SG, LC</span>
+                  <span class="badge badge-brand"><span class="badge-dot"></span>Disponível</span>
+                </li>
+                <li class="doc-item">
+                  <svg class="doc-item__ic" width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>
+                  <span class="doc-item__name">Certidão Negativa de Falência e Concordata</span>
+                  <span class="badge badge-success"><span class="badge-dot"></span>Vigente</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Tecnica -->
+            <div class="doc-group" data-reveal>
+              <h3 class="doc-group__title"><span class="doc-group__idx">04</span>Qualificação técnica</h3>
+              <ul class="doc-list">
+                <li class="doc-item">
+                  <svg class="doc-item__ic" width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-art"></use></svg>
+                  <span class="doc-item__name">Registro no CREA-BA n° 0010441166 (Pessoa Jurídica)</span>
+                  <span class="badge badge-success"><span class="badge-dot"></span>Ativo</span>
+                </li>
+                <li class="doc-item">
+                  <svg class="doc-item__ic" width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-art"></use></svg>
+                  <span class="doc-item__name">CAT e CAT-A (manutenção, modernização e instalação)</span>
+                  <span class="badge badge-success"><span class="badge-dot"></span>Emitido</span>
+                </li>
+                <li class="doc-item">
+                  <svg class="doc-item__ic" width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-art"></use></svg>
+                  <span class="doc-item__name">Atestados de Capacidade Técnica (inclui CREMEB)</span>
+                  <span class="badge badge-success"><span class="badge-dot"></span>Emitido</span>
+                </li>
+                <li class="doc-item">
+                  <svg class="doc-item__ic" width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-art"></use></svg>
+                  <span class="doc-item__name">ART (Anotação de Responsabilidade Técnica) por contrato</span>
+                  <span class="badge badge-success"><span class="badge-dot"></span>Emitida</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Certificacoes -->
+            <div class="doc-group" data-reveal>
+              <h3 class="doc-group__title"><span class="doc-group__idx">05</span>Certificações da equipe</h3>
+              <ul class="cert-pills">
+                <li>NR-10</li>
+                <li>NR-12</li>
+                <li>NR-33</li>
+                <li>NR-35</li>
+                <li>Reciclagem em dia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAPACIDADE TECNICA (LIGHT) -->
+      <section class="section panel panel--light" id="lic-tecnica" data-spy="Capacidade">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="section-head" data-reveal>
+            <p class="kicker"><span class="kicker-tick" aria-hidden="true"></span>Engenharia responsável</p>
+            <h2 class="section-title">Capacidade técnica.</h2>
+            <p class="section-head__note section-head__note--full">Engenheiros responsáveis vinculados e registrados no
+              CREA, atuando em campo, não apenas no contrato.</p>
+          </div>
+
+          <div class="eng-cards eng-cards--lic" data-reveal>
+            <div class="eng-card eng-card--light">
+              <span class="eng-card__role">Responsável Técnico</span>
+              <strong>Eng. Mecânico Milton Jesus dos Santos</strong>
+              <span class="eng-card__crea">CREA-BA n° 3000129974</span>
+            </div>
+            <div class="eng-card eng-card--light">
+              <span class="eng-card__role">Engenheira Responsável</span>
+              <strong>Eng. Mecânica Gilva Teixeira dos Santos</strong>
+              <span class="eng-card__crea">CREA-BA n° 3000129975</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- POR QUE A UPTEC (LIGHT) -->
+      <section class="section panel panel--light" id="lic-porque" data-spy="Por que a UPTEC">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="section-head" data-reveal>
+            <p class="kicker"><span class="kicker-tick" aria-hidden="true"></span>Diferencial no certame</p>
+            <h2 class="section-title">Por que escolher a UPTEC<br>em <span class="hero__gold">licitação</span>.</h2>
+          </div>
+
+          <div class="porque-grid">
+            <div class="porque-item" data-reveal>
+              <svg width="22" height="22" aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>
+              <span>Documentação completa e atualizada, pronta para enviar em até 24h</span>
+            </div>
+            <div class="porque-item" data-reveal>
+              <svg width="22" height="22" aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>
+              <span>Equipe própria, sem terceirização disfarçada</span>
+            </div>
+            <div class="porque-item" data-reveal>
+              <svg width="22" height="22" aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>
+              <span>Execução rastreada por RAT, fiscal recebe relatório em cada visita</span>
+            </div>
+            <div class="porque-item" data-reveal>
+              <svg width="22" height="22" aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>
+              <span>Engenheiros responsáveis em campo, não apenas no contrato</span>
+            </div>
+            <div class="porque-item" data-reveal>
+              <svg width="22" height="22" aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>
+              <span>Multi-marcas, atendemos qualquer parque de elevadores do órgão</span>
+            </div>
+            <div class="porque-item" data-reveal>
+              <svg width="22" height="22" aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>
+              <span>Cumprimento de prazo, comprovado em atestados de capacidade técnica</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESSO DE LICITACAO (LIGHT) -->
+      <section class="section panel panel--light" id="lic-processo" data-spy="Processo">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="section-head" data-reveal>
+            <p class="kicker"><span class="kicker-tick" aria-hidden="true"></span>Como participamos</p>
+            <h2 class="section-title">O processo de licitação<br>com a UPTEC.</h2>
+            <p class="section-head__note section-head__note--full">Da leitura do edital à entrega do RAT no último mês de
+              contrato: cada etapa rastreada, documentada e com engenheiro responsável.</p>
+          </div>
+
+          <div class="tile-grid" style="--tile-min:260px">
+            <article class="tile-card" data-reveal>
+              <span class="tile-card__k">Etapa 01</span>
+              <h3>Análise do edital</h3>
+              <p>Enviamos proposta técnica e comercial completa em até 24h após recebimento do edital. Verificamos
+                requisitos de habilitação, capacidade técnica e especificações do objeto.</p>
+            </article>
+            <article class="tile-card" data-reveal>
+              <span class="tile-card__k">Etapa 02</span>
+              <h3>Pregão eletrônico e presencial</h3>
+              <p>Participamos no Comprasnet, BEC-BA e portais estaduais/municipais. Praticamos preços competitivos com
+                documentação sempre pronta para upload imediato.</p>
+            </article>
+            <article class="tile-card" data-reveal>
+              <span class="tile-card__k">Etapa 03</span>
+              <h3>Concorrência e dispensa</h3>
+              <p>Para contratos por concorrência ou dispensa de licitação, entregamos a proposta formatada conforme
+                Decreto n° 11.246/2022 e Lei 14.133/2021 (nova Lei de Licitações).</p>
+            </article>
+            <article class="tile-card" data-reveal>
+              <span class="tile-card__k">Etapa 04</span>
+              <h3>Execução com rastreabilidade</h3>
+              <p>Cada visita preventiva ou corretiva gera um RAT fotográfico enviado ao fiscal do contrato. A ART é
+                emitida por contrato, conforme exigido pelas normas CREA.</p>
+            </article>
+            <article class="tile-card" data-reveal>
+              <span class="tile-card__k">Etapa 05</span>
+              <h3>Atendimento nacional</h3>
+              <p>Operamos em todo o território nacional para contratos de licitação. A documentação de habilitação está
+                apta para certames em qualquer estado da federação.</p>
+            </article>
+            <article class="tile-card tile-card--feature" data-reveal>
+              <span class="tile-card__k">ART por contrato</span>
+              <h3>Responsabilidade técnica garantida</h3>
+              <p>Cada contrato firmado recebe ART (Anotação de Responsabilidade Técnica) assinada pelo engenheiro
+                mecânico registrado no CREA, conforme Lei 6.496/1977.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ LICITACOES (LIGHT) -->
+      <section class="section panel panel--light" id="lic-faq" data-spy="Perguntas Frequentes">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="section-head" data-reveal>
+            <p class="kicker"><span class="kicker-tick" aria-hidden="true"></span>Dúvidas frequentes</p>
+            <h2 class="section-title">Perguntas sobre licitações.</h2>
+          </div>
+
+          <div class="faq-accordion" data-reveal>
+
+            <div class="faq-item">
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="lic-faq-1" id="lic-faq-1-trigger" type="button">
+                <span>A UPTEC participa de pregão eletrônico?</span>
+                <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="accordion-body" id="lic-faq-1" role="region" aria-labelledby="lic-faq-1-trigger" hidden>
+                <p>Sim. Participamos de pregões eletrônicos no Comprasnet, BEC-BA e portais estaduais e municipais,
+                  além de pregões presenciais, concorrências e dispensas em todo o território nacional. A proposta
+                  técnica e comercial é emitida em até 24h após envio do edital.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="lic-faq-2" id="lic-faq-2-trigger" type="button">
+                <span>Vocês emitem ART por contrato público?</span>
+                <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="accordion-body" id="lic-faq-2" role="region" aria-labelledby="lic-faq-2-trigger" hidden>
+                <p>Sim. Cada contrato firmado com órgão público recebe ART (Anotação de Responsabilidade Técnica)
+                  assinada por engenheiro mecânico registrado no CREA, conforme Lei 6.496/1977. A ART é
+                  entregue antes do início da execução.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="lic-faq-3" id="lic-faq-3-trigger" type="button">
+                <span>Atendem órgãos fora da Bahia?</span>
+                <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="accordion-body" id="lic-faq-3" role="region" aria-labelledby="lic-faq-3-trigger" hidden>
+                <p>Sim. Para licitações públicas, atuamos em todo o território nacional. A documentação de
+                  habilitação jurídica, fiscal e técnica está apta para certames em qualquer estado da federação.
+                  Entre em contato pelo e-mail licitacoes@uptecelevadores.com para verificar a viabilidade
+                  logística do seu certame.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="lic-faq-4" id="lic-faq-4-trigger" type="button">
+                <span>Como o fiscal do contrato acompanha a execução?</span>
+                <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="accordion-body" id="lic-faq-4" role="region" aria-labelledby="lic-faq-4-trigger" hidden>
+                <p>O fiscal recebe o RAT fotográfico (Relatório de Atendimento Técnico) por e-mail após cada
+                  visita preventiva ou corretiva, com data, fotos antes e depois, e assinatura do técnico
+                  responsável. Isso garante rastreabilidade total para prestação de contas e medições mensais.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO PARA LICITACOES (GOLD/DARK) -->
+      <section class="cta-band panel panel--dark" id="lic-contato">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="cta-band__inner" data-reveal>
+            <div class="cta-band__shaft" aria-hidden="true"></div>
+            <p class="kicker"><span class="kicker-tick" aria-hidden="true"></span>Contato comercial</p>
+            <h2 class="cta-band__title">Contato para<br><span class="hero__gold">licitações.</span></h2>
+            <p class="cta-band__sub">Comissão de Licitação ou Pregoeiro? Envie o edital que respondemos em até 24h com
+              proposta técnica e comercial completa.</p>
+            <div class="cta-band__actions">
+              <a href="mailto:licitacoes@uptecelevadores.com" class="btn-gold btn-lg btn-magnetic">
+                <svg width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+                licitacoes@uptecelevadores.com
+              </a>
+              <a href="https://wa.me/5571996526835" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-lg">(71) 99652-6835</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- ============================================================ FOOTER (shared, DARK) ============================================================ -->
+  <footer class="site-footer panel panel--dark" id="contato-footer">
+    <div class="mx-auto max-w-shell px-6 lg:px-10">
+      <div class="site-footer__top">
+
+        <!-- Col 1: Brand + tagline + status + CTAs -->
+        <div class="site-footer__brand">
+          <a href="/" data-page="home" class="site-footer__brandlink" aria-label="UPTEC Elevadores, início">
+            <img src="images/logo-uptec-t.png" alt="" class="site-footer__logo" width="44" height="44">
+            <span class="site-nav__wordmark">
+              <span class="site-nav__name">UPTEC</span>
+              <span class="site-nav__tagline">Elevadores</span>
+            </span>
+          </a>
+          <p class="site-footer__desc">Manutenção, instalação e modernização de elevadores com engenharia responsável,
+            transparência e RAT com foto em cada visita, para condomínios, empresas e órgãos públicos em Salvador, na
+            Bahia e em todos os estados do Brasil.</p>
+          <span class="status-dot"><span class="status-dot__pulse" aria-hidden="true"></span>Plantão 24h, 365 dias</span>
+          <div class="site-footer__cta">
+            <button type="button" class="btn-gold btn-sm" data-open-quote>Solicitar orçamento</button>
+            <a href="https://wa.me/5571996526835" target="_blank" rel="noopener noreferrer" class="btn-emergency btn-sm">
+              <span class="emergency-dot" aria-hidden="true"></span>Emergência 24h</a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navegação -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Navegação</p>
+          <ul class="site-footer__list">
+            <li><a href="/" data-page="home">Início</a></li>
+            <li><a href="/servicos" data-page="servicos">Serviços</a></li>
+            <li><a href="/licitacoes" data-page="licitacoes">Licitações</a></li>
+            <li><a href="/condominios" data-page="condominios">Condomínios</a></li>
+            <li><a href="/elevadores" data-page="elevadores">Elevadores</a></li>
+            <li><a href="/contato" data-page="contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contato -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Contato</p>
+          <div class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.63a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14z"/></svg>
+            <a href="tel:+5571996526835">(71) 99652-6835</a>
+          </div>
+          <div class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:contato@uptecelevadores.com">contato@uptecelevadores.com</a>
+          </div>
+          <div class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:licitacoes@uptecelevadores.com">licitacoes@uptecelevadores.com</a>
+          </div>
+          <div class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:luiscordeiro@uptecelevadores.com">luiscordeiro@uptecelevadores.com</a>
+          </div>
+          <div class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <address style="font-style:normal;">Av. Tancredo Neves, 3343, Bloco B, Sala 1009/10, Caminho das Árvores, Salvador/BA, 41.820-021</address>
+          </div>
+        </div>
+
+        <!-- Col 4: Empresa (registro, CREA, engenheiros) -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Empresa</p>
+          <div class="site-footer__data-row">
+            <span class="site-footer__data-label">CNPJ</span>
+            <span class="site-footer__data-value">64.753.094/0001-52</span>
+          </div>
+          <div class="site-footer__data-row">
+            <span class="site-footer__data-label">CREA-BA</span>
+            <span class="site-footer__data-value">0010441166</span>
+          </div>
+          <p class="site-footer__col-title site-footer__col-title--mt">Engenharia responsável</p>
+          <div class="site-footer__eng-card">
+            <p class="site-footer__eng-role">Eng. Responsável</p>
+            <p class="site-footer__eng-name">Milton Jesus dos Santos</p>
+            <p class="site-footer__eng-crea">CREA-BA 3000129974</p>
+          </div>
+          <div class="site-footer__eng-card">
+            <p class="site-footer__eng-role">Eng. Responsável</p>
+            <p class="site-footer__eng-name">Gilva Teixeira dos Santos</p>
+            <p class="site-footer__eng-crea">CREA-BA 3000129975</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="site-footer__legal">
+        <p class="site-footer__data">2026 UPTEC Elevadores Ltda.<span>/</span>CNPJ 64.753.094/0001-52<span>/</span>CREA-BA 0010441166</p>
+        <p class="site-footer__copy">Plantão 24h, 365 dias. Atendimento em até 30 min.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================ QUOTE MODAL (shared) ============================================================ -->
+  <div class="quote-modal" id="quote-modal" aria-hidden="true">
+    <div class="quote-modal__backdrop" data-close-quote></div>
+    <div class="quote-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+      <div class="quote-modal__head">
+        <div class="quote-modal__brand">
+          <img src="images/logo-uptec-t.png" alt="UPTEC Elevadores" class="h-8 w-auto" width="96" height="32">
+          <span id="quote-modal-title" class="quote-modal__title">Solicitar orçamento</span>
+        </div>
+        <button type="button" class="quote-modal__close" data-close-quote aria-label="Fechar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div class="quote-modal__body">
+        <div id="lead-form-root"></div>
+        <noscript>
+          <p class="quote-modal__noscript">Ative o JavaScript ou fale direto no
+            <a href="https://wa.me/5571996526835" target="_blank" rel="noopener noreferrer">WhatsApp (71) 99652-6835</a>.
+          </p>
+        </noscript>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY MOBILE CTA BAR (visible only on mobile, hidden on desktop) -->
+  <div class="mobile-cta-bar" id="mobile-cta-bar" aria-label="Ações rápidas">
+    <button type="button" class="btn-gold" data-open-quote>Solicitar orçamento</button>
+    <a href="https://wa.me/5571996526835?text=Emerg%C3%AAncia%20-%20preciso%20de%20atendimento%20no%20elevador"
+      target="_blank" rel="noopener noreferrer" class="btn-emergency">
+      <span class="emergency-dot" aria-hidden="true"></span>Emergência 24h
+    </a>
+  </div>
+
+  <!-- BRAND LOADER / CINEMATIC VINHETA (first load only) - is-visible no HTML cobre desde o primeiro paint (evita flash) -->
+  <div id="brand-loader" class="is-visible" aria-hidden="true" role="presentation">
+    <img src="images/logo-uptec-t.png" alt="" class="bl-logo" width="72" height="72">
+    <div class="bl-wordmark">
+      <span class="bl-name">UPTEC</span>
+      <span class="bl-tag">Elevadores</span>
+    </div>
+    <div class="bl-bar-track">
+      <div class="bl-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- PAGE TRANSITION OVERLAY (brand loading vignette) -->
+  <div id="page-transition" aria-hidden="true" role="presentation">
+    <img src="images/logo-uptec-t.png" alt="" class="pt-logo" width="64" height="64">
+    <div class="pt-wordmark">
+      <span class="pt-name">UPTEC</span>
+      <span class="pt-tag">Elevadores</span>
+    </div>
+    <div class="pt-bar-track">
+      <div class="pt-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- noise filter source for grain -->
+  <svg style="position:absolute;width:0;height:0" aria-hidden="true">
+    <filter id="grainFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.05 0" />
+    </filter>
+  </svg>
+
+  <!-- ============================================================ LIBS (deferred) ============================================================ -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- conversational lead form (self-mounts into #lead-form-root) -->
+  <script defer src="form.js"></script>
+
+  <!-- ============================================================ ROUTING + REVEAL + COUNTERS + MODAL (external, robust, no Lenis) ============================================================ -->
+  <script defer src="site.js"></script>
+
+  <!-- ============================================================ AMBIENT EFFECTS (cursor follower, glow cards, grid ripple) ============================================================ -->
+  <script defer src="effects.js"></script>
+</body>
+</html>

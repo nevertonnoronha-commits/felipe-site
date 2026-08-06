@@ -1,4 +1,31 @@
 User-agent: *
 Allow: /
 
+# Crawlers de indexacao/RAG das buscas com IA. O Allow acima ja os cobre;
+# nomea-los deixa a permissao explicita para ChatGPT, Perplexity e Claude.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# documento interno de operacao, nao e conteudo do site
+User-agent: *
+Disallow: /docs/
+
 Sitemap: https://uptecelevadores.com/sitemap.xml
