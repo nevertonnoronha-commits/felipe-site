@@ -29,3 +29,8 @@ index-free.html
 theme-montserrat.css
 index-montserrat.html
 index-opcao*.html
+
+# relatorios de trabalho dos agentes (nao vao para producao)
+.seo/
+.audit/
+.maestri/
