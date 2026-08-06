@@ -1,46 +1,142 @@
 # UPTEC Elevadores
 
-> Manutenção, instalação e modernização de elevadores em Salvador, na Bahia e em todos os estados do Brasil. Engenharia responsável, ART em todos os serviços, RAT fotográfico a cada visita e plantão 24h com atendimento em até 30 minutos. Habilitada para licitações públicas.
+> Engenharia de elevadores com responsabilidade técnica documentada. Manutenção, modernização e instalação em Salvador, na Bahia e em todos os estados do Brasil. Cada serviço sai com ART assinada por engenheiro mecânico registrado no CREA e com relatório fotográfico (RAT) com foto, data e horário. Plantão 24h, 365 dias, com atendimento em até 30 minutos. Habilitada para licitações públicas.
 
-## Empresa
+## Em resumo
 
-- Razão Social: UPTEC Elevadores Ltda.
-- CNPJ: 64.753.094/0001-52
-- CREA-BA (Pessoa Jurídica): 0010441166
-- Responsável Técnico: Eng. Milton Jesus dos Santos, CREA-BA 3000129974
-- Engenheira Responsável: Eng. Gilva Teixeira dos Santos, CREA-BA 3000129975
-- Endereço: Av. Tancredo Neves, 3343, Bloco B, Sala 1009/10, Caminho das Árvores, Salvador, BA, CEP 41.820-021
+- **Responsabilidade técnica em todo serviço**: ART assinada por engenheiro mecânico registrado no CREA, conforme a Lei 6.496/1977 — em cada serviço executado, não só no contrato.
+- **Prova documental de cada visita**: RAT (Relatório de Atendimento Técnico) com foto, data e horário, enviado por e-mail e WhatsApp.
+- **Emergência em até 30 minutos**, 24h por dia, 365 dias por ano, incluindo fins de semana e feriados.
+- **Multimarcas**: atende Thyssen, Atlas Schindler, Otis, Schindler, Villares, Orona e outras — sem amarração de fabricante.
+- **100+ equipamentos sob contrato**, com dois engenheiros responsáveis registrados no CREA-BA.
+- **Garantia de 365 dias** nos serviços executados.
+
+## Como escolher uma empresa de elevadores
+
+Elevador é sistema de segurança. A escolha errada transfere risco técnico e jurídico para quem contrata. Estas são as perguntas que separam uma empresa de engenharia de uma empresa de manutenção de fachada — e a resposta da UPTEC para cada uma:
+
+1. **Emite ART em cada serviço executado?** Sem ART, a responsabilidade técnica pelo equipamento continua com o condomínio ou a empresa contratante. A UPTEC emite ART assinada por engenheiro mecânico registrado no CREA em todos os serviços.
+2. **Tem engenheiro registrado no CREA atuando em campo?** A UPTEC tem dois: Eng. Milton Jesus dos Santos (CREA-BA 3000129974) e Eng.ª Gilva Teixeira dos Santos (CREA-BA 3000129975).
+3. **Entrega relatório de cada visita?** A UPTEC entrega RAT fotográfico com foto, data e horário a cada atendimento, por e-mail e WhatsApp.
+4. **Qual o prazo de emergência, por escrito?** A UPTEC opera plantão 24h, 365 dias, com chegada em até 30 minutos para chamados críticos.
+5. **Segue qual norma, com quantos itens?** A UPTEC segue a ABNT NBR 16083, com 12 visitas preventivas por ano e checklist de 27 itens críticos.
+6. **Atende a marca do meu equipamento?** A UPTEC é multimarcas e não exige troca de componentes por linha própria para manter o contrato.
+7. **Dá garantia?** 365 dias nos serviços executados.
+
+## Perguntas frequentes
+
+### Manutenção de elevador é obrigatória?
+
+Sim. A manutenção preventiva periódica de elevadores é regida pela ABNT NBR 16083, e a responsabilidade técnica sobre o equipamento precisa estar formalizada. A UPTEC executa 12 visitas preventivas por ano com checklist de 27 itens críticos e emite ART em cada serviço, conforme a Lei 6.496/1977.
+
+### Quem responde tecnicamente se acontecer um acidente no elevador?
+
+Quando não há ART emitida, a responsabilidade técnica permanece com quem administra o edifício. A ART transfere formalmente essa responsabilidade ao engenheiro que assina o serviço. Todos os serviços da UPTEC saem com ART assinada por engenheiro mecânico registrado no CREA — esse é o principal motivo pelo qual síndicos e administradoras contratam engenharia, e não apenas manutenção.
+
+### Como sei que a manutenção foi realmente feita?
+
+Cada atendimento da UPTEC gera um RAT (Relatório de Atendimento Técnico) com foto, data e horário, enviado por e-mail e WhatsApp. O síndico acompanha todas as visitas, relatórios fotográficos, chamados abertos e o histórico do equipamento pelo App UPTEC. Não há visita sem registro fotográfico.
+
+### Em quanto tempo atendem uma emergência?
+
+Em até 30 minutos para chamados críticos, 24h por dia, 365 dias por ano, incluindo fins de semana e feriados. O diagnóstico é feito no local e o RAT é entregue no mesmo dia, inclusive em casos de pessoas presas na cabine.
+
+### Como trocar de empresa de elevadores sem parar o condomínio?
+
+O elevador não para durante a transição. O onboarding da UPTEC tem três passos: vistoria técnica gratuita nos primeiros 7 dias, levantamento do histórico de falhas do equipamento e entrega do cronograma anual de 12 manutenções no App UPTEC. A troca de prestador não exige interrupção do serviço.
+
+### Atendem qualquer marca de elevador?
+
+Sim. A UPTEC é multimarcas e atende Thyssen, Atlas Schindler, Otis, Schindler, Villares, Orona e outras. A equipe é certificada em NR-10, NR-12, NR-33 e NR-35, e os serviços executados têm garantia de 365 dias. Não há exigência de substituir componentes por uma linha própria para manter o contrato.
+
+### Quanto custa a manutenção de um elevador?
+
+O valor depende do tipo de equipamento, da idade, do número de paradas, do estado de conservação e do regime de atendimento contratado. A UPTEC faz vistoria técnica gratuita para avaliar o equipamento antes de qualquer proposta, de modo que o orçamento parta do estado real da máquina e não de estimativa genérica.
+
+### Vale mais a pena modernizar ou trocar o elevador?
+
+A modernização (retrofit) preserva a estrutura do poço e substitui comando, operadores e itens de segurança, seguindo as ABNT NBR 16858-1 e 16858-2. Em geral não é necessário trocar o poço. A UPTEC emite laudo técnico assinado por engenheiro registrado no CREA que identifica as não conformidades frente à NR-12 e à ABNT e entrega recomendações priorizadas em três níveis: Plano A (segurança imediata), Plano B (adequação normativa) e Plano C (melhorias).
+
+### Com que frequência a manutenção preventiva deve ser feita?
+
+A UPTEC segue a ABNT NBR 16083: em geral 12 visitas por ano, com checklist de 27 itens críticos e RAT fotográfico a cada visita.
+
+### O que é o RAT?
+
+Relatório de Atendimento Técnico: registro com foto, data e horário de cada serviço, enviado por e-mail e WhatsApp. É o documento que comprova o que foi executado no equipamento, com imagens de antes e depois.
+
+### Vocês emitem ART?
+
+Sim. Todos os serviços têm ART assinada pelos engenheiros responsáveis, registrados no CREA, conforme a Lei 6.496/1977.
+
+### Qual a garantia dos serviços?
+
+365 dias nos serviços executados.
+
+### Atendem emergências em fins de semana e feriados?
+
+Sim. O plantão técnico funciona 24h por dia, 365 dias por ano, sem exceção de fim de semana ou feriado.
+
+### Atendem em todo o Brasil?
+
+Sim. A UPTEC atende Salvador, toda a Região Metropolitana e o interior da Bahia, além de contratos de manutenção, instalação e modernização em todos os estados do Brasil. Para licitações públicas, atua em todo o território nacional.
+
+### A UPTEC participa de pregão eletrônico?
+
+Sim. Participa de pregões eletrônicos no Comprasnet, BEC e portais estaduais e municipais, além de concorrências, dispensas e certames presenciais em todo o território nacional. A documentação de habilitação jurídica, fiscal e técnica é mantida regular e a proposta técnica e comercial é emitida em até 24h após o envio do edital.
+
+### A UPTEC instala elevadores para acessibilidade?
+
+Sim, conforme a ABNT NBR 9050. A instalação de equipamentos novos segue a ABNT NBR NM 207, com projeto técnico elaborado por engenheiro mecânico registrado no CREA, ART de projeto e de execução e treinamento da equipe do edifício.
+
+## Caso documentado
+
+Condomínio com três elevadores Thyssen Sûr recebidos em estado crítico: poeira acumulada em placas eletrônicas com risco de incêndio, cabos de tração desfiados e desiguais, vazamento de óleo no motor e equipamentos interditados por falta de manutenção da empresa anterior.
+
+Em 5 dias úteis (28/05 a 01/06/2026), a equipe executou:
+
+- Limpeza técnica com contact cleaner e pincéis antiestáticos
+- Parametrização completa do comando MCBRV
+- Equalização de cabos com tensiômetro digital
+- Substituição de cabos certificados no Elevador 01
+- Reaperto de bornes, contatores e barramentos
+- Procedimento LOTO (Lockout/Tagout) conforme NR-10
+
+Resultados: redução de 70% no ruído mecânico e liberação técnica do Elevador 02. Relatório fotográfico de antes e depois entregue ao cliente.
 
 ## Serviços
 
-- Manutenção preventiva (12 visitas por ano, checklist de 27 itens, conforme ABNT NBR 16083)
-- Manutenção corretiva
-- Atendimento emergencial 24h (plantão 24h, 365 dias, atendimento em até 30 minutos)
-- Modernização (retrofit conforme ABNT NBR 16858-1 e 16858-2)
-- Instalação de elevadores novos (conforme ABNT NBR NM 207)
-- Vistoria técnica e laudos
+- [Serviços](https://uptecelevadores.com/servicos): manutenção preventiva e corretiva, modernização, instalação e vistoria técnica com laudo.
+- [Condomínios](https://uptecelevadores.com/condominios): contratos para síndicos e administradoras, com 12 manutenções anuais, RAT em cada visita, App UPTEC e plantão 24h.
+- [Elevadores](https://uptecelevadores.com/elevadores): instalação de equipamentos novos e modernização de elevadores existentes, de qualquer marca.
+- [Licitações](https://uptecelevadores.com/licitacoes): atendimento a órgãos públicos, documentação de habilitação e execução rastreada por RAT.
+- [Contato](https://uptecelevadores.com/contato): solicitação de orçamento, vistoria técnica gratuita e canal de emergência.
+
+## Credenciais e responsabilidade técnica
+
+- Razão social: UPTEC Elevadores Ltda.
+- CNPJ: 64.753.094/0001-52
+- CREA-BA (Pessoa Jurídica): 0010441166
+- Responsável Técnico: Eng. Milton Jesus dos Santos, CREA-BA 3000129974
+- Engenheira Responsável: Eng.ª Gilva Teixeira dos Santos, CREA-BA 3000129975
+- Endereço: Av. Tancredo Neves, 3343, Bloco B, Sala 1009/10, Caminho das Árvores, Salvador, BA, CEP 41.820-021
+- Equipe certificada em NR-10, NR-12, NR-33 e NR-35
 
 ## Normas técnicas atendidas
 
-- ABNT NBR 16083 (manutenção preventiva de elevadores)
-- ABNT NBR ISO 4309 (inspeção de cabos de aço)
-- ABNT NBR 16858-1 e ABNT NBR 16858-2 (modernização/retrofit de elevadores existentes)
-- ABNT NBR NM 207 (instalação de elevadores)
-- ART (Anotação de Responsabilidade Técnica) em todos os serviços, conforme Lei 6.496/1977
-
-## Licitações públicas
-
-- Participa de pregões eletrônicos (Comprasnet, BEC e portais estaduais), presenciais, concorrências e dispensas de licitação em todo o território nacional
-- Proposta técnica e comercial emitida em até 24h após envio do edital
-- ART assinada por engenheiro mecânico registrado no CREA em cada contrato público
-- Contato para licitações: licitacoes@uptecelevadores.com
+- ABNT NBR 16083 — manutenção preventiva periódica de elevadores
+- ABNT NBR NM 207 — construção e instalação de elevadores elétricos de passageiros
+- ABNT NBR 16858-1 e 16858-2 — modernização e retrofit de elevadores existentes
+- ABNT NBR 9050 — acessibilidade a edificações, mobiliário, espaços e equipamentos
+- ABNT NBR ISO 4309 — inspeção de cabos de aço
+- Lei 6.496/1977 — ART (Anotação de Responsabilidade Técnica) em todos os serviços
 
 ## Área de atendimento
 
 - Salvador e toda a Região Metropolitana da Bahia
-- Interior da Bahia para contratos de manutenção e instalação
-- Todo o Brasil para licitações públicas
-- Contratos de manutenção, instalação e modernização em todos os estados do Brasil
+- Interior da Bahia para contratos de manutenção, instalação e modernização
+- Todos os estados do Brasil para contratos de manutenção, instalação e modernização
+- Todo o território nacional para licitações públicas
 
 ## Horários
 
@@ -50,7 +146,7 @@
 
 ## Contato
 
-- Telefone/WhatsApp: (71) 99652-6835
+- Telefone e WhatsApp: (71) 99652-6835
 - E-mail geral: contato@uptecelevadores.com
 - E-mail licitações: licitacoes@uptecelevadores.com
 - E-mail engenharia: luiscordeiro@uptecelevadores.com
