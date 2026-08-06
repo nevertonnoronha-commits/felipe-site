@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Seis serviços de engenharia em elevadores para Salvador, a Bahia e todo o Brasil: manutenção preventiva e corretiva, emergência 24h, modernização e instalação.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Serviços de Elevadores: Manutenção e Modernização | UPTEC">
+  <meta property="og:description"
+    content="Seis serviços de engenharia em elevadores para Salvador, a Bahia e todo o Brasil: manutenção preventiva e corretiva, emergência 24h, modernização e instalação.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uptecelevadores.com/servicos">
+  <meta name="theme-color" content="#f6f2e9">
+  <link rel="canonical" href="https://uptecelevadores.com/servicos">
+  <title>Serviços de Elevadores: Manutenção e Modernização | UPTEC</title>
+
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d8b15a' stroke-width='2'%3E%3Crect x='6' y='2' width='12' height='3' rx='1'/%3E%3Crect x='6' y='10' width='12' height='4' rx='1'/%3E%3Crect x='6' y='19' width='12' height='3' rx='1'/%3E%3Crect x='3' y='5' width='3' height='14' rx='1'/%3E%3Crect x='18' y='5' width='3' height='14' rx='1'/%3E%3C/svg%3E"
+    type="image/svg+xml">
+
+  <!-- Preload de assets criticos: carregar logo e hero logo no inicio -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preload" as="image" href="images/logo-uptec-t.png">
+  <link rel="preload" as="image" href="images/uptec-hero-bg-opcao5.jpg" media="(min-width: 768px)">
+  <link rel="preload" as="image" href="images/uptec-hero-bg-mobile-opcao5.jpg" media="(max-width: 767px)">
+
+  <!-- Fonts: Montserrat (display + body) + DM Mono (data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Form depends on tokens.css variables -->
+  <link rel="stylesheet" href="tokens.css">
+  <!-- Custom cinematic + light-break layer -->
+  <link rel="stylesheet" href="theme.css">
+  <!-- Conversational form, restyled for the dark modal -->
+  <link rel="stylesheet" href="form.css">
+
+  <!-- FAQPage JSON-LD: inner pages (licitacoes, condominios, elevadores, contato) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "UPTEC Elevadores Ltda.",
+    "description": "Manutenção, instalação e modernização de elevadores em Salvador, na Bahia e em todos os estados do Brasil. RAT com foto, ART em todos os serviços e plantão 24h com atendimento em até 30 minutos.",
+    "image": "https://uptecelevadores.com/images/logo-uptec-full.png",
+    "telephone": "+55-71-99652-6835",
+    "email": "contato@uptecelevadores.com",
+    "url": "https://uptecelevadores.com",
+    "taxID": "64.753.094/0001-52",
+    "areaServed": [
+      { "@type": "City", "name": "Salvador" },
+      { "@type": "State", "name": "Bahia" },
+      { "@type": "Country", "name": "Brasil" }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Tancredo Neves, 3343, Bloco B, Sala 1009/10, Caminho das Árvores",
+      "addressLocality": "Salvador",
+      "addressRegion": "BA",
+      "postalCode": "41820-021",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59",
+        "description": "Plantão técnico de emergência 24h, atendimento em até 30 minutos"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="font-body antialiased">
+
+  <a href="#main" class="skip-to-content">Ir para o conteúdo</a>
+
+  <!-- Layered cinematic background (dark sections sit above it; light sections cover it) -->
+  <div class="site-bg" aria-hidden="true">
+    <div class="site-bg__mesh"></div>
+    <div class="site-bg__grid"></div>
+    <div class="site-bg__grain"></div>
+  </div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-fill"></span></div>
+
+  <!-- ============================================================ NAV (shared, technological floating pill) ============================================================ -->
+  <header id="site-nav" class="site-nav" aria-label="Navegação principal">
+    <div class="site-nav__pill">
+      <a href="/" data-page="home" class="site-nav__brand" aria-label="UPTEC Elevadores, início">
+        <img src="images/logo-uptec-t.png" alt="" class="site-nav__logo" width="40" height="40">
+        <span class="site-nav__wordmark">
+          <span class="site-nav__name">UPTEC</span>
+          <span class="site-nav__tagline">Elevadores</span>
+        </span>
+      </a>
+
+      <nav class="site-nav__links" aria-label="Seções">
+        <a href="/" data-page="home" class="nav-link">Início</a>
+        <a href="/servicos" data-page="servicos" class="nav-link">Serviços</a>
+        <a href="/licitacoes" data-page="licitacoes" class="nav-link">Licitações</a>
+        <a href="/condominios" data-page="condominios" class="nav-link">Condomínios</a>
+        <a href="/elevadores" data-page="elevadores" class="nav-link">Elevadores</a>
+      </nav>
+
+      <div class="site-nav__actions">
+        <a href="https://wa.me/5571996526835?text=Emerg%C3%AAncia%20-%20preciso%20de%20atendimento%20no%20elevador"
+          target="_blank" rel="noopener noreferrer" class="btn-emergency btn-sm" title="Emergência 24h via WhatsApp">
+          <span class="emergency-dot" aria-hidden="true"></span>
+          Emergência 24h
+        </a>
+        <button type="button" class="btn-gold btn-sm" data-open-quote>Solicitar orçamento</button>
+        <button type="button" class="nav-burger" id="nav-burger" aria-label="Abrir menu" aria-expanded="false"
+          aria-controls="mobile-drawer">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawer backdrop (tap-to-close) -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+  <!-- Mobile drawer (shared) -->
+  <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true" role="dialog" aria-label="Menu de navegação">
+    <!-- Drawer header: brand + close -->
+    <div class="mobile-drawer__header">
+      <div class="mobile-drawer__brand">
+        <img src="images/logo-uptec-t.png" alt="" width="34" height="34">
+        <div class="mobile-drawer__brand-text">
+          <span class="mobile-drawer__brand-name">UPTEC</span>
+          <span class="mobile-drawer__brand-tag">Elevadores</span>
+        </div>
+      </div>
+      <button type="button" class="mobile-drawer__close" id="drawer-close-btn" aria-label="Fechar menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Nav links -->
+    <nav class="mobile-drawer__links" aria-label="Menu mobile">
+      <a href="/" data-page="home">Início</a>
+      <a href="/servicos" data-page="servicos">Serviços</a>
+      <a href="/licitacoes" data-page="licitacoes">Licitações</a>
+      <a href="/condominios" data-page="condominios">Condomínios</a>
+      <a href="/elevadores" data-page="elevadores">Elevadores</a>
+      <a href="/contato" data-page="contato">Contato</a>
+    </nav>
+
+    <!-- Status -->
+    <span class="mobile-drawer__status">
+      <span class="mobile-drawer__status-dot" aria-hidden="true"></span>Plantão 24h, 365 dias
+    </span>
+
+    <!-- CTA at bottom -->
+    <div class="mobile-drawer__cta">
+      <button type="button" class="btn-gold w-full justify-center" data-open-quote>Solicitar orçamento</button>
+      <a href="https://wa.me/5571996526835?text=Emerg%C3%AAncia%20-%20preciso%20de%20atendimento%20no%20elevador"
+        target="_blank" rel="noopener noreferrer" class="btn-emergency w-full justify-center">
+        <span class="emergency-dot" aria-hidden="true"></span>Emergência 24h</a>
+    </div>
+  </div>
+
+  <!-- Scroll-spy sidebar rail (desktop only; hidden on <=1024px) -->
+  <nav id="scroll-spy-rail" class="spy-rail" aria-label="Seções da página" aria-hidden="true"></nav>
+
+  <main id="main">
+
+    <!-- ============================================================
+         PAGE: HOME  (alternating dark <-> light rhythm)
+         Hero DARK -> trust LIGHT -> diferenciais DARK -> servicos LIGHT
+         -> numeros DARK (counters) -> quem somos LIGHT -> case DARK
+         -> CTA gold/dark -> (shared footer DARK)
+         ============================================================ -->
+    <div id="page-servicos" class="page page--inner is-active">
+
+      <!-- INNER HERO (DARK) -->
+      <section class="inner-hero panel panel--dark">
+        <div class="inner-hero__shaft anim-parallax" data-speed="5" aria-hidden="true">
+          <div class="illus-panel illus-panel--photo"><img src="images/uptec-servicos.jpg" alt="" width="1024" height="1024" loading="lazy"></div>
+        </div>
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <nav class="breadcrumb" aria-label="Trilha de navegação">
+            <a href="/" data-page="home">Início</a>
+            <span class="breadcrumb-sep" aria-hidden="true">/</span>
+            <span class="breadcrumb-current">Serviços</span>
+          </nav>
+          <p class="kicker" data-reveal><span class="kicker-tick" aria-hidden="true"></span>O que fazemos</p>
+          <h1 class="inner-hero__title" data-reveal>Engenharia aplicada<br>em cada visita.</h1>
+          <p class="inner-hero__lead" data-reveal>Da manutenção preventiva à instalação de elevadores novos, em
+            conformidade total com as normas ABNT e NR. Cada atendimento termina com relatório fotográfico (RAT) e ART
+            assinada por engenheiro mecânico registrado no CREA.</p>
+          <ul class="licit__pills" data-reveal>
+            <li>12 visitas por ano</li>
+            <li>27 itens críticos</li>
+            <li>Emergência em 30 min</li>
+            <li>Garantia 365 dias</li>
+          </ul>
+          <div class="inner-hero__actions" data-reveal>
+            <button type="button" class="btn-gold btn-magnetic" data-open-quote>Solicitar orçamento
+              <svg width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+            </button>
+            <a href="https://wa.me/5571996526835?text=Emerg%C3%AAncia%20-%20preciso%20de%20atendimento%20no%20elevador"
+              target="_blank" rel="noopener noreferrer" class="btn-emergency">
+              <span class="emergency-dot" aria-hidden="true"></span>Emergência 24h
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- OS 6 SERVICOS (LIGHT, srv-grid — cards concisos com link para detalhe) -->
+      <section class="section panel panel--light" id="srv-lista" data-spy="Visão geral">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="section-head section-head--split" data-reveal>
+            <div>
+              <p class="kicker"><span class="kicker-tick" aria-hidden="true"></span>Soluções completas</p>
+              <h2 class="section-title">Seis serviços,<br>uma só <span class="hero__gold">engenharia</span>.</h2>
+            </div>
+            <p class="section-head__note">Manutenção, modernização, instalação e laudos. Tudo documentado e
+              assinado, sem improviso e sem manutenção de fachada.</p>
+          </div>
+
+          <div class="srv-grid">
+            <article class="srv-card srv-card--tall" data-reveal>
+              <div class="srv-card__top">
+                <span class="srv-num">01</span>
+                <svg class="srv-icon" width="48" height="48" aria-hidden="true"><use href="images/icons.svg#ic-preventiva"></use></svg>
+              </div>
+              <h3>Manutenção preventiva</h3>
+              <p>12 visitas anuais, 27 itens críticos, RAT fotográfico em cada visita.</p>
+              <a href="#srv-preventiva" class="link-arrow">Ver detalhe
+                <svg width="14" height="14" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+              </a>
+            </article>
+
+            <article class="srv-card" data-reveal>
+              <div class="srv-card__top">
+                <span class="srv-num">02</span>
+                <svg class="srv-icon" width="44" height="44" aria-hidden="true"><use href="images/icons.svg#ic-corretiva"></use></svg>
+              </div>
+              <h3>Manutenção corretiva</h3>
+              <p>Peças certificadas, ART emitida e garantia de 365 dias nos reparos.</p>
+              <a href="#srv-corretiva" class="link-arrow">Ver detalhe
+                <svg width="14" height="14" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+              </a>
+            </article>
+
+            <article class="srv-card srv-card--emergency" data-reveal>
+              <div class="srv-card__top">
+                <span class="srv-num">03</span>
+                <svg class="srv-icon" width="44" height="44" aria-hidden="true"><use href="images/icons.svg#ic-emergencia"></use></svg>
+              </div>
+              <h3>Atendimento emergencial 24h</h3>
+              <p>Plantão 24h, 365 dias, com chegada em até 30 minutos.</p>
+              <a href="#srv-emergencial" class="link-arrow link-arrow--orange">Ver detalhe
+                <svg width="14" height="14" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+              </a>
+            </article>
+
+            <article class="srv-card srv-card--wide" data-reveal>
+              <div class="srv-card__top">
+                <span class="srv-num">04</span>
+                <svg class="srv-icon" width="44" height="44" aria-hidden="true"><use href="images/icons.svg#ic-modernizacao"></use></svg>
+              </div>
+              <h3>Modernização</h3>
+              <p>Tecnologia atual sem trocar a estrutura do poço: mais segurança, menos chamados.</p>
+              <a href="#srv-modernizacao" class="link-arrow">Ver detalhe
+                <svg width="14" height="14" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+              </a>
+            </article>
+
+            <article class="srv-card" data-reveal>
+              <div class="srv-card__top">
+                <span class="srv-num">05</span>
+                <svg class="srv-icon" width="44" height="44" aria-hidden="true"><use href="images/icons.svg#ic-instalacao"></use></svg>
+              </div>
+              <h3>Instalação de elevadores novos</h3>
+              <p>Linha UPTEC com projeto por engenheiro, ART e treinamento da equipe.</p>
+              <a href="#srv-instalacao" class="link-arrow">Ver detalhe
+                <svg width="14" height="14" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+              </a>
+            </article>
+
+            <article class="srv-card" data-reveal>
+              <div class="srv-card__top">
+                <span class="srv-num">06</span>
+                <svg class="srv-icon" width="44" height="44" aria-hidden="true"><use href="images/icons.svg#ic-vistoria"></use></svg>
+              </div>
+              <h3>Vistoria técnica e laudos</h3>
+              <p>Laudo assinado por engenheiro para compra, venda ou fiscalização.</p>
+              <a href="#srv-laudos" class="link-arrow">Ver detalhe
+                <svg width="14" height="14" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETALHE 01: MANUTENCAO PREVENTIVA (LIGHT) -->
+      <section class="section panel panel--light" id="srv-preventiva" data-spy="Manutenção Preventiva">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="srv-block" data-reveal>
+            <div class="srv-block__head">
+              <span class="srv-chip"><svg aria-hidden="true"><use href="images/icons.svg#ic-preventiva"></use></svg></span>
+              <h2 class="srv-block__title">Manutenção preventiva</h2>
+            </div>
+            <p class="srv-block__lead">12 visitas anuais com 27 itens críticos inspecionados em cada atendimento,
+              conforme ABNT NBR 16083. Cada visita cobre os componentes mecânicos, elétricos e de segurança do
+              equipamento e termina com um Relatório de Atendimento Técnico (RAT) fotográfico entregue ao síndico ou
+              gestor responsável por e-mail e WhatsApp.</p>
+
+            <div class="feature-box">
+              <p class="feature-box__title">O que está incluído</p>
+              <ul class="check-list">
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Inspeção de cabos de aço (ABNT NBR ISO 4309)</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Lubrificação de mancais, guias e correntes</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Reaperto de bornes, contatores e barramentos</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Teste anual de limitador e freio de segurança (paraquedas)</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Limpeza técnica de placas, drivers e quadros de comando</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Verificação de portas, soleiras, fotocélulas e botoeiras</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Relatório fotográfico (RAT) ao final de cada visita</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Comunicação direta com o gestor via WhatsApp</li>
+              </ul>
+            </div>
+
+            <ul class="pill-set" style="margin-top:1.6rem">
+              <li>ABNT NBR 16083</li>
+              <li>ABNT NBR ISO 4309</li>
+              <li>NR-10 / NR-12 / NR-35</li>
+              <li>12 visitas anuais</li>
+              <li>27 itens por visita</li>
+              <li>RAT com foto e data</li>
+              <li>ART por contrato</li>
+            </ul>
+
+            <button type="button" class="btn-gold btn-magnetic" data-open-quote style="margin-top:1.8rem">Solicitar orçamento de manutenção
+              <svg width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETALHE 02: MANUTENCAO CORRETIVA (LIGHT) -->
+      <section class="section panel panel--light" id="srv-corretiva" data-spy="Manutenção Corretiva">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="srv-block" data-reveal>
+            <div class="srv-block__head">
+              <span class="srv-chip"><svg aria-hidden="true"><use href="images/icons.svg#ic-corretiva"></use></svg></span>
+              <h2 class="srv-block__title">Manutenção corretiva</h2>
+            </div>
+            <p class="srv-block__lead">Diagnóstico técnico preciso, reparo com peças certificadas ou originais e
+              Anotação de Responsabilidade Técnica (ART) emitida em todos os serviços. Quando o elevador apresenta
+              falha, entramos em ação com substituição dos componentes defeituosos e comunicação direta com o gestor
+              sobre o que foi encontrado e o que foi feito.</p>
+
+            <div class="feature-box">
+              <p class="feature-box__title">O que fazemos</p>
+              <ul class="check-list">
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Troca de cabos de aço, polias, retentores e freios</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Substituição de contatores, barramentos e fusíveis</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Recuperação de quadros de comando com oxidação ou falha</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Reparo em portas, soleiras, fotocélulas e operadores</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Substituição de placas, drivers e componentes de potência</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>RAT fotográfico e ART emitidos ao final do serviço</li>
+              </ul>
+            </div>
+
+            <ul class="pill-set" style="margin-top:1.6rem">
+              <li>Peças certificadas</li>
+              <li>Garantia 365 dias</li>
+              <li>ART em todo serviço</li>
+              <li>NR-10 / NR-12 / NR-33</li>
+              <li>RAT com foto e data</li>
+            </ul>
+
+            <button type="button" class="btn-gold btn-magnetic" data-open-quote style="margin-top:1.8rem">Chamar técnico agora
+              <svg width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETALHE 03: ATENDIMENTO EMERGENCIAL (DARK) -->
+      <section class="section panel panel--dark" id="srv-emergencial" data-spy="Emergencial 24h">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="srv-block" data-reveal>
+            <div class="srv-block__head">
+              <span class="srv-chip srv-chip--emergency"><svg aria-hidden="true"><use href="images/icons.svg#ic-emergencia"></use></svg></span>
+              <h2 class="srv-block__title">Atendimento emergencial 24h</h2>
+            </div>
+            <p class="srv-block__lead">Plantão técnico disponível 24 horas por dia, 365 dias por ano, com tempo de
+              resposta de até 30 minutos para qualquer chamado urgente, inclusive situações com pessoas presas.
+              Diagnóstico imediato, liberação segura do equipamento ou interdição técnica quando aplicável, e RAT
+              fotográfico emitido no mesmo dia com comunicação direta ao síndico ou gestor via WhatsApp.</p>
+
+            <div class="stat-tiles">
+              <div class="stat-tile">
+                <div class="stat-tile__k">Tempo de resposta</div>
+                <div class="stat-tile__v">Até 30 min</div>
+              </div>
+              <div class="stat-tile">
+                <div class="stat-tile__k">Disponibilidade</div>
+                <div class="stat-tile__v">24h / 365 dias</div>
+              </div>
+            </div>
+
+            <ul class="pill-set" style="margin-top:0.6rem">
+              <li>NR-10 / NR-12 / NR-33 / NR-35</li>
+              <li>RAT no mesmo dia</li>
+              <li>ART quando aplicável</li>
+              <li>Comunicação via WhatsApp</li>
+            </ul>
+
+            <div class="srv-block__actions">
+              <a href="https://wa.me/5571996526835?text=Emerg%C3%AAncia%20-%20preciso%20de%20atendimento%20no%20elevador"
+                target="_blank" rel="noopener noreferrer" class="btn-emergency btn-lg">
+                <span class="emergency-dot" aria-hidden="true"></span>Chamar plantão via WhatsApp
+              </a>
+              <a href="tel:+5571996526835" class="btn-ghost btn-lg">Ligar agora</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETALHE 04: MODERNIZACAO (LIGHT) -->
+      <section class="section panel panel--light" id="srv-modernizacao" data-spy="Modernização">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="srv-block" data-reveal>
+            <div class="srv-block__head">
+              <span class="srv-chip"><svg aria-hidden="true"><use href="images/icons.svg#ic-modernizacao"></use></svg></span>
+              <h2 class="srv-block__title">Modernização</h2>
+            </div>
+            <p class="srv-block__lead">Atualização tecnológica completa do elevador sem necessidade de substituição
+              da estrutura do poço. Troca do comando antigo por sistema microprocessado, operadores de porta
+              automáticos, novas cabines e botoeiras, e adequação integral às ABNT NBR 16858-1 e 16858-2. O resultado
+              é mais segurança, menor consumo energético e redução expressiva de chamados e paradas.</p>
+
+            <div class="feature-box">
+              <p class="feature-box__title">O que atualizamos</p>
+              <ul class="check-list">
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Comando microprocessado em substituição ao sistema analógico</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Operadores de porta automáticos com proteção de reversão</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Cabines, botoeiras e painéis de operação</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Sistemas de tração, freio e variador de frequência</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Adequação a ABNT NBR 16858-1 e NBR 16858-2</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>ART de modernização assinada por engenheiro mecânico</li>
+              </ul>
+            </div>
+
+            <ul class="pill-set" style="margin-top:1.6rem">
+              <li>ABNT NBR 16858-1</li>
+              <li>ABNT NBR 16858-2</li>
+              <li>NR-10 / NR-12</li>
+              <li>ART de modernização</li>
+              <li>Garantia 365 dias</li>
+            </ul>
+
+            <button type="button" class="btn-gold btn-magnetic" data-open-quote style="margin-top:1.8rem">Solicitar avaliação técnica
+              <svg width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETALHE 05: INSTALACAO (LIGHT) -->
+      <section class="section panel panel--light" id="srv-instalacao" data-spy="Instalação">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="srv-block" data-reveal>
+            <div class="srv-block__head">
+              <span class="srv-chip"><svg aria-hidden="true"><use href="images/icons.svg#ic-instalacao"></use></svg></span>
+              <h2 class="srv-block__title">Instalação de elevadores novos</h2>
+            </div>
+            <p class="srv-block__lead">Elevadores próprios da linha UPTEC, fabricados em parceria com a STEP.
+              Projeto técnico personalizado elaborado por engenheiro mecânico registrado no CREA, instalação
+              seguindo rigorosamente a ABNT NBR NM 207, ART de instalação emitida e treinamento completo da equipe
+              de manutenção e operação do cliente.</p>
+
+            <div class="feature-box">
+              <p class="feature-box__title">O que está incluído</p>
+              <ul class="check-list">
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Projeto técnico por engenheiro (CREA-BA 0010441166)</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Linha própria UPTEC em parceria com a STEP</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Instalação conforme ABNT NBR NM 207</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>ART de instalação assinada pelo engenheiro responsável</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Treinamento da equipe de operação e manutenção do cliente</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Comissionamento e entrega com RAT fotográfico</li>
+              </ul>
+            </div>
+
+            <ul class="pill-set" style="margin-top:1.6rem">
+              <li>ABNT NBR NM 207</li>
+              <li>NR-10 / NR-12 / NR-35</li>
+              <li>ART de instalação</li>
+              <li>Linha UPTEC / STEP</li>
+              <li>CREA-BA 0010441166</li>
+            </ul>
+
+            <a href="/elevadores" data-page="elevadores" class="btn-ghost" style="margin-top:1.8rem;display:inline-flex;align-items:center;gap:0.5rem">Conhecer a linha UPTEC
+              <svg width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETALHE 06: VISTORIA E LAUDOS (LIGHT) -->
+      <section class="section panel panel--light" id="srv-laudos" data-spy="Vistoria e Laudos">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="srv-block" data-reveal>
+            <div class="srv-block__head">
+              <span class="srv-chip"><svg aria-hidden="true"><use href="images/icons.svg#ic-vistoria"></use></svg></span>
+              <h2 class="srv-block__title">Vistoria técnica e laudos</h2>
+            </div>
+            <p class="srv-block__lead">Avaliação completa do estado do elevador para compra, venda, fiscalização
+              ou troca de empresa de manutenção. O laudo técnico é assinado por engenheiro mecânico registrado no
+              CREA, identifica todas as não conformidades frente a NR-12 e ABNT e entrega recomendações priorizadas
+              em três níveis: Plano A (segurança imediata), Plano B (adequação normativa) e Plano C (melhorias
+              operacionais).</p>
+
+            <div class="feature-box">
+              <p class="feature-box__title">O que está incluído</p>
+              <ul class="check-list">
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Inspeção física completa do equipamento e do poço</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Verificação de cabos, freio, limitador e paraquedas</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Análise de quadro de comando, circuitos de segurança e botoeiras</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Identificação de não conformidades NR-12 e ABNT</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Laudo técnico fotográfico assinado por engenheiro mecânico</li>
+                <li><svg aria-hidden="true"><use href="images/icons.svg#ic-check"></use></svg>Recomendações priorizadas: Plano A, B e C</li>
+              </ul>
+            </div>
+
+            <ul class="pill-set" style="margin-top:1.6rem">
+              <li>ABNT NBR NM 207</li>
+              <li>ABNT NBR 16083</li>
+              <li>NR-12</li>
+              <li>ISO 4309</li>
+              <li>ART de vistoria</li>
+              <li>CREA-BA 0010441166</li>
+              <li>Laudo fotográfico</li>
+            </ul>
+
+            <button type="button" class="btn-gold btn-magnetic" data-open-quote style="margin-top:1.8rem">Solicitar laudo técnico
+              <svg width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA (GOLD/DARK) -->
+      <section class="cta-band panel panel--dark" id="srv-cta">
+        <div class="mx-auto max-w-shell px-6 lg:px-10">
+          <div class="cta-band__inner" data-reveal>
+            <div class="cta-band__shaft" aria-hidden="true"></div>
+            <p class="kicker"><span class="kicker-tick" aria-hidden="true"></span>Pronto quando você estiver</p>
+            <h2 class="cta-band__title">Precisa de uma manutenção<br>de <span class="hero__gold">verdade?</span></h2>
+            <p class="cta-band__sub">Conte o tipo de serviço e a quantidade de elevadores. Nossa engenharia responde
+              rápido, com proposta técnica e comercial.</p>
+            <div class="cta-band__actions">
+              <button type="button" class="btn-gold btn-lg btn-magnetic" data-open-quote>Solicitar orçamento
+                <svg width="18" height="18" aria-hidden="true"><use href="images/icons.svg#ic-arrow-right"></use></svg>
+              </button>
+              <a href="https://wa.me/5571996526835?text=Emerg%C3%AAncia%20-%20preciso%20de%20atendimento%20no%20elevador"
+                target="_blank" rel="noopener noreferrer" class="btn-emergency btn-lg">
+                <span class="emergency-dot" aria-hidden="true"></span>Emergência 24h
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- ============================================================ FOOTER (shared, DARK) ============================================================ -->
+  <footer class="site-footer panel panel--dark" id="contato-footer">
+    <div class="mx-auto max-w-shell px-6 lg:px-10">
+      <div class="site-footer__top">
+
+        <!-- Col 1: Brand + tagline + status + CTAs -->
+        <div class="site-footer__brand">
+          <a href="/" data-page="home" class="site-footer__brandlink" aria-label="UPTEC Elevadores, início">
+            <img src="images/logo-uptec-t.png" alt="" class="site-footer__logo" width="44" height="44">
+            <span class="site-nav__wordmark">
+              <span class="site-nav__name">UPTEC</span>
+              <span class="site-nav__tagline">Elevadores</span>
+            </span>
+          </a>
+          <p class="site-footer__desc">Manutenção, instalação e modernização de elevadores com engenharia responsável,
+            transparência e RAT com foto em cada visita, para condomínios, empresas e órgãos públicos em Salvador, na
+            Bahia e em todos os estados do Brasil.</p>
+          <span class="status-dot"><span class="status-dot__pulse" aria-hidden="true"></span>Plantão 24h, 365 dias</span>
+          <div class="site-footer__cta">
+            <button type="button" class="btn-gold btn-sm" data-open-quote>Solicitar orçamento</button>
+            <a href="https://wa.me/5571996526835" target="_blank" rel="noopener noreferrer" class="btn-emergency btn-sm">
+              <span class="emergency-dot" aria-hidden="true"></span>Emergência 24h</a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navegação -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Navegação</p>
+          <ul class="site-footer__list">
+            <li><a href="/" data-page="home">Início</a></li>
+            <li><a href="/servicos" data-page="servicos">Serviços</a></li>
+            <li><a href="/licitacoes" data-page="licitacoes">Licitações</a></li>
+            <li><a href="/condominios" data-page="condominios">Condomínios</a></li>
+            <li><a href="/elevadores" data-page="elevadores">Elevadores</a></li>
+            <li><a href="/contato" data-page="contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contato -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Contato</p>
+          <div class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.63a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14z"/></svg>
+            <a href="tel:+5571996526835">(71) 99652-6835</a>
+          </div>
+          <div class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:contato@uptecelevadores.com">contato@uptecelevadores.com</a>
+          </div>
+          <div class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:licitacoes@uptecelevadores.com">licitacoes@uptecelevadores.com</a>
+          </div>
+          <div class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:luiscordeiro@uptecelevadores.com">luiscordeiro@uptecelevadores.com</a>
+          </div>
+          <div class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <address style="font-style:normal;">Av. Tancredo Neves, 3343, Bloco B, Sala 1009/10, Caminho das Árvores, Salvador/BA, 41.820-021</address>
+          </div>
+        </div>
+
+        <!-- Col 4: Empresa (registro, CREA, engenheiros) -->
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Empresa</p>
+          <div class="site-footer__data-row">
+            <span class="site-footer__data-label">CNPJ</span>
+            <span class="site-footer__data-value">64.753.094/0001-52</span>
+          </div>
+          <div class="site-footer__data-row">
+            <span class="site-footer__data-label">CREA-BA</span>
+            <span class="site-footer__data-value">0010441166</span>
+          </div>
+          <p class="site-footer__col-title site-footer__col-title--mt">Engenharia responsável</p>
+          <div class="site-footer__eng-card">
+            <p class="site-footer__eng-role">Eng. Responsável</p>
+            <p class="site-footer__eng-name">Milton Jesus dos Santos</p>
+            <p class="site-footer__eng-crea">CREA-BA 3000129974</p>
+          </div>
+          <div class="site-footer__eng-card">
+            <p class="site-footer__eng-role">Eng. Responsável</p>
+            <p class="site-footer__eng-name">Gilva Teixeira dos Santos</p>
+            <p class="site-footer__eng-crea">CREA-BA 3000129975</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="site-footer__legal">
+        <p class="site-footer__data">2026 UPTEC Elevadores Ltda.<span>/</span>CNPJ 64.753.094/0001-52<span>/</span>CREA-BA 0010441166</p>
+        <p class="site-footer__copy">Plantão 24h, 365 dias. Atendimento em até 30 min.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================ QUOTE MODAL (shared) ============================================================ -->
+  <div class="quote-modal" id="quote-modal" aria-hidden="true">
+    <div class="quote-modal__backdrop" data-close-quote></div>
+    <div class="quote-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+      <div class="quote-modal__head">
+        <div class="quote-modal__brand">
+          <img src="images/logo-uptec-t.png" alt="UPTEC Elevadores" class="h-8 w-auto" width="96" height="32">
+          <span id="quote-modal-title" class="quote-modal__title">Solicitar orçamento</span>
+        </div>
+        <button type="button" class="quote-modal__close" data-close-quote aria-label="Fechar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div class="quote-modal__body">
+        <div id="lead-form-root"></div>
+        <noscript>
+          <p class="quote-modal__noscript">Ative o JavaScript ou fale direto no
+            <a href="https://wa.me/5571996526835" target="_blank" rel="noopener noreferrer">WhatsApp (71) 99652-6835</a>.
+          </p>
+        </noscript>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY MOBILE CTA BAR (visible only on mobile, hidden on desktop) -->
+  <div class="mobile-cta-bar" id="mobile-cta-bar" aria-label="Ações rápidas">
+    <button type="button" class="btn-gold" data-open-quote>Solicitar orçamento</button>
+    <a href="https://wa.me/5571996526835?text=Emerg%C3%AAncia%20-%20preciso%20de%20atendimento%20no%20elevador"
+      target="_blank" rel="noopener noreferrer" class="btn-emergency">
+      <span class="emergency-dot" aria-hidden="true"></span>Emergência 24h
+    </a>
+  </div>
+
+  <!-- BRAND LOADER / CINEMATIC VINHETA (first load only) - is-visible no HTML cobre desde o primeiro paint (evita flash) -->
+  <div id="brand-loader" class="is-visible" aria-hidden="true" role="presentation">
+    <img src="images/logo-uptec-t.png" alt="" class="bl-logo" width="72" height="72">
+    <div class="bl-wordmark">
+      <span class="bl-name">UPTEC</span>
+      <span class="bl-tag">Elevadores</span>
+    </div>
+    <div class="bl-bar-track">
+      <div class="bl-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- PAGE TRANSITION OVERLAY (brand loading vignette) -->
+  <div id="page-transition" aria-hidden="true" role="presentation">
+    <img src="images/logo-uptec-t.png" alt="" class="pt-logo" width="64" height="64">
+    <div class="pt-wordmark">
+      <span class="pt-name">UPTEC</span>
+      <span class="pt-tag">Elevadores</span>
+    </div>
+    <div class="pt-bar-track">
+      <div class="pt-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- noise filter source for grain -->
+  <svg style="position:absolute;width:0;height:0" aria-hidden="true">
+    <filter id="grainFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.05 0" />
+    </filter>
+  </svg>
+
+  <!-- ============================================================ LIBS (deferred) ============================================================ -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- conversational lead form (self-mounts into #lead-form-root) -->
+  <script defer src="form.js"></script>
+
+  <!-- ============================================================ ROUTING + REVEAL + COUNTERS + MODAL (external, robust, no Lenis) ============================================================ -->
+  <script defer src="site.js"></script>
+
+  <!-- ============================================================ AMBIENT EFFECTS (cursor follower, glow cards, grid ripple) ============================================================ -->
+  <script defer src="effects.js"></script>
+</body>
+</html>

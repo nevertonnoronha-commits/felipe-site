@@ -343,23 +343,64 @@
     }
   }
 
+  /* Cada pagina agora e um arquivo HTML proprio (/, /servicos, ...), para
+     que cada uma tenha URL, title e canonical proprios e possa ranquear
+     sozinha. O clique deixa de trocar a secao no DOM e passa a navegar de
+     verdade — mas o overlay de transicao roda ANTES da navegacao, entao o
+     efeito visual continua o mesmo de quando era SPA. */
+  function urlDaPagina(pageId) {
+    return pageId === 'home' ? '/' : '/' + pageId;
+  }
+
+  function navegarPara(url) {
+    /* sem overlay ou com movimento reduzido: vai direto */
+    if (!ptOverlay || reduce) { window.location.href = url; return; }
+    if (ptBarFill) { ptBarFill.style.transition = 'none'; ptBarFill.style.width = '0%'; }
+    ptOverlay.classList.add('is-entering');
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        if (ptBarFill) ptBarFill.style.transition = '';
+        /* mesma duracao do fade-in usado pelo showOverlay */
+        setTimeout(function () { window.location.href = url; }, 380);
+      });
+    });
+  }
+
   pageLinks.forEach(function (link) {
     link.addEventListener('click', function (e) {
       var pageId = link.getAttribute('data-page');
-      if (!pageId) return;
+      if (!pageId || VALID_PAGES.indexOf(pageId) === -1) return;
+      /* respeita ctrl/cmd/shift-clique e botao do meio: o navegador abre em
+         nova aba e nao passamos por aqui */
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      var href = link.getAttribute('href');
+      if (!href || href.charAt(0) === '#') href = urlDaPagina(pageId);
       e.preventDefault();
-      showPage(pageId);
+      navegarPara(href);
     });
   });
 
-  window.addEventListener('popstate', function (e) {
-    var pageId = (e.state && e.state.page) || (window.location.hash.slice(1)) || 'home';
-    showPage(pageId, { fromPop: true });
-  });
+  /* Com URLs reais, voltar/avancar e navegacao do proprio navegador: ele
+     recarrega o arquivo certo. Nao ha mais o que trocar via JS. */
 
   function initRoute() {
+    /* Links antigos compartilhados como /#servicos precisam continuar
+       funcionando. O fragmento nunca chega ao servidor, entao a conversao
+       para a URL real so pode acontecer aqui. */
     var hash = window.location.hash.slice(1);
-    showPage(hash && VALID_PAGES.indexOf(hash) !== -1 ? hash : 'home', { fromPop: true });
+    if (hash && VALID_PAGES.indexOf(hash) !== -1) {
+      var destino = urlDaPagina(hash);
+      if (window.location.pathname !== destino) {
+        window.location.replace(destino);
+        return;
+      }
+    }
+    /* O arquivo servido ja traz a sua propria secao com is-active; so
+       garantimos o estado inicial (scroll-spy, reveals, nav ativa). */
+    var atual = document.querySelector('.page[id^="page-"]');
+    var pageId = atual ? atual.id.replace('page-', '') : 'home';
+    if (VALID_PAGES.indexOf(pageId) === -1) pageId = 'home';
+    showPage(pageId, { fromPop: true });
   }
 
   /* ============================================================
@@ -532,14 +573,16 @@
              the main pageLinks handler on that button fire instead */
           if (e.target && e.target.closest('button[data-page]')) return;
           var pageId = el.getAttribute('data-page');
-          if (pageId) showPage(pageId);
+          /* navegacao real: a secao de destino nao existe mais neste
+             documento, cada pagina e um arquivo proprio */
+          if (pageId) navegarPara(urlDaPagina(pageId));
         });
         /* Keyboard: Enter/Space on the article */
         el.addEventListener('keydown', function (e) {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             var pageId = el.getAttribute('data-page');
-            if (pageId) showPage(pageId);
+            if (pageId) navegarPara(urlDaPagina(pageId));
           }
         });
       }
