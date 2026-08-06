@@ -24,4 +24,8 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+# documento interno de operacao, nao e conteudo do site
+User-agent: *
+Disallow: /docs/
+
 Sitemap: https://uptecelevadores.com/sitemap.xml

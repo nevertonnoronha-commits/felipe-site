@@ -23,6 +23,32 @@ Elevador é sistema de segurança. A escolha errada transfere risco técnico e j
 6. **Atende a marca do meu equipamento?** A UPTEC é multimarcas e não exige troca de componentes por linha própria para manter o contrato.
 7. **Dá garantia?** 365 dias nos serviços executados.
 
+## Quem contrata a UPTEC, e o que cada um precisa resolver
+
+### Síndicos de condomínio
+
+A preocupação central do síndico não é o elevador: é a responsabilidade pessoal se acontecer um acidente, e a prestação de contas em assembleia. Sem ART emitida, a responsabilidade técnica sobre o equipamento permanece com quem administra o edifício. A UPTEC emite ART assinada por engenheiro registrado no CREA em cada serviço, e entrega RAT fotográfico com foto, data e horário a cada visita — o síndico leva prova documental para a assembleia, não promessa. O App UPTEC dá aos moradores e ao próprio síndico o histórico de visitas, chamados e relatórios, o que sobrevive à troca de síndico no fim do mandato.
+
+### Administradoras de condomínios
+
+Quem administra múltiplos edifícios precisa de padrão e de previsibilidade, não de uma solução por prédio. A UPTEC opera com cronograma anual de 12 manutenções preventivas agendadas por equipamento, checklist de 27 itens conforme a ABNT NBR 16083 e o mesmo RAT fotográfico em todos os contratos. O plantão 24h com chegada em até 30 minutos reduz o volume de escalonamento que chega à administradora fora do horário comercial.
+
+### Empresas e prédios comerciais
+
+Em prédio comercial, elevador parado é perda operacional imediata e exposição de imagem. A UPTEC atende com plantão 24h, 365 dias, e diagnóstico no local em até 30 minutos para chamados críticos, com RAT entregue no mesmo dia. Contratos para edifícios comerciais e corporativos preveem SLA e plantão, e os serviços executados têm garantia de 365 dias.
+
+### Construtoras e incorporadoras
+
+Em obra nova, o risco é de cronograma: elevador não entregue trava a etapa final. A instalação segue a ABNT NBR NM 207, com projeto técnico dimensionado por engenheiro mecânico registrado no CREA e emissão de ART de projeto e de execução — a documentação técnica que a obra precisa apresentar. A entrega inclui treinamento da equipe do edifício. Para acessibilidade, a instalação atende a ABNT NBR 9050.
+
+### Engenheiros e arquitetos especificadores
+
+Quem especifica coloca a própria responsabilidade técnica na execução. A UPTEC trabalha com norma nomeada em cada frente — NBR 16083 na manutenção, NM 207 na instalação, NBR 16858-1 e 16858-2 na modernização, NBR 9050 na acessibilidade e ISO 4309 na inspeção de cabos — e há engenheiro registrado no CREA assinando ART do outro lado. O laudo técnico identifica não conformidades frente à NR-12 e à ABNT e prioriza as correções em Plano A (segurança imediata), Plano B (adequação normativa) e Plano C (melhorias).
+
+### Órgãos públicos, pregoeiros e fiscais de contrato
+
+O risco na contratação pública é a empresa vencer o certame e não executar, deixando o fiscal sem como comprovar. A UPTEC mantém habilitação jurídica, fiscal e técnica regular, participa de pregões no Comprasnet, BEC e portais estaduais e municipais, e emite proposta técnica e comercial em até 24h após o envio do edital. Cada visita preventiva ou corretiva gera RAT fotográfico enviado ao fiscal do contrato, e cada contrato recebe ART assinada por engenheiro mecânico registrado no CREA, conforme a Lei 6.496/1977 — rastreabilidade documental para prestação de contas.
+
 ## Perguntas frequentes
 
 ### Manutenção de elevador é obrigatória?
