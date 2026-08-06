@@ -2876,9 +2876,10 @@ body.drawer-open .mobile-cta-bar {
   padding: 1.25rem 1.35rem 1.2rem;
   gap: 0.5rem;
 }
-#page-home .srv-card--tall {
-  padding: 1.5rem 1.35rem 1.35rem;
-}
+/* o override de padding do --tall foi removido: ele herda exatamente o
+   mesmo padding dos cards irmaos, para o link "saiba mais" ficar na
+   mesma distancia da base em todos. O extra existia porque o card
+   ocupava 2 linhas da grade, span que nao existe mais. */
 #page-home .srv-card h3 {
   font-size: 1.1rem;
 }
@@ -3813,3 +3814,21 @@ body.drawer-open .mobile-cta-bar {
      de leitura. */
   .site-footer__brand > * { max-width: 34rem; }
 }
+
+/* d) LINK "SAIBA MAIS" ANCORADO NA BASE DO CARD
+      Os cards ja tem altura igual (a grade estica), mas o link vinha
+      logo depois do paragrafo — entao sua altura variava conforme o
+      texto tivesse 3 ou 4 linhas. Como o card e flex-column, empurrar
+      o link com margin-top:auto fixa a mesma distancia da borda
+      inferior em todos, independente do tamanho do texto. */
+.srv-card > .link-arrow {
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+/*    O .srv-card--tall tinha padding inferior maior que os irmaos
+      (1.65rem contra 1.55rem), justificado no codigo por "ocupar 2
+      linhas da grade". Esse span foi removido, entao a excecao perdeu
+      o motivo — e deixava o link 2px fora de alinhamento em relacao
+      aos cards vizinhos. Padding unificado. */
+.srv-card--tall { padding: 1.6rem 1.65rem 1.55rem; }
