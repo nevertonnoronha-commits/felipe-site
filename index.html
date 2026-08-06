@@ -13,6 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://uptecelevadores.com">
   <meta name="theme-color" content="#f6f2e9">
+  <link rel="canonical" href="https://uptecelevadores.com/">
   <title>UPTEC Elevadores: Manutenção, Instalação e Modernização em Todo o Brasil</title>
 
   <link rel="icon"
@@ -190,11 +191,16 @@
     "@type": "LocalBusiness",
     "name": "UPTEC Elevadores Ltda.",
     "description": "Manutenção, instalação e modernização de elevadores em Salvador, na Bahia e em todos os estados do Brasil. RAT com foto, ART em todos os serviços e plantão 24h com atendimento em até 30 minutos.",
+    "image": "https://uptecelevadores.com/images/logo-uptec-full.png",
     "telephone": "+55-71-99652-6835",
     "email": "contato@uptecelevadores.com",
     "url": "https://uptecelevadores.com",
     "taxID": "64.753.094/0001-52",
-    "areaServed": "Brasil",
+    "areaServed": [
+      { "@type": "City", "name": "Salvador" },
+      { "@type": "State", "name": "Bahia" },
+      { "@type": "Country", "name": "Brasil" }
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Av. Tancredo Neves, 3343, Bloco B, Sala 1009/10, Caminho das Árvores",
@@ -203,12 +209,21 @@
       "postalCode": "41820-021",
       "addressCountry": "BR"
     },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59",
+        "description": "Plantão técnico de emergência 24h, atendimento em até 30 minutos"
+      }
+    ]
   }
   </script>
 </head>
