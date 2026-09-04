@@ -67,3 +67,28 @@ Atualize tambem:
 > repositorio uma vez: ele existia, era citado neste README, mas nunca chegou a
 > ser versionado. A excecao `!scripts/*.mjs` logo abaixo dela e o que impede
 > isso de acontecer de novo — nao remova.
+
+---
+
+## indexnow.sh
+
+Avisa Bing e Yandex que paginas mudaram, em vez de esperar o crawler passar.
+Importa porque o indice do Bing e o que alimenta as respostas do ChatGPT e do
+Copilot — e o Google nao participa do protocolo.
+
+```bash
+bash scripts/indexnow.sh               # as 6 URLs do site
+bash scripts/indexnow.sh /servicos     # so as que voce listar
+```
+
+**Rode depois do deploy.** O IndexNow busca o arquivo de chave no ar
+(`https://uptecelevadores.com/<chave>.txt`) para confirmar que quem pediu e o
+dono do dominio; se a chave ainda nao subiu, o script aborta antes de enviar.
+
+A chave fica em duas coisas que precisam bater: a constante `CHAVE` dentro do
+script e o arquivo `<chave>.txt` na raiz do repositorio. **Nao renomeie nem
+apague esse .txt** — sem ele o protocolo passa a responder 403. Se um dia
+precisar trocar a chave, troque os dois ao mesmo tempo.
+
+Resposta 202 na primeira vez e normal: significa aceito, com a chave ainda em
+validacao.
