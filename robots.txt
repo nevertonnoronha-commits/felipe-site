@@ -1,31 +1,44 @@
 User-agent: *
 Allow: /
+Disallow: /docs/
 
 # Crawlers de indexacao/RAG das buscas com IA. O Allow acima ja os cobre;
 # nomea-los deixa a permissao explicita para ChatGPT, Perplexity e Claude.
+#
+# O Disallow se repete em cada grupo de proposito: pela RFC 9309 um crawler
+# obedece apenas ao grupo mais especifico que casa com ele, entao um bot
+# nomeado aqui ignoraria por completo as regras do grupo "*" acima.
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /docs/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /docs/
 
 User-agent: GPTBot
 Allow: /
+Disallow: /docs/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /docs/
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /docs/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /docs/
 
 User-agent: Google-Extended
 Allow: /
-
-# documento interno de operacao, nao e conteudo do site
-User-agent: *
 Disallow: /docs/
+
+# Guia em texto para agentes de IA. Nao existe diretiva padronizada que aponte
+# para ele; a descoberta e por caminho fixo na raiz, como este proprio arquivo.
+# A linha abaixo e so um comentario, para quem estiver lendo:
+#   https://uptecelevadores.com/llms.txt
 
 Sitemap: https://uptecelevadores.com/sitemap.xml

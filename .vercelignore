@@ -1,0 +1,16 @@
+# Arquivos que ficam no repositorio mas NAO devem ir para o site publico.
+#
+# O robots.txt nao serve para isto: ele e um pedido que o crawler pode ignorar,
+# e nao impede ninguem de abrir a URL no navegador. Quem decide o que existe no
+# ar e este arquivo.
+
+# arquivo-fonte das 6 paginas: publica-lo duplicaria todo o conteudo do site
+# numa URL sem canonical propria
+_source.html
+
+# documentacao interna de operacao e de design
+docs/
+design.md
+
+# ferramentas de build e deploy, nao sao conteudo
+scripts/
