@@ -22,8 +22,14 @@ else
   CAMINHOS=("/" "/servicos" "/licitacoes" "/condominios" "/elevadores" "/contato")
 fi
 
-# monta a lista de URLs em JSON
-URLS=$(printf '"https://%s%s",' "$HOST" "${CAMINHOS[@]}" | sed 's/,$//')
+# monta a lista de URLs em JSON.
+# Nao use um printf so com "$HOST" na frente: o formato cicla consumindo dois
+# argumentos por vez e acaba emparelhando as rotas entre si.
+URLS=""
+for c in "${CAMINHOS[@]}"; do
+  URLS="${URLS}\"https://${HOST}${c}\","
+done
+URLS="${URLS%,}"
 
 CORPO=$(cat <<JSON
 {
@@ -36,7 +42,7 @@ JSON
 )
 
 echo "enviando ${#CAMINHOS[@]} URL(s) para o IndexNow:"
-printf '  https://%s%s\n' "$HOST" "${CAMINHOS[@]}"
+for c in "${CAMINHOS[@]}"; do echo "  https://${HOST}${c}"; done
 echo
 
 # a chave precisa estar acessivel no ar antes do ping
@@ -50,13 +56,15 @@ STATUS=$(curl -s -o /tmp/indexnow-resposta.txt -w '%{http_code}' \
   -H 'Content-Type: application/json; charset=utf-8' \
   -d "$CORPO")
 
+# corpo da resposta, quando vier (202 costuma vir vazio)
+mostrar_corpo() { [ -s /tmp/indexnow-resposta.txt ] && sed 's/^/  /' /tmp/indexnow-resposta.txt; return 0; }
+
 case "$STATUS" in
-  200) echo "200 - aceito e validado" ;;
-  202) echo "202 - aceito, chave em validacao (normal na primeira vez)" ;;
-  400) echo "400 - JSON malformado" ;;
-  403) echo "403 - chave recusada: confira $ARQ_CHAVE" ;;
-  422) echo "422 - alguma URL nao pertence a $HOST" ;;
-  429) echo "429 - pedidos demais, tente mais tarde" ;;
-  *)   echo "$STATUS - resposta inesperada" ;;
+  200) echo "200 - aceito e validado" ;         mostrar_corpo; exit 0 ;;
+  202) echo "202 - aceito, chave em validacao (normal na primeira vez)"; mostrar_corpo; exit 0 ;;
+  400) echo "400 - JSON malformado" ;           mostrar_corpo; exit 1 ;;
+  403) echo "403 - chave recusada: confira $ARQ_CHAVE"; mostrar_corpo; exit 1 ;;
+  422) echo "422 - alguma URL nao pertence a $HOST";    mostrar_corpo; exit 1 ;;
+  429) echo "429 - pedidos demais, tente mais tarde";   mostrar_corpo; exit 1 ;;
+  *)   echo "$STATUS - resposta inesperada" ;   mostrar_corpo; exit 1 ;;
 esac
-[ -s /tmp/indexnow-resposta.txt ] && sed 's/^/  /' /tmp/indexnow-resposta.txt
