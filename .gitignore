@@ -14,9 +14,13 @@ _briefing_extracted.txt
 .DS_Store
 Thumbs.db
 /*.png
+# ...menos o icone de toque do iOS, que precisa ficar na raiz
+!apple-touch-icon.png
 verify-*.mjs
 verify-output/
 *.mjs
+# ...menos o gerador de paginas: foi essa regra que o apagou do repositorio
+!scripts/*.mjs
 test-results/
 playwright-report/
 index-dark-backup.html
